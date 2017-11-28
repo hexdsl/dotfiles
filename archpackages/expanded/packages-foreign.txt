@@ -1,8 +1,10 @@
+adwaita-qt4
+adwaita-qt5
+adwaita-x-dark-and-light-theme
 cower
 dtrx
 dunstify
 i3-gaps
-libxfont
 lightdm-settings
 lightdm-slick-greeter
 neofetch
@@ -10,8 +12,7 @@ neomutt-git
 pacaur
 papirus-icon-theme-git
 polybar
+qgnomeplatform-git
 signal-desktop-bin
-tasksh
 ttf-ibm-plex-git
-ttf-iosevka-term-ss04
 xcalib
