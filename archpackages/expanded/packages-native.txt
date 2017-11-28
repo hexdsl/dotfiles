@@ -197,8 +197,6 @@ gst-plugins-good
 gstreamer
 gthumb
 gtk-doc
-gtk-engine-murrine
-gtk-engines
 gtk-update-icon-cache
 gtk-xfce-engine
 gtk2

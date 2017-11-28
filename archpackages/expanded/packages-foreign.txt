@@ -1,6 +1,5 @@
 adwaita-qt4
 adwaita-qt5
-adwaita-x-dark-and-light-theme
 cower
 dtrx
 dunstify

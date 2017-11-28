@@ -8,7 +8,6 @@ adobe-source-code-pro-fonts
 adwaita-icon-theme
 adwaita-qt4
 adwaita-qt5
-adwaita-x-dark-and-light-theme
 alsa-lib
 alsa-plugins
 alsa-utils
@@ -203,8 +202,6 @@ gst-plugins-good
 gstreamer
 gthumb
 gtk-doc
-gtk-engine-murrine
-gtk-engines
 gtk-update-icon-cache
 gtk-xfce-engine
 gtk2
