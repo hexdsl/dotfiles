@@ -12,8 +12,6 @@ else
 export PS1="\n[\[\e[34m\]\w\[\e[m\]] \[\e[35m\]$ >\[\e[m\] "
 fi
 
-
-
 # Autocomplete with sudo
 if [ "$PS1" ]; then
     complete -cf sudo
@@ -66,6 +64,7 @@ alias pQi="sudo pacman -Qi" # see local package details
 # Remove packages
 alias pRs="pacaur -Rs" # remove unless conflicting deps
 alias pRnsc="sudo pacman -Rnsc" # remove recursively
+alias pRnscQdtq="sudo pacman -Rnsc $(pacman -Qdtq)" # remove orphans recursively
 
 # Clear cache
 alias pcache1="sudo paccache -rk 1" # remove cache except last item
