@@ -33,7 +33,7 @@ Package names with a short description.
 Actual busy.  
 ![i3 sample busy](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-busy.png)
 
-Clean desktop with dunst notification.  
+Clean desktop with a notification.  
 ![i3 sample clean desktop](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-clean.png)
 
 ## License
