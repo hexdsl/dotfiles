@@ -100,13 +100,13 @@ bindsym $mod+Shift+i resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+o resize grow height 10 px or 10 ppt
 
 # Change gap size
-bindsym $mod+Mod1+o gaps inner all plus 5; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-green.svg "Dynamic gaps" "Increased all inner gaps by 5"
-bindsym $mod+Mod1+i gaps inner all minus 5; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-green.svg "Dynamic gaps" "Decreased all inner gaps by 5"
-bindsym $mod+Mod1+u gaps inner all set 0; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-green.svg "Dynamic gaps" "Reset all inner gaps to 0"
+bindsym $mod+Mod1+o gaps inner all plus 5; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-green-desktop.svg "Dynamic gaps" "Increased all inner gaps by 5"
+bindsym $mod+Mod1+i gaps inner all minus 5; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-green-desktop.svg "Dynamic gaps" "Decreased all inner gaps by 5"
+bindsym $mod+Mod1+u gaps inner all set 0; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-green-desktop.svg "Dynamic gaps" "Reset all inner gaps to 0"
 
-bindsym $mod+Mod1+Ctrl+o gaps outer all plus 5; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-yellow.svg "Dynamic gaps" "Increased all outer gaps by 5"
-bindsym $mod+Mod1+Ctrl+i gaps outer all minus 5; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-yellow.svg "Dynamic gaps" "Decreased all outer gaps by 5"
-bindsym $mod+Mod1+Ctrl+u gaps outer all set 0; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-yellow.svg "Dynamic gaps" "Reset all outer gaps to 0"
+bindsym $mod+Mod1+Ctrl+o gaps outer all plus 5; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-cyan-desktop.svg "Dynamic gaps" "Increased all outer gaps by 5"
+bindsym $mod+Mod1+Ctrl+i gaps outer all minus 5; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-cyan-desktop.svg "Dynamic gaps" "Decreased all outer gaps by 5"
+bindsym $mod+Mod1+Ctrl+u gaps outer all set 0; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-cyan-desktop.svg "Dynamic gaps" "Reset all outer gaps to 0"
 
 # Vertical split 
 bindsym $mod+s split v
@@ -175,16 +175,16 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # Move focused container to workspace
-bindsym $mod+Mod1+1 move container to workspace $ws1; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 1"
-bindsym $mod+Mod1+2 move container to workspace $ws2; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 2"
-bindsym $mod+Mod1+3 move container to workspace $ws3; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 3"
-bindsym $mod+Mod1+4 move container to workspace $ws4; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 4"
-bindsym $mod+Mod1+5 move container to workspace $ws5; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 5"
-bindsym $mod+Mod1+6 move container to workspace $ws6; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 6"
-bindsym $mod+Mod1+7 move container to workspace $ws7; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 7"
-bindsym $mod+Mod1+8 move container to workspace $ws8; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 8"
-bindsym $mod+Mod1+9 move container to workspace $ws9; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 9"
-bindsym $mod+Mod1+0 move container to workspace $ws10; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/places/user-desktop-magenta.svg "Moved window to workspace 10"
+bindsym $mod+Mod1+1 move container to workspace $ws1; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 1"
+bindsym $mod+Mod1+2 move container to workspace $ws2; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 2"
+bindsym $mod+Mod1+3 move container to workspace $ws3; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 3"
+bindsym $mod+Mod1+4 move container to workspace $ws4; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 4"
+bindsym $mod+Mod1+5 move container to workspace $ws5; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 5"
+bindsym $mod+Mod1+6 move container to workspace $ws6; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 6"
+bindsym $mod+Mod1+7 move container to workspace $ws7; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 7"
+bindsym $mod+Mod1+8 move container to workspace $ws8; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 8"
+bindsym $mod+Mod1+9 move container to workspace $ws9; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 9"
+bindsym $mod+Mod1+0 move container to workspace $ws10; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 10"
 
 # Move focused container to workspace and switch to it
 bindsym Ctrl+$mod+Mod1+1 move container to workspace $ws1, workspace $ws1
@@ -199,7 +199,7 @@ bindsym Ctrl+$mod+Mod1+9 move container to workspace $ws9, workspace $ws9
 bindsym Ctrl+$mod+Mod1+0 move container to workspace $ws10, workspace $ws10
 
 # Dashboard
-bindsym $mod+Delete workspace 0; exec $term -e ranger; exec $term -e htop; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/administration.svg "Switched to dashboard"
+bindsym $mod+Delete workspace 0; exec $term -e ranger; exec $term -e htop; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/administration.svg "Switched to dashboard"
 
 # Session management
 # ==============================================================================
@@ -222,13 +222,13 @@ bindsym Ctrl+Mod1+End exec --no-startup-id systemctl poweroff -i, mode "default"
 # NOTE thus Mod1+<Number> is scalable (whereas $mod + first letter is tricky)
 bindsym $mod+Return exec $term
 bindsym Mod1+Return exec $term
-bindsym Mod1+1 exec $fm; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/system-file-manager.svg "File manager" "Launching application"
-bindsym Mod1+2 exec $browser; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/firefox.svg "Internet browser" "Launching application"
-bindsym Mod1+3 exec $rss; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/RSS_feeds.svg "Feed reader" "Launching application"
-bindsym Mod1+4 exec $mail; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/mail-client.svg "Mail client" "Launching application"
-bindsym Mod1+5 exec $music; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/musique.svg "Music player" "Launching application"
-bindsym Mod1+6 exec $podcast; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/podcast.svg "Podcast player" "Launching application"
-bindsym Mod1+7 exec $imageeditor; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/gimp.svg "Image editor" "Launching application"
+bindsym Mod1+1 exec $fm; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/system-file-manager.svg "File manager" "Launching application"
+bindsym Mod1+2 exec $browser; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/firefox.svg "Internet browser" "Launching application"
+bindsym Mod1+3 exec $rss; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/RSS_feeds.svg "Feed reader" "Launching application"
+bindsym Mod1+4 exec $mail; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/mail-client.svg "Mail client" "Launching application"
+bindsym Mod1+5 exec $music; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/musique.svg "Music player" "Launching application"
+bindsym Mod1+6 exec $podcast; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/podcast.svg "Podcast player" "Launching application"
+bindsym Mod1+7 exec $imageeditor; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/gimp.svg "Image editor" "Launching application"
 
 # App launcher menu
 bindsym $mod+a exec --no-startup-id rofi -show drun -display-drun "Run app"
@@ -247,10 +247,10 @@ bindsym $mod+d exec xfce4-terminal --drop-down
 # NOTE higher values interfere with multiple scrots in quick succession
 
 # Focused window
-bindsym Print exec scrot -u -z '%Y-%m-%d_%H:%M:%S_$wx$h$n.png' -e 'mv $f ~/Desktop'; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/ksnapshot.svg "Window view screenshot" "Saved image to Desktop"
+bindsym Print exec scrot -u -z '%Y-%m-%d_%H:%M:%S_$wx$h$n.png' -e 'mv $f ~/Desktop'; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/ksnapshot.svg "Window view screenshot" "Saved image to Desktop"
 
 # Full screen
-bindsym $mod+Print exec scrot -z '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Desktop'; exec notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/ksnapshot.svg "Screen view screenshot" "Saved image to Desktop"
+bindsym $mod+Print exec scrot -z '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Desktop'; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/ksnapshot.svg "Screen view screenshot" "Saved image to Desktop"
 
 # Music and sound
 # ==============================================================================
@@ -296,7 +296,7 @@ bindsym Mod1+c exec $volumeup
 set $play --no-startup-id mpc toggle
 set $prev --no-startup-id mpc prev
 set $next --no-startup-id mpc next
-set $songnotify --no-startup-id notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)"
+set $songnotify --no-startup-id notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)"
 
 bindsym $mod+XF86AudioMute exec $play
 bindsym $mod+XF86AudioLowerVolume exec $prev; exec $songnotify
@@ -309,6 +309,7 @@ bindsym Mod1+s exec $prev; exec $songnotify
 bindsym Mod1+d exec $next; exec $songnotify
 
 # Autostart programs
+# The `exec_always` directive is used for those cases where initial exec fails
 # ==============================================================================
 
 # Xfce components
@@ -329,11 +330,11 @@ exec --no-startup-id compton -b
 
 # Start the Music Player Daemon
 # NOTE Do not use this together with the systemd autostart method
-exec_always --no-startup-id mpd
+exec --no-startup-id mpd
 
 # Keyboard settings
 exec_always --no-startup-id "setxkbmap -option compose:menu"
 exec_always --no-startup-id "setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'"
 
 # NOTE the following is specific to my monitor's colour settings
-exec_always --no-startup-id "/usr/bin/xcalib -d :0 /usr/share/color/icc/colord/Gamma5500K.icc"
+exec --no-startup-id "/usr/bin/xcalib -d :0 /usr/share/color/icc/colord/Gamma5500K.icc"
