@@ -18,7 +18,7 @@ if [ "$PS1" ]; then
 fi
 
 # Launch GNOME keyring
-# Needed with i3
+# Needed with standalon i3
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
@@ -102,7 +102,7 @@ alias xxx="vim ~/.Xresources"
 
 # Reload config files
 alias rbbb="source ~/.bashrc"
-alias rddd="killall dunst && eval $(dbus-launch)"
+# alias rddd="killall dunst && eval $(dbus-launch)"
 alias rxxx="xrdb -merge ~/.Xresources"
 
 # Curl
