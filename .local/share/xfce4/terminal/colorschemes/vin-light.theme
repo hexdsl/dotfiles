@@ -1,0 +1,10 @@
+[Scheme]
+Name=vin light
+ColorForeground=#3f4d24
+ColorBackground=#f0f2ea
+ColorCursor=#3f4d24
+ColorBold=#3f4d24
+ColorPalette=#181a28;#a3415c;#487d14;#7d851d;#5a5da8;#ac587a;#13865a;#e0e2da;#282a38;#8d522d;#3f4d24;#626442;#727584;#8858a5;#6d8476;#f0f2ea
+TabActivityColor=#487d14
+ColorSelectionBackground=#e0e2da
+ColorSelection=#3f4d24

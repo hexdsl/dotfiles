@@ -1,0 +1,10 @@
+[Scheme]
+Name=oliveira light
+ColorForeground=#51534b
+ColorBackground=#f1f3eb
+ColorCursor=#51534b
+ColorBold=#51534b
+ColorPalette=#252922;#a64e3c;#5ca15a;#a59520;#4a8dac;#a95f85;#5caa9a;#e1e3db;#353932;#a35c35;#51534b;#757972;#91938b;#7c85b7;#959992;#f1f3eb
+TabActivityColor=#5ca15a
+ColorSelectionBackground=#e1e3db
+ColorSelection=#51534b

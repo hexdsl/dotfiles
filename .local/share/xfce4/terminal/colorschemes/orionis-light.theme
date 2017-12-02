@@ -1,0 +1,10 @@
+[Scheme]
+Name=orionis light
+ColorForeground=#5f6163
+ColorBackground=#eff1f3
+ColorCursor=#5f6163
+ColorBold=#5f6163
+ColorPalette=#1f2a2d;#974f6c;#5b935b;#9a8f0c;#4d8ab3;#ad6e8f;#52a6ad;#dfe1e3;#2f3a3d;#9d7427;#5f6163;#5f6a6d;#8f9193;#7e7ead;#8f9a9d;#eff1f3
+TabActivityColor=#5b935b
+ColorSelectionBackground=#dfe1e3
+ColorSelection=#5f6163

@@ -1,0 +1,6 @@
+Command=mpc --format '%artist% ~ %title% \\[%album%\\]' current
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=250
+Font=Cantarell Bold 12
+

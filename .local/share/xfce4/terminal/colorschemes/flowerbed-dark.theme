@@ -1,0 +1,10 @@
+[Scheme]
+Name=flowerbed dark
+ColorForeground=#a3b9c9
+ColorBackground=#233949
+ColorCursor=#a3b9c9
+ColorBold=#a3b9c9
+ColorPalette=#233949;#d86a87;#5cbc7d;#cd9a8a;#4aa7d2;#bc74af;#1caba1;#dce3e2;#334959;#d89a47;#5c6362;#738999;#8c9392;#7988ca;#a3b9c9;#ecf3f2
+TabActivityColor=#5cbc7d
+ColorSelectionBackground=#334959
+ColorSelection=#a3b9c9

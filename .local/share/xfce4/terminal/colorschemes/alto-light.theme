@@ -1,0 +1,10 @@
+[Scheme]
+Name=alto light
+ColorForeground=#5a5a4c
+ColorBackground=#fafaec
+ColorCursor=#5a5a4c
+ColorBold=#5a5a4c
+ColorPalette=#182d2a;#c6414d;#679945;#c6a13d;#378bbd;#c97885;#57ab8b;#eaeadc;#283d3a;#c9753d;#5a5a4c;#687d7a;#8a8a7c;#9a7bc8;#98adaa;#fafaec
+TabActivityColor=#679945
+ColorSelectionBackground=#eaeadc
+ColorSelection=#5a5a4c

@@ -1,0 +1,10 @@
+[Scheme]
+Name=caprice dark
+ColorForeground=#a19ba9
+ColorBackground=#211b29
+ColorCursor=#a19ba9
+ColorBold=#a19ba9
+ColorPalette=#211b29;#983d4f;#278975;#a58a30;#585ebc;#ac4d7a;#587ebc;#eeebec;#312b39;#9a5d38;#2e2b2c;#716b79;#7e7b7c;#8955a2;#a19ba9;#fefbfc
+TabActivityColor=#278975
+ColorSelectionBackground=#312b39
+ColorSelection=#a19ba9
