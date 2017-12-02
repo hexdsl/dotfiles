@@ -31,7 +31,6 @@ autoconf-archive
 automake
 avahi
 babl
-bamf
 bash
 bash-completion
 bc
@@ -85,8 +84,6 @@ confuse
 coreutils
 cower
 cracklib
-cryfs
-crypto++
 cryptsetup
 curl
 damageproto
@@ -115,7 +112,6 @@ e2fsprogs
 efibootmgr
 efivar
 enca
-encfs
 enchant
 engrampa
 eom
@@ -296,8 +292,6 @@ keyutils
 kimageformats
 kmod
 krb5
-kwayland
-kwindowsystem
 ladspa
 lame
 lapack
@@ -337,7 +331,6 @@ libcue
 libcups
 libdaemon
 libdatrie
-libdbusmenu-qt5
 libdc1394
 libdca
 libdiscid
@@ -362,7 +355,6 @@ libfakekey
 libfbclient
 libfdk-aac
 libffi
-libfm-extra
 libfontenc
 libfreehand
 libftdi
@@ -396,12 +388,10 @@ libjpeg-turbo
 libkate
 libkeybinder3
 libksba
-libkscreen
 liblangtag
 libldap
 liblqr
 liblrdf
-liblxqt
 libmad
 libmatekbd
 libmatemixer
@@ -456,7 +446,6 @@ libproxy
 libpsl
 libpst
 libpulse
-libqtxdg
 libquicktime
 libraqm
 libraw1394
@@ -583,11 +572,6 @@ lua52
 lv2
 lvm2
 lxappearance
-lxmenu-data
-lxqt-config
-lxqt-globalkeys
-lxqt-notificationd
-lxqt-panel
 lxqt-themes
 lz4
 lzo
@@ -618,14 +602,12 @@ mate-settings-daemon
 mate-system-monitor
 mate-terminal
 mate-themes
-mate-user-guide
 mate-user-share
 mate-utils
 mathjax
 mdadm
 media-player-info
 mediainfo
-menu-cache
 mesa
 minizip
 mjpegtools
@@ -743,7 +725,6 @@ perl-xml-parser
 pinentry
 pixman
 pkg-config
-plank
 pluma
 polkit
 polkit-gnome
@@ -835,7 +816,6 @@ qt5-svg
 qt5-webchannel
 qt5-webengine
 qt5-webkit
-qt5-x11extras
 qt5-xmlpatterns
 qt5ct
 qtpass
@@ -889,7 +869,6 @@ slang
 smbclient
 smpeg
 snappy
-solid
 sord
 sound-theme-freedesktop
 soundtouch
@@ -925,7 +904,6 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 thunderbird
-tinyxml2
 tree
 tslib
 ttf-dejavu
@@ -1078,7 +1056,6 @@ xterm
 xvidcore
 xz
 yajl
-yelp
 yelp-tools
 yelp-xsl
 youtube-dl
