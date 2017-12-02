@@ -22,7 +22,7 @@ Package names with a short description.
 - PDF viewer `zathura`. Vi-like keybindings for document viewing.
 - Notifications `xfce4-notifyd`. Simple. Gets the job done. And unlike `dunst`, does not override the default of other desktop environments (messing up with other users).
 - Fonts `ttf-dejavu` and `cantarell-fonts`. The former is my main choice.
-- GTK and Qt theme is *Adwaita Dark*, but setting up requires a few extra packages: `adwaita-qt4` (AUR), `adwaita-qt5` (AUR), `qgnomeplatform-git` (AUR), `qt5ct` (refer to the Arch Wiki for [a unified look for GTK and QT](https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications)).
+- GTK and Qt theme is *Adwaita Dark*, but setting it up requires a few extra packages: `adwaita-qt4` (AUR), `adwaita-qt5` (AUR), `qgnomeplatform-git` (AUR), `qt5ct` (refer to the Arch Wiki for [a unified look for GTK and QT](https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications)).
 - GTK and Qt icon themes `papirus-icon-theme-git` (AUR) and `breeze-icons`. Both icon themes seem to work across GTK and Qt. I just keep Papirus for GTK and Breeze for Qt as those seem to be their respective targets.
 
 ## Samples of my current setup
@@ -30,7 +30,7 @@ Package names with a short description.
 'Fake busy'.  
 ![i3 sample fake busy](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-fake-busy.png)
 
-Actual busy.  
+Closer to actual busy.  
 ![i3 sample busy](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-busy.png)
 
 Clean desktop with a notification.  
