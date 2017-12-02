@@ -23,7 +23,7 @@ rofi.columns: 2
 rofi.bw: 0
 rofi.location: 0
 rofi.fuzzy: true
-rofi.font: IBM Plex Sans Light 24
+rofi.font: DejaVu Sans ExtraLight 24
 
 ! NOTE rofi has deprecated below themes settings
 ! The new path ~/.config/rofi/config.rasi
@@ -55,10 +55,10 @@ URxvt.saveLines: 5000
 URxvt.intensityStyles: false
 URxvt.depth: 32
 URxvt.allow_bold: true
-URxvt.font: xft:IBM Plex Mono:pixelsize=16, xft:DejaVu Sans Mono:pixelsize=16
-URxvt.boldFont: xft:IBM Plex Mono:pixelsize=16:bold, xft:DejaVu Sans Mono:pixelsize=16:bold
-URxvt.italicFont: xft:IBM Plex Mono:pixelsize=16:italic, xft:DejaVu Sans Mono:pixelsize=16:italic
-URxvt.bolditalicFont: xft:IBM Plex Mono:pixelsize=16:bold:italic, xft:DejaVu Sans Mono:pixelsize=16:bold:italic
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
+URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=16:bold
+URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=16:italic
+URxvt.bolditalicFont: xft:DejaVu Sans Mono:pixelsize=16:bold:italic
 URxvt.letterSpace: 0
 URxvt.lineSpace: 3
 URxvt.scrollBar: false
