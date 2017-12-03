@@ -19,7 +19,6 @@ Package names with a short description.
 - Music client `ncmpcpp`. Console based MPD interface.
 - Music client GUI `cantata`. Qt app to interface with MPD. Fully featured.
 - Program launcher `rofi`. Actually the program is quite more than that, but I mostly use it for launching programs.
-- PDF viewer `zathura`. Vi-like keybindings for document viewing.
 - Notifications `xfce4-notifyd`. Simple. Gets the job done. And unlike `dunst`, does not override the default of other desktop environments (messing up with other users).
 - Fonts `ttf-dejavu` and `cantarell-fonts`. The former is my main choice.
 - GTK and Qt theme is *Adwaita Dark*, but setting it up requires a few extra packages: `adwaita-qt4` (AUR), `adwaita-qt5` (AUR), `qgnomeplatform-git` (AUR), `qt5ct` (refer to the Arch Wiki for [a unified look for GTK and QT](https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications)).
