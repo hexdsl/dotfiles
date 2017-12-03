@@ -34,20 +34,24 @@ set $col15 #798ba5
 
 # Common applications
 # ------------------------------------------------------------------------------
-set $term urxvt
+
+# NOTE urxvtd is started with ~/.xprofile, which is sourced from ~/.xinitrc
+# NOTE this is necessary for logging in with a display manager
+# NOTE the daemon is launched before i3 to speed up the opening of terminals
+set $term urxvtc
 set $browser firefox
-set $fm urxvt -e ranger
-set $rss urxvt -e newsboat
-set $mail urxvt -e neomutt
-set $podcast urxvt -e podboat -a
+set $fm urxvtc -e ranger
+set $rss urxvtc -e newsboat
+set $mail urxvtc -e neomutt
+set $podcast urxvtc -e podboat -a
 set $imageeditor gimp
-set $music urxvt -e ncmpcpp
+set $music urxvtc -e ncmpcpp
 
 # NOTE neat idea but I prefer setting a ncmpcpp slave screen
 # # NOTE set custom bg for ncmpcpp
 # # since I only use it for the visualiser
 # # or some minor stuff
-# set $music urxvt -bg [60]#000000 -e ncmpcpp -s visualizer
+# set $music urxvtc -bg [60]#000000 -e ncmpcpp -s visualizer
 
 # Window settings
 # ==============================================================================

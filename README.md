@@ -8,7 +8,7 @@ Package names with a short description.
 - Bar `xfce4-panel`. Flexible, easy-to-use, system bar with easy configs for its various plugins.
 - Bar + i3 module `xfce4-i3-workspaces-plugin-git` (AUR) and `i3ipc-glib-git` (AUR). By default, the Xfce panel does not support i3 workspaces. These provide the plugin that does the job.
 - Compositor `compton`. For transparency and some mildly fancy effects like shadows.
-- Terminal emulator `urxvt`. Customisable, lightweight, effective terminal.
+- Terminal emulator `urxvt`. Customisable, lightweight, effective terminal. NOTE, I use it in a server-client mode. Refer to the i3 config, as well as `.xinitrc` and `.xprofile`.
 - Drop down terminal `xfce4-terminal` with option `--drop-down`. My favourite non-urxvt terminal.
 - Text editor `vim`. The decent text editor that is not included with Emacs.
 - File Manager `ranger`. Console application, extensible, and straightforward.

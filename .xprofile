@@ -1,0 +1,5 @@
+# Run commands
+# NOTE include only what is needed for i3, before the window manager starts
+# NOTE do not include components of other environments, e.g. xfce4-panel
+urxvtd --quiet --opendisplay --fork &
+
