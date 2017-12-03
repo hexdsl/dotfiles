@@ -41,132 +41,132 @@ export BROWSER=firefox
 # ------------------------------------------------
 
 # General package management
-alias pSyu="sudo pacman -Syu" # system upgrade
-alias aSyu="pacaur -Syu --aur" # system upgrade aur
-alias pD="sudo pacman -D" # control package install state with `--asdeps` or `--asexplicit`
+alias pSyu='sudo pacman -Syu' # system upgrade
+alias aSyu='pacaur -Syu --aur' # system upgrade aur
+alias pD='sudo pacman -D' # control package install state with `--asdeps` or `--asexplicit`
 
 # Search remote database and download packages
-alias pSs="sudo pacman -Ss" # query database for package
-alias ps="pacaur --search" # search aur
-alias pS="sudo pacman -S" # sync download
-alias pSa="pacaur -S --aur" # sync download AUR
+alias pSs='sudo pacman -Ss' # query database for package
+alias ps='pacaur --search' # search aur
+alias pS='sudo pacman -S' # sync download
+alias pSa='pacaur -S --aur' # sync download AUR
 
 # Search local database
-alias pQs="sudo pacman -Qs" # list packages based on query
-alias pQmq="sudo pacman -Qmq" # list foreign packages
-alias pQdt="sudo pacman -Qdt" # list orphans
+alias pQs='sudo pacman -Qs' # list packages based on query
+alias pQmq='sudo pacman -Qmq' # list foreign packages
+alias pQdt='sudo pacman -Qdt' # list orphans
 
 # Inspect packages (remote and local)
-alias pSi="sudo pacman -Si" # see remote package details
-alias pSai="pacaur -Si --aur" # see remote package details
-alias pQi="sudo pacman -Qi" # see local package details
+alias pSi='sudo pacman -Si' # see remote package details
+alias pSai='pacaur -Si --aur' # see remote package details
+alias pQi='sudo pacman -Qi' # see local package details
 
 # Remove packages
-alias pRs="pacaur -Rs" # remove unless conflicting deps
-alias pRnsc="sudo pacman -Rnsc" # remove recursively
-alias pRnscQdtq="sudo pacman -Rnsc $(pacman -Qdtq)" # remove orphans recursively
+alias pRs='pacaur -Rs' # remove unless conflicting deps
+alias pRnsc='sudo pacman -Rnsc' # remove recursively
+alias pRnscQdtq='sudo pacman -Rnsc $(pacman -Qdtq)' # remove orphans recursively
 
 # Clear cache
-alias pcache1="sudo paccache -rk 1" # remove cache except last item
-alias pcache0="sudo paccache -ruk0" # remove all cache
+alias pcache1='sudo paccache -rk 1' # remove cache except last item
+alias pcache0='sudo paccache -ruk0' # remove all cache
 
 # Backup package lists (main)
-alias pQqback="sudo pacman -Qq > packages-all.txt"
-alias pQnqback="sudo pacman -Qnq > packages-native.txt"
-alias pQmqback="sudo pacman -Qmq > packages-foreign.txt"
+alias pQqback='sudo pacman -Qq > packages-all.txt'
+alias pQnqback='sudo pacman -Qnq > packages-native.txt'
+alias pQmqback='sudo pacman -Qmq > packages-foreign.txt'
 
 # Backup package lists (auxiliary)
-alias pQqeback="sudo pacman -Qqe > packages-explicit.txt"
-alias pQqdback="sudo pacman -Qqd > packages-deps.txt"
-alias pQqgback="sudo pacman -Qqg > packages-groups.txt"
+alias pQqeback='sudo pacman -Qqe > packages-explicit.txt'
+alias pQqdback='sudo pacman -Qqd > packages-deps.txt'
+alias pQqgback='sudo pacman -Qqg > packages-groups.txt'
 
 # Helper shortcuts
 # ------------------------------------------------
 
 # Editor
-alias v="vim"
+alias v='vim'
 
 # Common configs
-alias bbb="vim ~/.bashrc"
-# alias ddd="vim ~/.config/dunst/dunstrc"
-alias iii="vim ~/.config/i3/config"
-# alias kkk="vim ~/.config/kitty/kitty.conf"
-alias mmm="vim ~/.muttrc"
-alias nnn="vim ~/.config/newsboat/urls"
-# alias ppp="vim ~/.config/polybar/config"
-alias rrr="vim .config/ranger/rc.conf"
-alias sss="vim ~/.mutt/mails/signature"
-alias ttt="vim ~/.taskrc"
-alias vvv="vim ~/.vimrc"
-alias xxx="vim ~/.Xresources"
+alias bbb='vim ~/.bashrc'
+# alias ddd='vim ~/.config/dunst/dunstrc'
+alias iii='vim ~/.config/i3/config'
+# alias kkk='vim ~/.config/kitty/kitty.conf'
+alias mmm='vim ~/.muttrc'
+alias nnn='vim ~/.config/newsboat/urls'
+# alias ppp='vim ~/.config/polybar/config'
+alias rrr='vim .config/ranger/rc.conf'
+alias sss='vim ~/.mutt/mails/signature'
+alias ttt='vim ~/.taskrc'
+alias vvv='vim ~/.vimrc'
+alias xxx='vim ~/.Xresources'
 
 # Reload config files
-alias rbbb="source ~/.bashrc"
-# alias rddd="killall dunst && eval $(dbus-launch)"
-alias rxxx="xrdb -merge ~/.Xresources"
+alias rbbb='source ~/.bashrc'
+# alias rddd='killall dunst && eval $(dbus-launch)'
+alias rxxx='xrdb -merge ~/.Xresources'
 
 # Curl
-alias cO="curl -O"
+alias cO='curl -O'
 
 # Encryption
-alias gpge="gpg -e -r" # gpg encrypt
-alias gpgde="gpg -d -r" # gpg decrypt
-alias gpgs="gpg -s -r" # gpg sign
+alias gpge='gpg -e -r' # gpg encrypt
+alias gpgde='gpg -d -r' # gpg decrypt
+alias gpgs='gpg -s -r' # gpg sign
 
 # Tasks (taskwarrior)
-alias tl="task list"
-alias ta="task add"
-alias td="task done"
-alias tm="task modify"
-alias tx="task delete"
+alias tl='task list'
+alias ta='task add'
+alias td='task done'
+alias tm='task modify'
+alias tx='task delete'
 
 # YouTube dl
-alias mp3="youtube-dl -x --audio-format mp3 -o '~/Music/%(title)s.%(ext)s'"
-alias ytmp3="youtube-dl -x --audio-format mp3 -o '~/Music/Youtube/%(title)s.%(ext)s'"
+alias mp3='youtube-dl -x --audio-format mp3 -o "~/Music/%(title)s.%(ext)s"'
+alias ytmp3='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
 
 # Certbot
-alias certm="sudo certbot certonly -a manual -d"
+alias certm='sudo certbot certonly -a manual -d'
 
 # Neofetch
-alias neofetchwall="neofetch --w3m --source ~/.config/i3/wallpaper.jpg"
+alias neofetchwall='neofetch --w3m --source ~/.config/i3/wallpaper.jpg'
 
 # Git
 # ------------------------------------------------
 
 # Common commands
-alias gadd="git add"
-alias gall="git add -A"
-alias gcom="git commit -m"
-alias gpm="git push -u origin master"
-alias gph="git push -u origin HEAD"
+alias gadd='git add'
+alias gall='git add -A'
+alias gcom='git commit -m'
+alias gpm='git push -u origin master'
+alias gph='git push -u origin HEAD'
 
 # Branching
-alias gch="git checkout"
-alias gchb="git checkout -b"
-alias gbd="git branch -d"
-alias gpd="git push origin --delete"
+alias gch='git checkout'
+alias gchb='git checkout -b'
+alias gbd='git branch -d'
+alias gpd='git push origin --delete'
 
 # Jekyll
 # ------------------------------------------------
 
 # Bundler
-alias buibuu="bundle install && bundle update"
-alias buu="bundle update"
+alias buibuu='bundle install && bundle update'
+alias buu='bundle update'
 
 # Jekyll serve
-alias bejs="bundle exec jekyll serve"
-alias bejsdev="bundle exec jekyll serve --config _config.yml,_config-dev.yml"
+alias bejs='bundle exec jekyll serve'
+alias bejsdev='bundle exec jekyll serve --config _config.yml,_config-dev.yml'
 
 # npm
-alias npmiu="npm install && npm update"
+alias npmiu='npm install && npm update'
 
 # Miscellaneous
 # ------------------------------------------------
 
 # Enable colour output
-alias ls="ls --color=auto"
-alias dir="dir --color=auto"
-alias grep="grep --color=auto"
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias grep='grep --color=auto'
 alias dmesg='dmesg --color'
 
 # Functions
