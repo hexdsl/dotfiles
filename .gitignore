@@ -6,3 +6,4 @@
 .newsboat/history.cmdline
 .newsboat/history.search
 *.swp
+.config/xfce4/panel/weather-*.rc
