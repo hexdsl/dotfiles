@@ -5,5 +5,5 @@ if [ "$pacaur" -eq "0" ]; then
 	echo "";
    	exit;
 else
-    echo "$pacaur";
+    echo "pacaur: $pacaur";
 fi
