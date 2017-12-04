@@ -1,0 +1,6 @@
+Command=sh -c "bash ~/.local/bin/check-pacman-package-updates.sh"
+UseLabel=0
+Text=pac
+UpdatePeriod=86400000
+Font=DejaVu Sans Semi-Condensed 12
+
