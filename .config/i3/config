@@ -8,7 +8,7 @@ font pango:DejaVu Sans Mono 8
 
 # i3 config file
 bindsym $mod+Mod1+c reload
-bindsym $mod+Mod1+r restart
+# bindsym $mod+Mod1+r restart
 
 # Colour scheme
 # ------------------------------------------------------------------------------------------------------------
@@ -144,11 +144,11 @@ bindsym $mod+Mod1+space floating toggle
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+Insert move scratchpad
+# # Make the currently focused window a scratchpad
+# bindsym $mod+Shift+Insert move scratchpad
 
-# Show the first scratchpad window
-bindsym $mod+Insert scratchpad show
+# # Show the first scratchpad window
+# bindsym $mod+Insert scratchpad show
 
 # Workspace actions
 # ==============================================================================
@@ -239,7 +239,6 @@ bindsym $mod+a exec --no-startup-id rofi -show drun -display-drun "Run app"
 bindsym Mod1+Tab exec --no-startup-id rofi -show window -display-window "App switch"
 
 # Drop down terminal
-# NOTE for the native i3 option, see `scratchpad`
 bindsym $mod+d exec xfce4-terminal --drop-down
 
 # Utilities
@@ -256,8 +255,18 @@ bindsym Print exec scrot -u -z '%Y-%m-%d_%H:%M:%S_$wx$h$n.png' -e 'mv $f ~/Deskt
 # Full screen
 bindsym $mod+Print exec scrot -z '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Desktop'; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/ksnapshot.svg "Screen view screenshot" "Saved image to Desktop"
 
-# Music and sound
+# Multimedia
 # ==============================================================================
+
+# Session recording
+# ------------------------------------------------------------------------------
+set $record --no-startup-id "~/.local/bin/ffmpeg-x-session-capture.sh"
+
+# NOTE Same key for both audio and video recording
+set $stoprecord --no-startup-id killall ffmpeg
+
+bindsym $mod+r exec $record; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/devices/camera-web.svg "Started screen recording" "Stop with Super+Shift+r"
+bindsym $mod+Shift+r exec $stoprecord; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/devices/camera-web.svg "Terminated screen recording" "The file is on the ~/Desktop"
 
 # Microphone volume controls
 # ------------------------------------------------------------------------------
@@ -266,9 +275,9 @@ bindsym $mod+Print exec scrot -z '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Deskt
 # set $micvolumedown --no-startup-id amixer set Capture 5%-
 
 # NOTE `notify-send` actions are set in the script
-set $micmute --no-startup-id "~/.local/bin/mic-volume-notify-dunst.sh mute"
-set $micvolumeup --no-startup-id "~/.local/bin/mic-volume-notify-dunst.sh up"
-set $micvolumedown --no-startup-id "~/.local/bin/mic-volume-notify-dunst.sh down"
+set $micmute --no-startup-id "~/.local/bin/mic-volume-notify-send.sh mute"
+set $micvolumeup --no-startup-id "~/.local/bin/mic-volume-notify-send.sh up"
+set $micvolumedown --no-startup-id "~/.local/bin/mic-volume-notify-send.sh down"
 
 bindsym Shift+XF86AudioMute exec $micmute
 bindsym Shift+XF86AudioLowerVolume exec $micvolumedown
@@ -276,14 +285,9 @@ bindsym Shift+XF86AudioRaiseVolume exec $micvolumeup
 
 # Speaker volume controls
 # ------------------------------------------------------------------------------
-# set $mute --no-startup-id amixer set Master toggle
-# set $volumeup --no-startup-id amixer set Master 5%+
-# set $volumedown --no-startup-id amixer set Master 5%-
-
-# NOTE `notify-send` actions are set in the script
-set $mute --no-startup-id "~/.local/bin/volume-notify-dunst.sh mute"
-set $volumeup --no-startup-id "~/.local/bin/volume-notify-dunst.sh up"
-set $volumedown --no-startup-id "~/.local/bin/volume-notify-dunst.sh down"
+set $mute --no-startup-id amixer set Master toggle
+set $volumeup --no-startup-id amixer set Master 5%+
+set $volumedown --no-startup-id amixer set Master 5%-
 
 bindsym XF86AudioMute exec $mute
 bindsym XF86AudioLowerVolume exec $volumedown

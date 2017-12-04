@@ -35,28 +35,28 @@ function send_notification {
     status=$(amixer get Master | grep % -m 1 | awk '{print $5}' | sed 's/[^0-9\%]//g')
 
     # Send the notification
-    dunstify -r 2000 -I /usr/share/icons/Papirus-Adapta-Nokto/64x64/devices/audio-speakers.svg -t 3000 -u normal "Speaker volume" "Sound level at $status"
+    notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64/devices/audio-speakers.svg -t 3000 -u normal "Speaker volume" "Sound level at $status"
 }
 
 # Either increase or decrease will turn the volume on if it was muted
 case $1 in
     up)
-	# Increase the volume (+ 5%)
+	# Increase the volume (+ 10%)
 	amixer -D pulse set Master on > /dev/null
-	amixer -D pulse sset Master 5%+ > /dev/null
+	amixer -D pulse sset Master 10%+ > /dev/null
 	send_notification
 	;;
     down)
-	# Decrease the volume (+ 5%)
+	# Decrease the volume (+ 10%)
 	amixer -D pulse set Master on > /dev/null
-	amixer -D pulse sset Master 5%- > /dev/null
+	amixer -D pulse sset Master 10%- > /dev/null
 	send_notification
 	;;
     mute)
     # Toggle mute
 	amixer -D pulse set Master 1+ toggle > /dev/null
 	if is_mute ; then
-	    dunstify -r 2000 -I /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/xfpm-suspend.svg -t 1000 -u normal "Speaker volume" "Sound Muted"
+	    notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/xfpm-suspend.svg -t 1000 -u normal "Speaker volume" "Sound Muted"
 	else
 	    send_notification
 	fi

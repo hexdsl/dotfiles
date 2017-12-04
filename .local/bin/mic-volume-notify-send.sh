@@ -35,7 +35,7 @@ function send_notification {
     status=$(amixer get Capture | grep % -m 1 | awk '{print $5}' | sed 's/[^0-9\%]//g')
 
     # Send the notification
-    dunstify -r 3000 -I /usr/share/icons/Papirus-Adapta-Nokto/64x64/devices/audio-input-microphone.svg -t 3000 -u normal "Microphone volume" "Sound level at $status"
+    notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64/devices/audio-input-microphone.svg -t 3000 -u normal "Microphone volume" "Sound level at $status"
 }
 
 # Either increase or decrease will turn the volume on if it was muted
@@ -56,7 +56,7 @@ case $1 in
     # Toggle mute
 	amixer -D pulse set Capture 1+ toggle > /dev/null
 	if is_mute ; then
-	    dunstify -r 3000 -I /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/xfpm-suspend.svg -t 1000 -u normal "Microphone volume" "Sound Muted"
+	    notify-send -i /usr/share/icons/Papirus-Adapta-Nokto/64x64@2x/apps/xfpm-suspend.svg -t 1000 -u normal "Microphone volume" "Sound Muted"
 	else
 	    send_notification
 	fi
