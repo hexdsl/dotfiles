@@ -22,14 +22,18 @@ if [ "$pacman" -eq "0" ]; then
 	echo "";
    	exit;
 else
-    echo "<img>/usr/share/icons/Papirus-Dark/16x16/places/folder-tar.svg</img>"
-    echo "pacman: $pacman";
+    echo "<img>/usr/share/icons/Papirus-Dark/16x16/places/folder-tar.svg</img>";
+    echo "<click>urxvtc -e sudo pacman -Syu</click>";
+    echo "<txt>pacman: $pacman</txt>";
+    echo "<tool>sudo pacman -Syu</tool>";
 fi
 
 if [ "$pacaur" -eq "0" ]; then
 	echo "";
    	exit;
 else
-    echo "<img>/usr/share/icons/Papirus-Dark/16x16/places/folder-tar.svg</img>"
-    echo "pacaur: $pacaur";
+    echo "<img>/usr/share/icons/Papirus-Dark/16x16/places/folder-tar.svg</img>";
+    echo "<click>urxvtc -e pacaur -Syu --aur</click>";
+    echo "<txt>pacaur: $pacaur</txt>";
+    echo "<tool>pacaur -Syu --aur</tool>";
 fi
