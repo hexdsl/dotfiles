@@ -1,6 +1,0 @@
-Command=sh -c "bash ~/.local/bin/check-pacaur-package-updates.sh"
-UseLabel=0
-Text=aur
-UpdatePeriod=86400000
-Font=Cantarell 11
-

@@ -1,0 +1,6 @@
+Command=/home/prot/.local/bin/genmon-mpc-playing.sh
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=1000
+Font=DejaVu Sans Semi-Condensed 12
+
