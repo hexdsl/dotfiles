@@ -2,14 +2,12 @@ adwaita-qt4
 adwaita-qt5
 cower
 dtrx
-feedreader-git
 i3-gaps
 i3ipc-glib-git
 lightdm-settings
 lightdm-slick-greeter
 neomutt-git
 pacaur
-papirus-icon-theme-git
 qgnomeplatform-git
 signal-desktop-bin
 xcalib
