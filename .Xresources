@@ -8,35 +8,6 @@ Xft.autohint: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-! Rofi
-! ================================================
-rofi.modi: drun
-rofi.show-icons: true
-rofi.hide-scrollbar: true
-rofi.sidebar-mode: false
-rofi.fullscreen: true
-rofi.width: 50
-rofi.padding: 300
-rofi.lines: 10
-rofi.line-margin: 10
-rofi.columns: 2
-rofi.bw: 0
-rofi.location: 0
-rofi.fuzzy: true
-rofi.font: DejaVu Sans ExtraLight 24
-
-! NOTE rofi has deprecated below themes settings
-! The new path ~/.config/rofi/config.rasi
-! Example themes:
-! https://github.com/DaveDavenport/rofi-themes/tree/master/Official%20Themes
-! TODO write new theme
-
-!                       bg         fg           altbg          hlbg       hlfg
-rofi.color-normal: argb:00000000, #9eb0b5, argb:00000000, argb:de058942, #fbfbfb
-rofi.color-urgent: argb:00000000, #e52530, argb:00000000, argb:dee52530, #fbfbfb
-rofi.color-active: argb:00000000, #1f7ac4, argb:00000000, argb:de1f7ac4, #fbfbfb
-rofi.color-window: argb:de07040a, argb:de07040a, argb:de07040a
-
 ! urxvt
 ! ================================================
 
@@ -62,6 +33,8 @@ URxvt.bolditalicFont: xft:DejaVu Sans Mono:pixelsize=16:bold:italic
 URxvt.letterSpace: 0
 URxvt.lineSpace: 3
 URxvt.scrollBar: false
+URxvt.scrollTtyOutput: false
+URxvt.scrollTTyKeypress: true
 Urxvt.secondaryScroll: true
 URxvt.perl-ext-common: default,matcher,selection-to-clipboard
 URxvt.url-launcher:	firefox
