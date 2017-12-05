@@ -60,7 +60,7 @@ set $music urxvtc -e ncmpcpp
 # ------------------------------------------------------------------------------
 smart_borders on
 # smart_gaps on
-gaps inner 25
+gaps inner 15
 gaps outer 0
 for_window [class="^.*"] border pixel 4
 focus_on_window_activation urgent
@@ -77,7 +77,12 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Simplescreenrecorder"] floating enable
+for_window [class="Xfce4-panel"] floating enable
+
+# App launcher window defaults
+for_window [class="Xfce4-appfinder"] floating enable
+for_window [class="Xfce4-appfinder"] resize set 1200 600
+for_window [class="Xfce4-appfinder"] move position center
 
 # Use Mouse+Mod1 (Alt) to drag floating windows
 floating_modifier Mod1
@@ -89,7 +94,7 @@ floating_modifier Mod1
 # order: BORDER BACKGROUND FOREGROUND INDICATOR CHILD_BORDER
 client.focused $col8 $col0 $col15 $col5 $col10
 client.unfocused $col0 $col8 $col7 $col7 $col0
-client.focused_inactive $col0 $col8 $col7 $col7 $col0
+client.focused_inactive $col0 $col0 $col0 $col0 $col0
 client.urgent $col1 $col1 $col8 $col1 $col1
 client.background $col8
 
@@ -235,8 +240,7 @@ bindsym Mod1+6 exec $podcast; exec notify-send -i /usr/share/icons/Papirus-Dark/
 bindsym Mod1+7 exec $imageeditor; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/gimp.svg "Image editor" "Launching application"
 
 # App launcher menu
-bindsym $mod+a exec --no-startup-id rofi -show drun -display-drun "Run app"
-bindsym Mod1+Tab exec --no-startup-id rofi -show window -display-window "App switch"
+bindsym $mod+a exec --no-startup-id xfce4-appfinder
 
 # Drop down terminal
 bindsym $mod+d exec xfce4-terminal --drop-down
