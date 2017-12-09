@@ -12,7 +12,7 @@ Package names with a short description.
 - Drop down terminal `xfce4-terminal` with option `--drop-down`. My favourite non-urxvt terminal.
 - Text editor `vim`. The decent text editor that is not included with Emacs.
 - File Manager `ranger`. Console application, extensible, and straightforward.
-- Mail client `neomutt-git` (AUR). Robust, reliable, email client for communicating via the console. Neomutt aims to revive or otherwise improve `mutt`.
+- Mail client `neomutt`. Robust, reliable, email client for communicating via the console. Neomutt aims to revive or otherwise improve `mutt`.
 - Feed reader `newsboat`. Simple RSS reader with podcasting capabilities.
 - Feed reader GUI `feedreader-git`. Very promising. Still a work in progress. Excellent support for podcasts.
 - Music server `mpd`. Music Player Daemon works in the background, enabling all sorts of clients to interface with it.
