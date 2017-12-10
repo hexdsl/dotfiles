@@ -7,6 +7,7 @@ Package names with a short description.
 - Window manager `i3-gaps` (AUR). For a keyboard-centric, highly-customisable, tilling window manager.
 - Bar `xfce4-panel`. Flexible, easy-to-use, system bar with easy configs for its various plugins.
 - Bar + i3 module `xfce4-i3-workspaces-plugin-git` (AUR) and `i3ipc-glib-git` (AUR). By default, the Xfce panel does not support i3 workspaces. These provide the plugin that does the job.
+- Lock screen [this script](https://github.com/pavanjadhaw/betterlockscreen) with all installed dependencies from the main repos and the AUR.
 - Compositor `compton`. For transparency and some mildly fancy effects like shadows.
 - Terminal emulator `urxvt`. Customisable, lightweight, effective terminal. NOTE, I use it in a server-client mode. Refer to the i3 config, as well as `.xinitrc` and `.xprofile`.
 - Drop down terminal `xfce4-terminal` with option `--drop-down`. My favourite non-urxvt terminal.
@@ -18,7 +19,7 @@ Package names with a short description.
 - Music server `mpd`. Music Player Daemon works in the background, enabling all sorts of clients to interface with it.
 - Music client `ncmpcpp`. Console based MPD interface.
 - Music client GUI `cantata`. Qt app to interface with MPD. Fully featured.
-- Program launcher `rofi`. Actually the program is quite more than that, but I mostly use it for launching programs.
+- Program launcher `xfce4-appfinder`.
 - Notifications `xfce4-notifyd`. Simple. Gets the job done. And unlike `dunst`, does not override the default of other desktop environments (messing up with other users).
 - Fonts `ttf-dejavu` and `cantarell-fonts`. The former is my main choice.
 - GTK and Qt theme is *Adwaita Dark*, but setting it up requires a few extra packages: `adwaita-qt4` (AUR), `adwaita-qt5` (AUR), `qgnomeplatform-git` (AUR), `qt5ct` (refer to the Arch Wiki for [a unified look for GTK and QT](https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications)).
@@ -41,7 +42,9 @@ Unless otherwise noted, all code herein is distributed under the terms of the GN
 
 ## Credits
 
-The wallpaper image file is courtesy of [Matthew Smith on Unsplash](https://unsplash.com/photos/Rfflri94rs8). Used under the terms of the Unsplash license.
+The wallpaper image file is courtesy of [Eike Klingspohn on Unsplash](https://unsplash.com/photos/s-hJf5N5Pos). Used under the terms of the Unsplash license.
+
+The lock screen background is courtesy of [Jeremy Bishop on Unsplash](https://unsplash.com/photos/_EBv1BKtbvs). Used under the terms of the Unsplash license.
 
 The slick greeter background is courtesy of [Michael Fertig on Unsplash](https://unsplash.com/photos/DWWe3bhkj9k). Used under the terms of the Unsplash license.
 
