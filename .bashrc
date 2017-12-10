@@ -80,6 +80,9 @@ alias pQqeback='sudo pacman -Qqe > packages-explicit.txt'
 alias pQqdback='sudo pacman -Qqd > packages-deps.txt'
 alias pQqgback='sudo pacman -Qqg > packages-groups.txt'
 
+# Package count
+alias paccount='sudo pacman -Qq | wc -l'
+
 # Helper shortcuts
 # ------------------------------------------------
 
@@ -94,7 +97,7 @@ alias iii='vim ~/.config/i3/config'
 alias mmm='vim ~/.muttrc'
 alias nnn='vim ~/.config/newsboat/urls'
 # alias ppp='vim ~/.config/polybar/config'
-alias rrr='vim .config/ranger/rc.conf'
+alias rrr='vim ~/.config/ranger/rc.conf'
 alias sss='vim ~/.mutt/mails/signature'
 alias ttt='vim ~/.taskrc'
 alias vvv='vim ~/.vimrc'
