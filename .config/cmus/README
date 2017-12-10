@@ -1,6 +1,0 @@
-CMUS configs
-============
-
-The `autosave` file consists mostly of the default options. Though I have changed the colours to make it more rainbox-like. This works particularly well with one of my colour schemes: https://protesilaos.com/schemes
-
-CMUS is a great tool once combined with `cmus-remote`. It is easy to bind those commands to global keyboard shortcuts (tested on XFCE 4).
