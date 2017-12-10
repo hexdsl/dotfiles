@@ -15,7 +15,6 @@ Package names with a short description.
 - File Manager `ranger`. Console application, extensible, and straightforward.
 - Mail client `neomutt`. Robust, reliable, email client for communicating via the console. Neomutt aims to revive or otherwise improve `mutt`.
 - Feed reader `newsboat`. Simple RSS reader with podcasting capabilities.
-- Feed reader GUI `feedreader-git`. Very promising. Still a work in progress. Excellent support for podcasts.
 - Music server `mpd`. Music Player Daemon works in the background, enabling all sorts of clients to interface with it.
 - Music client `ncmpcpp`. Console based MPD interface.
 - Music client GUI `cantata`. Qt app to interface with MPD. Fully featured.
@@ -25,16 +24,10 @@ Package names with a short description.
 - GTK and Qt theme is *Adwaita Dark*, but setting it up requires a few extra packages: `adwaita-qt4` (AUR), `adwaita-qt5` (AUR), `qgnomeplatform-git` (AUR), `qt5ct` (refer to the Arch Wiki for [a unified look for GTK and QT](https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications)).
 - GTK and Qt icon themes `papirus-icon-theme-git` (AUR) and `breeze-icons`. Both icon themes seem to work across GTK and Qt. I just keep Papirus for GTK and Breeze for Qt as those seem to be their respective targets.
 
-## Samples of my current setup
+## Sample of my current setup
 
-'Fake busy'.  
-![i3 sample fake busy](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-fake-busy.png)
-
-Closer to actual busy.  
-![i3 sample busy](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-busy.png)
-
-Clean desktop with a notification.  
-![i3 sample clean desktop](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-clean.png)
+'Fake busy'  
+![i3 sample](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-sample.png)
 
 ## License
 
