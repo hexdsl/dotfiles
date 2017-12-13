@@ -102,6 +102,9 @@ client.background $col8
 # Window actions
 # ------------------------------------------------------------------------------
 
+# Jump to last urgent window
+bindsym $mod+x [urgent=latest] focus
+
 # Resizing
 bindsym $mod+i resize shrink width 10 px or 10 ppt
 bindsym $mod+o resize grow width 10 px or 10 ppt
@@ -215,7 +218,7 @@ bindsym $mod+Delete workspace 0; exec $term -e ranger; exec $term -e htop; exec 
 # ==============================================================================
 
 # Lock, Log out, Switch users, Reboot, Shut down
-bindsym Ctrl+Mod1+l exec --no-startup-id ~/.local/bin/lock.sh -l dimblur
+bindsym Ctrl+Mod1+l exec --no-startup-id i3lock -i ~/.config/i3/lock.png
 bindsym Ctrl+Mod1+o exec --no-startup-id i3-msg exit, mode "default"
 bindsym Ctrl+Mod1+s exec --no-startup-id "dm-tool switch-to-greeter"
 bindsym Ctrl+Mod1+r exec --no-startup-id systemctl reboot, mode "default"
@@ -241,10 +244,11 @@ bindsym Mod1+6 exec $podcast; exec notify-send -i /usr/share/icons/Papirus-Dark/
 bindsym Mod1+7 exec $imageeditor; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/gimp.svg "Image editor" "Launching application"
 
 # App launcher menu
-bindsym $mod+a exec --no-startup-id xfce4-appfinder
+bindsym $mod+a exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Drop down terminal
-bindsym $mod+d exec xfce4-terminal --drop-down
+bindsym $mod+grave exec xfce4-terminal --drop-down
 
 # Utilities
 # ==============================================================================
