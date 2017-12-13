@@ -2,13 +2,14 @@ adwaita-qt4
 adwaita-qt5
 cower
 dtrx
+flat-remix-git
 i3-gaps
 i3ipc-glib-git
 lightdm-settings
 lightdm-slick-greeter
-neomutt-git
 pacaur
 qgnomeplatform-git
 signal-desktop-bin
+tor-browser
 xcalib
 xfce4-i3-workspaces-plugin-git
