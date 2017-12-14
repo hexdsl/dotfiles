@@ -7,7 +7,7 @@ alternative_order text/plain text/enriched text/html
 set mailcap_path=~/.mutt/mailcap
 
 # Colours
-source "~/.mutt/themes/prot16-dark"
+source "~/.mutt/themes/tempus-dark"
 
 # Receiving
 set mail_check = 600
