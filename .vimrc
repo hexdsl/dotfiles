@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'qpkorr/vim-renamer'
   Plug 'junegunn/goyo.vim'
+  Plug 'ap/vim-buftabline'
 
 call plug#end()
 
@@ -33,6 +34,11 @@ set whichwrap+=<,>,h,l
 
 set showcmd
 set wildmenu
+
+" Buffers
+set hidden
+nnoremap <tab> :bnext<CR>
+nnoremap <s-tab> :bprev<CR>
 
 " Lines
 set number
@@ -118,7 +124,7 @@ nnoremap <c-s-h> <c-w><c-h>
 " nmap <silent> <c-s-j> <C-W>j<C-W>_
 " nmap <silent> <c-s-k> <C-W>k<C-W>_
 
-" Manage tabs
+" Manage Vim tabs
 nmap <s-t> :tabnew<cr>
 nmap <s-q> :tabclose<cr>
 nmap <s-h> gT
@@ -205,6 +211,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Git status nerdtree
+let NERDTreeMinimalUI=1
+
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "*",
     \ "Staged"    : "+",
