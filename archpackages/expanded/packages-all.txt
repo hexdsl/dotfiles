@@ -188,7 +188,6 @@ gnome-icon-theme
 gnome-icon-theme-symbolic
 gnome-keyring
 gnome-online-accounts
-gnome-screenshot
 gnome-themes-standard
 gnupg
 gnutls
@@ -452,6 +451,7 @@ kparts
 kpeople
 kpty
 krb5
+kross
 krunner
 kscreen
 kscreenlocker
@@ -460,6 +460,7 @@ ksshaskpass
 ksysguard
 ktexteditor
 ktextwidgets
+ktorrent
 kuiserver
 kunitconversion
 kwallet
@@ -573,6 +574,7 @@ libkipi
 libksba
 libkscreen
 libksysguard
+libktorrent
 liblangtag
 libldap
 liblqr
