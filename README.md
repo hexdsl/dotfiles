@@ -7,7 +7,6 @@ Package names with a short description.
 - Window manager `i3-gaps` (AUR). For a keyboard-centric, highly-customisable, tilling window manager.
 - Bar `xfce4-panel`. Flexible, easy-to-use, system bar with easy configs for its various plugins.
 - Bar + i3 module `xfce4-i3-workspaces-plugin-git` (AUR) and `i3ipc-glib-git` (AUR). By default, the Xfce panel does not support i3 workspaces. These provide the plugin that does the job.
-- Lock screen [this script](https://github.com/pavanjadhaw/betterlockscreen) with all installed dependencies from the main repos and the AUR.
 - Compositor `compton`. For transparency and some mildly fancy effects like shadows.
 - Terminal emulator `urxvt`. Customisable, lightweight, effective terminal. NOTE, I use it in a server-client mode. Refer to the i3 config, as well as `.xinitrc` and `.xprofile`.
 - Drop down terminal `xfce4-terminal` with option `--drop-down`. My favourite non-urxvt terminal.
