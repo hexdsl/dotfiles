@@ -1,0 +1,22 @@
+! Colour scheme: seabed (light variant)
+! By Protesilaos Stavrou
+! https://protesilaos.com/seabed
+URxvt*background: #162d38
+URxvt*foreground: #96adb8
+URxvt*cursorColor: #96adb8
+URxvt*color0: #060d18
+URxvt*color1: #78456b
+URxvt*color2: #2d886c
+URxvt*color3: #6a865a
+URxvt*color4: #3a6a8d
+URxvt*color5: #846b85
+URxvt*color6: #35838c
+URxvt*color7: #263d48
+URxvt*color8: #161d28
+URxvt*color9: #6a867a
+URxvt*color10: #96adb8
+URxvt*color11: #666d78
+URxvt*color12: #667d88
+URxvt*color13: #4d5b94
+URxvt*color14: #969da8
+URxvt*color15: #162d38

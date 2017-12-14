@@ -1,0 +1,22 @@
+! Colour scheme: caprice (dark variant)
+! By Protesilaos Stavrou
+! https://protesilaos.com/caprice
+URxvt*background: #211b29
+URxvt*foreground: #a19ba9
+URxvt*cursorColor: #a19ba9
+URxvt*color0: #211b29
+URxvt*color1: #983d4f
+URxvt*color2: #278975
+URxvt*color3: #a58a30
+URxvt*color4: #585ebc
+URxvt*color5: #ac4d7a
+URxvt*color6: #587ebc
+URxvt*color7: #eeebec
+URxvt*color8: #312b39
+URxvt*color9: #9a5d38
+URxvt*color10: #2e2b2c
+URxvt*color11: #716b79
+URxvt*color12: #7e7b7c
+URxvt*color13: #8955a2
+URxvt*color14: #a19ba9
+URxvt*color15: #fefbfc

@@ -1,0 +1,23 @@
+! Colour scheme: Default website syntax theme with some modifications (light variant)
+! WCAG AA compliant
+! By Protesilaos Stavrou
+! https://protesilaos.com
+URxvt*background: #ffffff
+URxvt*foreground: #6c7a6d
+URxvt*cursorColor: #6c7a6d
+URxvt*color0: #07040a
+URxvt*color1: #e52530
+URxvt*color2: #058942
+URxvt*color3: #897600
+URxvt*color4: #1f7ac4
+URxvt*color5: #b25599
+URxvt*color6: #108294
+URxvt*color7: #e6e9ed
+URxvt*color8: #221a25
+URxvt*color9: #c65304
+URxvt*color10: #6c7a6d
+URxvt*color11: #7e7662
+URxvt*color12: #557b96
+URxvt*color13: #8764c4
+URxvt*color14: #587d80
+URxvt*color15: #ffffff

@@ -12,11 +12,12 @@ Xft.lcdfilter: lcddefault
 ! ================================================
 
 ! Tempus themes
-! #include </home/prot/.tempus-xcolors/tempus_totus.Xcolors>
-#include </home/prot/.tempus-xcolors/tempus_winter.Xcolors>
-! #include </home/prot/.tempus-xcolors/tempus_spring.Xcolors>
-! #include </home/prot/.tempus-xcolors/tempus_summer.Xcolors>
-! #include </home/prot/.tempus-xcolors/tempus_autumn.Xcolors>
+! NOTE for Prot16 see ~/.urxvt/themes/prot16/
+! #include </home/prot/.urxvt/themes/tempus/tempus_totus.Xcolors>
+#include </home/prot/.urxvt/themes/tempus/tempus_winter.Xcolors>
+! #include </home/prot/.urxvt/themes/tempus/tempus_spring.Xcolors>
+! #include </home/prot/.urxvt/themes/tempus/tempus_summer.Xcolors>
+! #include </home/prot/.urxvt/themes/tempus/tempus_autumn.Xcolors>
 
 ! Preferences
 URxvt.termName: rxvt-unicode
@@ -33,10 +34,10 @@ URxvt.bolditalicFont: xft:DejaVu Sans Mono:pixelsize=16:bold:italic
 URxvt.letterSpace: 0
 URxvt.lineSpace: 3
 URxvt.scrollBar: false
-URxvt.scrollTtyOutput: false
-URxvt.scrollTTyKeypress: true
+URxvt.scrollTtyOutput: true
+URxvt.scrollTtyKeypress: true
 Urxvt.secondaryScroll: true
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard,font-size
 URxvt.url-launcher:	firefox
 URxvt.matcher.button: 1
 
@@ -59,3 +60,13 @@ URxvt.keysym.End:  \033[F
 
 ! clear the scrollback
 URxvt.keysym.Control-l: command:\033c
+
+! Font resizing
+! Script from ~/.urxvt/ext/font-size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+! URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+! URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-equal:  perl:font-size:reset
+URxvt.keysym.C-slash:  perl:font-size:show
+

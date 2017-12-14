@@ -1,0 +1,22 @@
+! Colour scheme: termina (dark variant)
+! By Protesilaos Stavrou
+! https://protesilaos.com/termina
+URxvt*background: #2a2235
+URxvt*foreground: #7a929a
+URxvt*cursorColor: #7a929a
+URxvt*color0: #2a2235
+URxvt*color1: #a24e37
+URxvt*color2: #749234
+URxvt*color3: #94960d
+URxvt*color4: #5a7ca8
+URxvt*color5: #a3636d
+URxvt*color6: #529298
+URxvt*color7: #e0e1df
+URxvt*color8: #3a3245
+URxvt*color9: #9d7a47
+URxvt*color10: #53623e
+URxvt*color11: #7a7b65
+URxvt*color12: #7e96a8
+URxvt*color13: #8a6fa2
+URxvt*color14: #7a929a
+URxvt*color15: #f0f1ef
