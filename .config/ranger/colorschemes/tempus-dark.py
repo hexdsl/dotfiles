@@ -1,7 +1,9 @@
-# Prot16 by Protesilaos Stavrou
+# Tempus themes by Protesilaos Stavrou
+# https://github.com/protesilaos/tempus-themes
+# A terminal with the appropriate colour values is required
 # Color scheme for ranger file manager
 
-    # This program is free software: you can 2istribute it and/or modify
+    # This program is free software: you can distribute it and/or modify
     # it under the terms of the GNU General Public License as published by
     # the Free Software Foundation, either version 3 of the License, or
     # (at your option) any later version.
@@ -14,13 +16,11 @@
     # You should have received a copy of the GNU General Public License
     # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# NOTE Works with urxvt using any one of these https://protesilaos.com/schemes
-
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
 class prot16(ColorScheme):
-    progress_bar_color = 8
+    progress_bar_color = 7
 
     def use(self, context):
         fg, bg, attr = default_colors
@@ -30,13 +30,15 @@ class prot16(ColorScheme):
 
         elif context.in_browser:
             if context.selected:
-                fg = 14
+                fg = 4
                 bg = 8
+            if context.copied or context.cut:
+                attr |=reverse
             if context.empty or context.error:
                 fg = 0
-                bg = 9
+                bg = 1
             if context.border:
-                fg = 10
+                fg = 7
             if context.image:
                 fg = 5
             if context.video:
@@ -44,15 +46,16 @@ class prot16(ColorScheme):
             if context.audio:
                 fg = 6
             if context.document:
-                fg = 14
+                fg = 15
             if context.container:
                 fg = 3
             if context.directory:
-                fg = 11
+                fg = 7
+                attr |= bold
             elif context.executable and not \
                     any((context.media, context.container,
                        context.fifo, context.socket)):
-                fg = 1
+                fg = 9
             if context.socket:
                 fg = 3
                 attr |= bold
@@ -71,12 +74,9 @@ class prot16(ColorScheme):
                     fg = 0
                 else:
                     fg = 1
-            if not context.selected and (context.cut or context.copied):
-                bg = 15
             if context.main_column:
                 if context.selected:
-                    attr |= normal
-                    fg = 2
+                    attr |= reverse
                 if context.marked:
                     attr |= bold
                     fg = 13
@@ -114,11 +114,11 @@ class prot16(ColorScheme):
             if context.message:
                 if context.bad:
                     attr |= bold
-                    fg = 10
+                    fg = 1
             if context.loaded:
                 bg = self.progress_bar_color
             if context.vcsinfo:
-                fg = 10
+                fg = 14
                 attr &= ~bold
             if context.vcscommit:
                 fg = 6
@@ -156,7 +156,7 @@ class prot16(ColorScheme):
             elif context.vcssync:
                 fg = 4
             elif context.vcsignored:
-                fg = 10
+                fg = 7
 
         elif context.vcsremote and not context.selected:
             attr &= ~bold
@@ -167,7 +167,7 @@ class prot16(ColorScheme):
             elif context.vcsahead:
                 fg = 9
             elif context.vcsdiverged:
-                fg = 10
+                fg = 9
             elif context.vcsunknown:
                 fg = 11
 
