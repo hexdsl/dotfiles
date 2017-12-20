@@ -51,6 +51,10 @@ set $podcast urxvtc -e podboat -a
 set $imageeditor gimp
 set $music urxvtc -e ncmpcpp
 
+# TODO refine palette of $scratchterm
+set $scratchterm urxvtc -bg '[90]#000000' -fg '#339922' -cr '#339922' -color1 '#bb0000' -color2 '#339922' -color3 '#ccbb00' -color4 '#3355ff' -color5 '#cc55aa' -color6 '#3399bb' -color7 '#cccccc' -color8 '#2a2a2a' -color9 '#dd6600' -color10 '#33bb44' -color11 '#eeee00' -color12 '#5566ff' -color13 '#dd55bb' -color14 '#55bbdd' -color15 '#ffffff'
+
+
 # Bar
 # ------------------------------------------------------------------------------
 bar {
@@ -75,6 +79,9 @@ focus_follows_mouse no
 # Special window behaviour
 # ------------------------------------------------------------------------------
 
+# Use Mouse+Mod1 (Alt) to drag floating windows
+floating_modifier Mod1
+
 # NOTE use `xprop` to find details of open windows
 # Generic windows
 for_window [window_role="pop-up"] floating enable
@@ -84,25 +91,33 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
+# Dropdown terminal
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] border pixel 1
+for_window [instance="dropdown"] resize set 1500 800
+# NOTE how to calculate the dropdown terminal's size for centering at the top:
+# { (width of screen) - (width of terminal) } / 2
+# E.g. 1920 - 1500 = 420; 420 / 2 = 210
+for_window [instance="dropdown"] move position 210 0
+for_window [instance="dropdown"] move scratchpad
+
 # Application windows
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
-# Disabled border around Xfce whisker menu
-for_window [window_type="dialog"] border pixel 0
 
-# Xfce panel
-for_window [class="Xfce4-panel"] floating enable
-for_window [class="Xfce4-panel"] border pixel 0
+# # Disabled border around Xfce whisker menu
+# for_window [window_type="dialog"] border pixel 0
 
-# App launcher window defaults
-for_window [class="Xfce4-appfinder"] floating enable
-for_window [class="Xfce4-appfinder"] resize set 1200 600
-for_window [class="Xfce4-appfinder"] move position center
+# # Xfce panel
+# for_window [class="Xfce4-panel"] floating enable
+# for_window [class="Xfce4-panel"] border pixel 0
 
-# Use Mouse+Mod1 (Alt) to drag floating windows
-floating_modifier Mod1
+# # App launcher window defaults
+# for_window [class="Xfce4-appfinder"] floating enable
+# for_window [class="Xfce4-appfinder"] resize set 1200 600
+# for_window [class="Xfce4-appfinder"] move position center
 
 # Window state decorations
 # ------------------------------------------------------------------------------
@@ -170,10 +185,10 @@ bindsym $mod+Mod1+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # # Make the currently focused window a scratchpad
-# bindsym $mod+Shift+Insert move scratchpad
+# bindsym $mod+Insert move scratchpad
 
-# # Show the first scratchpad window
-# bindsym $mod+Insert scratchpad show
+# Show the first scratchpad window
+bindsym $mod+grave scratchpad show
 
 # Workspace actions
 # ==============================================================================
@@ -250,7 +265,7 @@ bindsym Ctrl+Mod1+End exec --no-startup-id systemctl poweroff -i, mode "default"
 # NOTE does not happen with the tools I use
 # NOTE thus Mod1+<Number> is scalable (whereas $mod + first letter is tricky)
 bindsym $mod+Return exec $term
-bindsym Mod1+Return exec $term
+bindsym $mod+Shift+Return exec --no-startup-id $scratchterm -name dropdown; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/urxvt.svg "Dropdown terminal" "Launch with super+grave"
 bindsym Mod1+1 exec $fm; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/system-file-manager.svg "File manager" "Launching application"
 bindsym Mod1+2 exec $browser; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/firefox.svg "Internet browser" "Launching application"
 bindsym Mod1+3 exec $rss; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/RSS_feeds.svg "Feed reader" "Launching application"
@@ -262,9 +277,6 @@ bindsym Mod1+7 exec $imageeditor; exec notify-send -i /usr/share/icons/Papirus-D
 # App launcher menu
 bindsym $mod+a exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id dmenu_run
-
-# Drop down terminal
-bindsym $mod+grave exec xfce4-terminal --drop-down
 
 # Utilities
 # ==============================================================================
