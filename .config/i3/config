@@ -50,9 +50,7 @@ set $mail urxvtc -e neomutt
 set $podcast urxvtc -e podboat -a
 set $imageeditor gimp
 set $music urxvtc -e ncmpcpp
-
-# TODO refine palette of $scratchterm
-set $scratchterm urxvtc -bg '[90]#000000' -fg '#339922' -cr '#339922' -color1 '#bb0000' -color2 '#339922' -color3 '#ccbb00' -color4 '#3355ff' -color5 '#cc55aa' -color6 '#3399bb' -color7 '#cccccc' -color8 '#2a2a2a' -color9 '#dd6600' -color10 '#33bb44' -color11 '#eeee00' -color12 '#5566ff' -color13 '#dd55bb' -color14 '#55bbdd' -color15 '#ffffff'
+set $scratchterm urxvtc -bg '[90]#18161d' -fg '#a4a0ac' -cr '#68b183' -color0 '#18161d' -color1 '#ff7780' -color2 '#68b183' -color3 '#bda014' -color4 '#54a5ff' -color5 '#da89b2' -color6 '#79a8c3' -color7 '#bd9b87' -color8 '#001b1a' -color9 '#ef873d' -color10 '#08b885' -color11 '#d39710' -color12 '#a294fe' -color13 '#ec7aca' -color14 '#4ab0b9' -color15 '#a4a0ac'
 
 
 # Bar
