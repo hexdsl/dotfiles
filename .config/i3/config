@@ -2,35 +2,39 @@
 # i3 config file (v4)
 
 # General settings
-# ============================================================================================================
+# ==============================================================================
 set $mod Mod4
 font pango:DejaVu Sans Mono 8
 
 # i3 config file
 bindsym $mod+Mod1+c reload
-# bindsym $mod+Mod1+r restart
+bindsym $mod+Mod1+r restart
 
 # Colour scheme
-# ------------------------------------------------------------------------------------------------------------
-# Tempus winter
+# ------------------------------------------------------------------------------
+
+# NOTE XXX Colours are sourced from ~/.Xresources
+# Xcolors are defined as `*.color[n]`, which exposes them to any program
+# The current setup uses these colours for URxvt, i3, and polybar
+
 # Tempus themes: https://github.com/protesilaos/tempus-themes
 # By Protesilaos Stavrou https://protesilaos.com
-set $col0 #202427 
-set $col1 #ca7162 
-set $col2 #589584 
-set $col3 #988b21 
-set $col4 #2b92c8 
-set $col5 #b572b6 
-set $col6 #4f91b5 
-set $col7 #888a8a 
-set $col8 #1b2431 
-set $col9 #c47818 
-set $col10 #2c9a81
-set $col11 #a2864b
-set $col12 #6987d7
-set $col13 #987dc2
-set $col14 #1f96b0
-set $col15 #798ba5
+set_from_resource $col0  color0  #000000
+set_from_resource $col1  color1  #000000
+set_from_resource $col2  color2  #000000
+set_from_resource $col3  color3  #000000
+set_from_resource $col4  color4  #000000
+set_from_resource $col5  color5  #000000
+set_from_resource $col6  color6  #000000
+set_from_resource $col7  color7  #000000
+set_from_resource $col8  color8  #000000
+set_from_resource $col9  color9  #000000
+set_from_resource $col10 color10 #000000
+set_from_resource $col11 color11 #000000
+set_from_resource $col12 color12 #000000
+set_from_resource $col13 color13 #000000
+set_from_resource $col14 color14 #000000
+set_from_resource $col15 color15 #000000
 
 # Common applications
 # ------------------------------------------------------------------------------
@@ -47,11 +51,11 @@ set $podcast urxvtc -e podboat -a
 set $imageeditor gimp
 set $music urxvtc -e ncmpcpp
 
-# NOTE neat idea but I prefer setting a ncmpcpp slave screen
-# # NOTE set custom bg for ncmpcpp
-# # since I only use it for the visualiser
-# # or some minor stuff
-# set $music urxvtc -bg [60]#000000 -e ncmpcpp -s visualizer
+# Bar
+# ------------------------------------------------------------------------------
+bar {
+        i3bar_command $HOME/.config/polybar/launch.sh
+}
 
 # Window settings
 # ==============================================================================
@@ -60,7 +64,7 @@ set $music urxvtc -e ncmpcpp
 # ------------------------------------------------------------------------------
 smart_borders on
 # smart_gaps on
-gaps inner 15
+gaps inner 20
 gaps outer 0
 for_window [class="^.*"] border pixel 4
 focus_on_window_activation urgent
@@ -70,15 +74,27 @@ focus_follows_mouse no
 
 # Special window behaviour
 # ------------------------------------------------------------------------------
+
+# NOTE use `xprop` to find details of open windows
+# Generic windows
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+
+# Application windows
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Firefox" window_role="About"] floating enable
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+# Disabled border around Xfce whisker menu
+for_window [window_type="dialog"] border pixel 0
+
+# Xfce panel
 for_window [class="Xfce4-panel"] floating enable
+for_window [class="Xfce4-panel"] border pixel 0
 
 # App launcher window defaults
 for_window [class="Xfce4-appfinder"] floating enable
@@ -326,17 +342,12 @@ bindsym Mod1+s exec $prev; exec $songnotify
 bindsym Mod1+d exec $next; exec $songnotify
 
 # Autostart programs
-# The `exec_always` directive is used for those cases where initial exec fails
 # ==============================================================================
-
-# Xfce components
-exec --no-startup-id xfce4-panel
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 
 # Wallpaper
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg 
 
-# GNOME keyring for needed operations
+# GNOME keyring
 exec --no-startup-id "eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
 
 # Hide the mouse
@@ -349,9 +360,10 @@ exec --no-startup-id compton -b
 # NOTE Do not use this together with the systemd autostart method
 exec --no-startup-id mpd
 
-# Keyboard settings
-exec_always --no-startup-id "setxkbmap -option compose:menu"
-exec_always --no-startup-id "setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'"
+# NOTE moved them to ~/.xprofile
+# # Keyboard settings
+# exec --no-startup-id "setxkbmap -option compose:menu"
+# exec --no-startup-id "setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'"
 
-# NOTE the following is specific to my monitor's colour settings
-exec --no-startup-id "/usr/bin/xcalib -d :0 /usr/share/color/icc/colord/Gamma5500K.icc"
+# # NOTE XXX the following is specific to my monitor's colour settings
+# exec --no-startup-id "/usr/bin/xcalib -d :0 /usr/share/color/icc/colord/Gamma5500K.icc"
