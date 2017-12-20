@@ -42,14 +42,14 @@ export BROWSER=firefox
 
 # General package management
 alias pSyu='sudo pacman -Syu' # system upgrade
-alias aSyu='pacaur -Syu --aur' # system upgrade aur
+alias ySyu='yay -Syu' # upgrade aur
 alias pD='sudo pacman -D' # control package install state with `--asdeps` or `--asexplicit`
 
 # Search remote database and download packages
 alias pSs='sudo pacman -Ss' # query database for package
-alias ps='pacaur --search' # search aur
+alias ySs='yay -Ss' # search aur
 alias pS='sudo pacman -S' # sync download
-alias pSa='pacaur -S --aur' # sync download AUR
+alias yS='yay -S' # sync download AUR
 
 # Search local database
 alias pQs='sudo pacman -Qs' # list packages based on query
@@ -58,11 +58,10 @@ alias pQdt='sudo pacman -Qdt' # list orphans
 
 # Inspect packages (remote and local)
 alias pSi='sudo pacman -Si' # see remote package details
-alias pSai='pacaur -Si --aur' # see remote package details
+alias ySi='yay -Si' # see remote package details
 alias pQi='sudo pacman -Qi' # see local package details
 
 # Remove packages
-alias pRs='pacaur -Rs' # remove unless conflicting deps
 alias pRnsc='sudo pacman -Rnsc' # remove recursively
 alias pRnscQdtq='sudo pacman -Rnsc $(pacman -Qdtq)' # remove orphans recursively
 
@@ -91,12 +90,12 @@ alias v='vim'
 
 # Common configs
 alias bbb='vim ~/.bashrc'
-# alias ddd='vim ~/.config/dunst/dunstrc'
+alias ddd='vim ~/.config/dunst/dunstrc'
 alias iii='vim ~/.config/i3/config'
 # alias kkk='vim ~/.config/kitty/kitty.conf'
 alias mmm='vim ~/.muttrc'
 alias nnn='vim ~/.config/newsboat/urls'
-# alias ppp='vim ~/.config/polybar/config'
+alias ppp='vim ~/.config/polybar/config'
 alias rrr='vim ~/.config/ranger/rc.conf'
 alias sss='vim ~/.mutt/mails/signature'
 alias ttt='vim ~/.taskrc'
@@ -105,7 +104,7 @@ alias xxx='vim ~/.Xresources'
 
 # Reload config files
 alias rbbb='source ~/.bashrc'
-# alias rddd='killall dunst && eval $(dbus-launch)'
+alias rddd='killall dunst && eval $(dbus-launch)'
 alias rxxx='xrdb -merge ~/.Xresources'
 
 # Curl
@@ -165,6 +164,8 @@ alias npmiu='npm install && npm update'
 
 # Miscellaneous
 # ------------------------------------------------
+alias composekey="setxkbmap -option compose:menu"
+alias greeklayout="setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'"
 
 # Enable colour output
 alias ls='ls --color=auto'
