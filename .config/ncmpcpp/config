@@ -1,6 +1,6 @@
 # vim: set ts=2 sw=2 tw=0 :
 # ncmpcpp
-egrep -v '^#' .ncmpcpp/config
+egrep -v '^#' .config/ncmpcpp/config
 mpd_music_dir = "~/Music/"
 
 # General
@@ -16,11 +16,10 @@ jump_to_now_playing_song_at_start = "yes"
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = "my_fifo"
 visualizer_sync_interval = 30 
-visualizer_in_stereo = "yes"
+visualizer_in_stereo = "no"
 visualizer_type = "spectrum"
-visualizer_look = "+|"
-# visualizer_color = 14, 5, 7, 3, 4, 10, 2
-visualizer_color = 6, 14, 13, 15, 11, 2
+visualizer_look = "◆▋"
+visualizer_color = 6, 14, 13, 15, 11, 7
 
 # Playlist
 now_playing_prefix = "$b > "
@@ -38,7 +37,7 @@ playlist_separate_albums = "no"
 progressbar_look = "┅┅┄"
 titles_visibility = "no"
 header_visibility = "no"
-statusbar_visibility = "yes"
+statusbar_visibility = "no"
 
 # Colors
 discard_colors_if_item_is_selected = "yes"
