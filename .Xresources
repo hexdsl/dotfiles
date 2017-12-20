@@ -11,13 +11,11 @@ Xft.lcdfilter: lcddefault
 ! urxvt
 ! ================================================
 
-! Tempus themes
-! NOTE for Prot16 see ~/.urxvt/themes/prot16/
-! #include </home/prot/.urxvt/themes/tempus/tempus_totus.Xcolors>
-#include </home/prot/.urxvt/themes/tempus/tempus_winter.Xcolors>
-! #include </home/prot/.urxvt/themes/tempus/tempus_spring.Xcolors>
-! #include </home/prot/.urxvt/themes/tempus/tempus_summer.Xcolors>
-! #include </home/prot/.urxvt/themes/tempus/tempus_autumn.Xcolors>
+! NOTE XXX With the following `include` directive colours are defined here
+! Xcolors are defined as `*.color[n]`, which exposes them to any program
+! The current setup uses these colours for URxvt, i3, and polybar
+! Refer to their respective configs
+#include </home/prot/.Xcolors/tempus_winter.Xcolors>
 
 ! Preferences
 URxvt.termName: rxvt-unicode
