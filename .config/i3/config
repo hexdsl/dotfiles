@@ -50,7 +50,7 @@ set $mail urxvtc -e neomutt
 set $podcast urxvtc -e podboat -a
 set $imageeditor gimp
 set $music urxvtc -e ncmpcpp
-set $scratchterm urxvtc -bg '[90]#18161d' -fg '#a4a0ac' -cr '#68b183' -color0 '#18161d' -color1 '#ff7780' -color2 '#68b183' -color3 '#bda014' -color4 '#54a5ff' -color5 '#da89b2' -color6 '#79a8c3' -color7 '#bd9b87' -color8 '#001b1a' -color9 '#ef873d' -color10 '#08b885' -color11 '#d39710' -color12 '#a294fe' -color13 '#ec7aca' -color14 '#4ab0b9' -color15 '#a4a0ac'
+set $scratchterm urxvtc -bg '[90]#18161d' -fg '#68b183' -cr '#68b183' -color0 '#18161d' -color1 '#ff7780' -color2 '#68b183' -color3 '#bda014' -color4 '#54a5ff' -color5 '#da89b2' -color6 '#79a8c3' -color7 '#bd9b87' -color8 '#001b1a' -color9 '#ef873d' -color10 '#08b885' -color11 '#d39710' -color12 '#a294fe' -color13 '#ec7aca' -color14 '#4ab0b9' -color15 '#a4a0ac'
 
 
 # Bar
@@ -100,6 +100,11 @@ for_window [instance="dropdown"] move position 210 0
 for_window [instance="dropdown"] move scratchpad
 
 # Application windows
+for_window [class="Thunderbird" window_role="Msgcompose"] floating enable
+for_window [class="Thunderbird" window_role="Msgcompose"] resize set 1200 800
+for_window [class="Thunderbird" window_role="Msgcompose"] move position center
+
+for_window [class="Corebird"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Lightdm-settings"] floating enable
@@ -273,8 +278,8 @@ bindsym Mod1+6 exec $podcast; exec notify-send -i /usr/share/icons/Papirus-Dark/
 bindsym Mod1+7 exec $imageeditor; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/gimp.svg "Image editor" "Launching application"
 
 # App launcher menu
-bindsym $mod+a exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+a exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -f -i -l 20 -p 'Launch App' -m 0 -fn 'DejaVu Sans Mono-12' -nb '$col0' -nf '$col15' -sb '$col2' -sf '$col0'"
+bindsym $mod+d exec --no-startup-id dmenu_run -l 20 -p 'Run Command' -m 0 -fn 'DejaVu Sans Mono-12' -nb '$col0' -nf '$col15' -sb '$col5' -sf '$col0'
 
 # Utilities
 # ==============================================================================
