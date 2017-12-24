@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'qpkorr/vim-renamer'
   Plug 'junegunn/goyo.vim'
-  Plug 'ap/vim-buftabline'
 
 call plug#end()
 
@@ -156,11 +155,13 @@ nmap <leader>wc g<C-g>
 " nmap <silent> <leader>v `[v`]
 
 " Visual wrappings
-:vmap [ "zdi[<C-R>z]<Esc>
-:vmap ( "zdi(<C-R>z)<Esc>
-:vmap { "zdi{<C-R>z}<Esc>
-:vmap ` "zdi`<C-R>z`<Esc>
-:vmap <leader>< "zdi<<C-R>z><Esc> " Cannot use without a modified. Screws adding < indentation
+:vmap <leader>* "zdi *<C-R>z*<Esc>
+:vmap <leader>** "zdi **<C-R>z**<Esc>
+:vmap <leader>[ "zdi [<C-R>z]<Esc>
+:vmap <leader>( "zdi (<C-R>z)<Esc>
+:vmap <leader>{ "zdi {<C-R>z}<Esc>
+:vmap <leader>` "zdi `<C-R>z`<Esc>
+:vmap <leader>< "zdi <<C-R>z><Esc>
 
 " Toggle invisibles
 nnoremap <leader>i :set list!<cr>
