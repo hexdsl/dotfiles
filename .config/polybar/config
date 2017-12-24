@@ -26,15 +26,20 @@ color15 = ${xrdb:color15}
 [bar/top]
 bottom = false
 monitor = VGA-0
-width = 1900
-height = 24
-radius = 5.0
+height = 32
+width = 100%
+radius = 0
+border-left-size = 0
+border-top-size = 0
+
+; # For rounded bar detached from the edge of the screen
+; width = 1900
+; radius = 5.0
+; border-left-size = 20 # margin left
+; border-top-size = 15
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
-border-left-size = 20 # margin left
-border-top-size = 15
 
 padding-left = 0
 padding-right = 0
@@ -42,8 +47,8 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = DejaVu Sans Condensed:pixelsize=10;2
-font-1 = FontAwesome:pixelsize=10;2
+font-0 = DejaVu Sans Condensed:antialias=true:pixelsize=11;2
+font-1 = FontAwesome:antialias=false:pixelsize=10;2
 
 # modules-left = hostname
 modules-left = i3 mpd
@@ -71,7 +76,7 @@ ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
-ws-icon-default =  
+ws-icon-default = 
 strip-wsnumbers = false
 format = <label-state> <label-mode>
 index-sort = true
@@ -118,9 +123,9 @@ format-muted-prefix-foreground = ${colors.color7}
 label-muted = "Muted"
 ramp-volume-padding-right = 1
 ramp-volume-0 = "  "
-ramp-volume-0-foreground = ${colors.color10}
+ramp-volume-0-foreground = ${colors.color2}
 ramp-volume-1 = "  "
-ramp-volume-1-foreground = ${colors.color12}
+ramp-volume-1-foreground = ${colors.color10}
 ramp-volume-2 = "  "
 ramp-volume-2-foreground = ${colors.color9}
 
