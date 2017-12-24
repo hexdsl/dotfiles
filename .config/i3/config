@@ -104,7 +104,6 @@ for_window [class="Thunderbird" window_role="Msgcompose"] floating enable
 for_window [class="Thunderbird" window_role="Msgcompose"] resize set 1200 800
 for_window [class="Thunderbird" window_role="Msgcompose"] move position center
 
-for_window [class="Corebird"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Lightdm-settings"] floating enable
