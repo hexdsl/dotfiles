@@ -21,6 +21,9 @@ call plug#end()
 " General
 " ------------------------------------------------
 set encoding=utf-8
+set spelllang=en
+set spellsuggest=10
+
 set errorbells
 set visualbell
 set autoread

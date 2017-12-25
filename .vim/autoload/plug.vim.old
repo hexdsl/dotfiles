@@ -2246,16 +2246,15 @@ function! s:status()
   let unloaded = 0
   let [cnt, total] = [0, len(g:plugs)]
   for [name, spec] in items(g:plugs)
-    let is_dir = isdirectory(spec.dir)
     if has_key(spec, 'uri')
-      if is_dir
+      if isdirectory(spec.dir)
         let [err, _] = s:git_validate(spec, 1)
         let [valid, msg] = [empty(err), empty(err) ? 'OK' : err]
       else
         let [valid, msg] = [0, 'Not found. Try PlugInstall.']
       endif
     else
-      if is_dir
+      if isdirectory(spec.dir)
         let [valid, msg] = [1, 'OK']
       else
         let [valid, msg] = [0, 'Not found.']
@@ -2264,7 +2263,7 @@ function! s:status()
     let cnt += 1
     let ecnt += !valid
     " `s:loaded` entry can be missing if PlugUpgraded
-    if is_dir && get(s:loaded, name, -1) == 0
+    if valid && get(s:loaded, name, -1) == 0
       let unloaded = 1
       let msg .= ' (not loaded)'
     endif

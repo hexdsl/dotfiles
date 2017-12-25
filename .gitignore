@@ -1,3 +1,6 @@
+*.swp
+.vim/plugged
+.vim/colors
 .config/i3/wallpaper.jpg
 .config/ranger/bookmarks
 .config/ranger/tagged
@@ -5,5 +8,4 @@
 .newsboat/cache.db.lock
 .newsboat/history.cmdline
 .newsboat/history.search
-*.swp
 .config/xfce4/panel/weather-*.rc
