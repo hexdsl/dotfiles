@@ -43,7 +43,7 @@ set_from_resource $col15 color15 #000000
 # NOTE this is necessary for logging in with a display manager
 # NOTE the daemon is launched before i3 to speed up the opening of terminals
 set $term urxvtc
-set $browser firefox
+set $browser qutebrowser
 set $fm urxvtc -e ranger
 set $rss urxvtc -e newsboat
 set $mail urxvtc -e neomutt
@@ -269,7 +269,7 @@ bindsym Ctrl+Mod1+End exec --no-startup-id systemctl poweroff -i, mode "default"
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec --no-startup-id $scratchterm -name dropdown; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/urxvt.svg "Dropdown terminal" "Launch with super+grave"
 bindsym Mod1+1 exec $fm; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/system-file-manager.svg "File manager" "Launching application"
-bindsym Mod1+2 exec $browser; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/firefox.svg "Internet browser" "Launching application"
+bindsym Mod1+2 exec $browser; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/qutebrowser.svg "Internet browser" "Launching application"
 bindsym Mod1+3 exec $rss; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/RSS_feeds.svg "Feed reader" "Launching application"
 bindsym Mod1+4 exec $mail; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/mail-client.svg "Mail client" "Launching application"
 bindsym Mod1+5 exec $music; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/musique.svg "Music player" "Launching application"
