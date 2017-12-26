@@ -276,9 +276,13 @@ bindsym Mod1+5 exec $music; exec notify-send -i /usr/share/icons/Papirus-Dark/64
 bindsym Mod1+6 exec $podcast; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/podcast.svg "Podcast player" "Launching application"
 bindsym Mod1+7 exec $imageeditor; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/gimp.svg "Image editor" "Launching application"
 
-# App launcher menu
+# dmenu implementations
+## Desktop
 bindsym $mod+a exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -f -i -l 20 -p 'Launch App' -m 0 -fn 'DejaVu Sans Mono-12' -nb '$col0' -nf '$col15' -sb '$col2' -sf '$col0'"
+## Executables
 bindsym $mod+d exec --no-startup-id dmenu_run -l 20 -p 'Run Command' -m 0 -fn 'DejaVu Sans Mono-12' -nb '$col0' -nf '$col15' -sb '$col5' -sf '$col0'
+## Pass
+bindsym $mod+p exec --no-startup-id passmenu -f -i -l 20 -p 'Get password' -m 0 -fn 'DejaVu Sans Mono-12' -nb '$col0' -nf '$col15' -sb '$col4' -sf '$col0'
 
 # Utilities
 # ==============================================================================
