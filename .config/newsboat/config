@@ -11,7 +11,7 @@ prepopulate-query-feeds yes
 feed-sort-order name
 show-keymap-hint false
 swap-title-and-hints false
-browser firefox %u
+browser /usr/bin/xdg-open %u
 
 # Podcasts
 player mpv

@@ -6,8 +6,6 @@ c.content.headers.accept_language = 'en-GB,en-US,en'
 c.content.pdfjs = True
 c.content.plugins = True
 c.url.default_page = 'about:blank' 
-c.url.searchengines = {"DEFAULT": "https://searx.eu/?q={}"}
-c.url.start_pages = 'https://www.archlinux.org' 
 
 #  User interface
 #  =============================================================================
@@ -101,10 +99,18 @@ c.fonts.messages.error = '10pt monospace'
 c.fonts.messages.info = '10pt monospace'
 c.fonts.messages.warning = '10pt monospace'
 c.fonts.prompts = '10pt monospace'
-c.fonts.statusbar = '10pt monospace'
+c.fonts.statusbar = 'bold 8pt monospace'
 c.fonts.tabs = '10pt monospace'
 
 # Functionality
 #  =============================================================================
 c.editor.command = ["/usr/bin/urxvtc", "-e", "/usr/bin/vim", "-f", "{}"]
 c.tabs.background = True
+c.url.searchengines = {"DEFAULT": "https://searx.eu/?q={}", "awk": "https://wiki.archlinux.org/?search={}", "aur": "https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&outdated=&SB=p&SO=d&PP=250&do_Search=Go"}
+c.url.start_pages = 'https://www.archlinux.org' 
+
+# Aliases
+config.bind('gh', 'open https://github.com')
+config.bind('tw', 'open https://twitter.com')
+config.bind('yt', 'open https://www.youtube.com')
+config.bind('me', 'open https://protesilaos.com')
