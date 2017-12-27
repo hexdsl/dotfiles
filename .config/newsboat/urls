@@ -1,10 +1,11 @@
-# Feeds // Newsbeuter 2.9
-# ===============================================
+# Tested with Newsboat 2.10.1-2
+# ==============================================================================
 
 # Computers
-# -----------------------------------------------
+# ==============================================================================
 
 # Distros
+# ------------------------------------------------------------------------------
 https://www.archlinux.org/feeds/news/ "Linux Distro"
 https://www.debian.org/News/news "Linux Distro"
 http://blog.linuxmint.com/?feed=rss2 "Linux Distro"
@@ -13,9 +14,11 @@ https://xubuntu.org/feed/ "Linux Distro"
 https://antergos.com/feed/ "Linux Distro"
 https://manjaro.org/feed/ "Linux Distro"
 https://solus-project.com/blog/index.xml "Linux Distro"
+https://www.deepin.org/en/feed/ "Linux Distro"
 https://www.gnu.org/software/guix/news/feed.xml "GNU Linux Distro"
 
 # Projects
+# ------------------------------------------------------------------------------
 https://blog.xfce.org/feed/ "Linux DE"
 https://budgie-desktop.org/blog/index.xml "Linux DE"
 https://www.gnome.org/feed/ "Linux DE"
@@ -30,10 +33,12 @@ http://libremusicproduction.com/feeds/articles-tutorials-news-full.xml "Linux Ap
 https://neovim.io/news.xml "Apps"
 
 # Hardware
+# ------------------------------------------------------------------------------
 https://puri.sm/feed/ "Linux Hardware"
 http://blog.system76.com/rss "Linux Hardware"
 
 # News and opinion
+# ------------------------------------------------------------------------------
 https://planet.archlinux.org/rss20.xml "Linux Community"
 https://feeds.feedburner.com/FreedomPenguin "Linux Community"
 https://www.linux.com/feeds/news/desktop/rss "Linux Community"
@@ -42,6 +47,7 @@ https://opensource.com/feed "Linux Community"
 http://lunduke.com/feed/ "Linux Community"
 https://www.sudosatirical.com/articles/index.xml "Linux Community"
 https://latenightlinux.com/feed/mp3 "Linux Community"
+https://xfce.space/en/feed/ "Linux Community"
 
 https://sfconservancy.org/feeds/news/ "Linux GPL"
 https://sfconservancy.org/feeds/news/ "Linux GPL"
@@ -50,16 +56,19 @@ https://fsfe.org/news/news.en.rss "GPL Politics EU"
 http://static.fsf.org/fsforg/rss/news.xml "GNU GPL"
 
 # Politics
-# -----------------------------------------------
+# ==============================================================================
 
 # Official
+# ------------------------------------------------------------------------------
 https://europa.eu/newsroom/highlights.xml_en "EU"
 https://europa.eu/newsroom/press-releases.xml_en "EU"
 
 # Parties
+# ------------------------------------------------------------------------------
 http://www.progressivecaucus.eu/feed/ "EU Left"
 
 # Civil society
+# ------------------------------------------------------------------------------
 http://gef.eu/feed/ "Greens"
 http://reconnecting-europe.boellblog.org/feed/ "Greens"
 https://blog.mozilla.org/internetcitizen/feed/ "Mozilla"
@@ -67,15 +76,18 @@ https://blog.mozilla.org/netpolicy/feed/ "Mozilla"
 https://blog.mozilla.org/community/feed/ "Mozilla"
 
 # Think Tanks
+# ------------------------------------------------------------------------------
 https://www.ineteconomics.org/feed.rss "Politics Economics"
 https://www.ceps.eu/rss1.php "EU Politics"
 http://bruegel.org/feed/ "EU Politics"
 
 # Media outlets
+# ------------------------------------------------------------------------------
 https://www.project-syndicate.org/rss "Politics Economics"
 http://evonomics.com/feed/ "Politics Economics"
 
 # Blogs
+# ------------------------------------------------------------------------------
 http://blogactiv.eu/feed/ "Politics"
 http://ruitavares.net/feed "Politics"
 http://europa.fhenriques.eu/rss "Politics"
@@ -84,9 +96,10 @@ https://boycottholland.wordpress.com/feed/ "Politics Economics"
 http://www.rushkoff.com/feed/ "Poilitics Economics"
 
 # General
-# -----------------------------------------------
+# ==============================================================================
 
 # Web
+# ------------------------------------------------------------------------------
 https://github.com/blog/all.atom "Web"
 https://about.gitlab.com/atom.xml "Web"
 https://www.gandi.net/feed/news/en/block/hp/ "Web"
@@ -96,17 +109,46 @@ https://blog.mozilla.org/feed/ "Web"
 https://hacks.mozilla.org/feed/ "Web"
 
 # Entertainment
+# ------------------------------------------------------------------------------
 http://samostudios.tumblr.com/rss "Music"
 
 # Testing
+# ------------------------------------------------------------------------------
 https://protesilaos.com/feed.xml "Personal"
 https://protesilaos.com/codelog.xml "Personal"
 https://protesilaos.com/greek.xml "Personal"
 https://protesilaos.com/master.xml "Personal"
 
-# Podcasts
-# -----------------------------------------------
+# Youtube
+# ==============================================================================
 
+# GNU/Linux
+# ------------------------------------------------------------------------------
+https://www.youtube.com/feeds/videos.xml?user=quidsup "Youtube Linux"
+https://www.youtube.com/feeds/videos.xml?user=BadEditPro "Youtube Linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCAPR27YUyxmgwm3Wc2WSHLw "Youtube Linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkK9UDm_ZNrq_rIXCz3xCGA "Youtube Linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=C2eYFnH61tmytImy1mTYvhA "Youtube Linux"
+https://www.youtube.com/feeds/videos.xml?channel_id=CZiL6BoryLWxyapUuVYW27g "Youtube Linux"
+
+# Dogs
+# ------------------------------------------------------------------------------
+https://www.youtube.com/feeds/videos.xml?channel_id=CpejL4mTlUJ_hfQY1PiCW6Q "Youtube Dogs"
+https://www.youtube.com/feeds/videos.xml?channel_id=CfsRp0AAJQII4EIfZeVoeRw "Youtube Dogs"
+
+# Music 
+# ------------------------------------------------------------------------------
+https://www.youtube.com/feeds/videos.xml?channel_id=CVp9mxsL4ALPxBHqMh2UUzg "Youtube Music"
+https://www.youtube.com/feeds/videos.xml?channel_id=C_gZR4dYbAEMcWcwdxAyC6Q "Youtube Music"
+https://www.youtube.com/feeds/videos.xml?channel_id=CHXgyt8HgbgmJ2XOobFZlZA "Youtube Music"
+https://www.youtube.com/feeds/videos.xml?channel_id=Ck40qSGYnVdFFBNXRjrvdpQ "Youtube Music"
+https://www.youtube.com/feeds/videos.xml?channel_id=CvBJ605ErdAhLeSRhKzVHRA "Youtube Music"
+
+# Podcasts
+# ==============================================================================
+
+# Politics
+# ------------------------------------------------------------------------------
 http://rss.acast.com/ft-news "Podcast Politics"
 http://rss.acast.com/ft-world-weekly "Podcast Politics"
 https://rss.acast.com/theeconomistallaudio "Podcast Politics"
@@ -114,12 +156,18 @@ http://rss.acast.com/ft-politics "Podcast Politics"
 http://the-e-r-podcast.foreignpolicy.com/ "Podcast Politics"
 http://www.europarl.europa.eu/rss/podcast/eprs-plenary-podcast/or.xml "Podcast Politics"
 
+# Culture
+# ------------------------------------------------------------------------------
 http://feed.pippa.io/public/shows/teamhuman "Podcats Culture"
 
+# GNU/Linux
+# ------------------------------------------------------------------------------
 https://mintcast.org/category/mp3/feed/ "Podcast Linux"
 https://latenightlinux.com/feed/mp3 "Podcast Linux"
 
 # Filters
-# -----------------------------------------------
+# ==============================================================================
+"query:Youtube Channels:tags # \"Youtube\""
+"query:Podcast shows:tags # \"Podcast\""
 
 "query:Unread Articles:unread = \"yes\""
