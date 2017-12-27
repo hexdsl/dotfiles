@@ -2,7 +2,7 @@
 
 # General settings
 #  =============================================================================
-c.content.headers.accept_language = 'en-GB,en-US,en' 
+c.content.headers.accept_language = 'en-GB,en-US,en,el-GR' 
 c.content.pdfjs = True
 c.content.plugins = True
 c.url.default_page = 'about:blank' 
@@ -54,9 +54,9 @@ c.colors.messages.warning.border = '#ca7162'
 c.colors.messages.info.fg = '#798ba5'
 c.colors.messages.info.bg = '#202427'
 c.colors.messages.info.border = '#798ba5'
-c.colors.prompts.fg = '#798ba5'
-c.colors.prompts.border = '1px solid #798ba5'
-c.colors.prompts.bg = '#202427'
+c.colors.prompts.fg = '#899bb5'
+c.colors.prompts.border = '1px solid #899bb5'
+c.colors.prompts.bg = '#303437'
 c.colors.prompts.selected.bg = '#1b2431'
 c.colors.statusbar.normal.fg = '#798ba5'
 c.colors.statusbar.normal.bg = '#202427'
@@ -82,34 +82,40 @@ c.colors.tabs.odd.bg = '#202427'
 c.colors.tabs.even.fg = '#798ba5'
 c.colors.tabs.even.bg = '#202427'
 c.colors.tabs.selected.odd.fg = '#899bb5'
-c.colors.tabs.selected.odd.bg = '#303437'
+c.colors.tabs.selected.odd.bg = '#404447'
 c.colors.tabs.selected.even.fg = '#899bb5'
-c.colors.tabs.selected.even.bg = '#303437'
+c.colors.tabs.selected.even.bg = '#404447'
 
 #  Fonts
 #  -----------------------------------------------------------------------------
+my_sans = '"DejaVu Sans Condensed", "Roboto Condensed", Cantarell'
+
 c.fonts.monospace = '"DejaVu Sans Mono", "Liberation Mono", "xos4 Terminus", Terminus, monospace'
-c.fonts.completion.entry = '10pt monospace'
-c.fonts.completion.category = 'bold 10pt monospace'
-c.fonts.debug_console = '10pt monospace'
-c.fonts.downloads = '10pt monospace'
-c.fonts.hints = 'bold 10pt monospace'
-c.fonts.keyhint = '10pt monospace'
-c.fonts.messages.error = '10pt monospace'
-c.fonts.messages.info = '10pt monospace'
-c.fonts.messages.warning = '10pt monospace'
-c.fonts.prompts = '10pt monospace'
-c.fonts.statusbar = 'bold 8pt monospace'
-c.fonts.tabs = '10pt monospace'
+c.fonts.web.family.serif = '"DejaVu Serif", "Liberation Serif"'
+c.fonts.web.family.sans_serif = '"DejaVu Sans", Roboto, "Liberation Sans"'
+c.fonts.completion.entry = '13px my_sans'
+c.fonts.completion.category = 'bold 13px my_sans'
+c.fonts.debug_console = '13px my_sans'
+c.fonts.downloads = '13px my_sans'
+c.fonts.hints = 'bold 13px my_sans'
+c.fonts.keyhint = '13px my_sans'
+c.fonts.messages.error = '13px my_sans'
+c.fonts.messages.info = '13px my_sans'
+c.fonts.messages.warning = '13px my_sans'
+c.fonts.prompts = '13px my_sans'
+c.fonts.statusbar = 'bold 11px monospace'
+c.fonts.tabs = '13px my_sans'
 
 # Functionality
 #  =============================================================================
 c.editor.command = ["/usr/bin/urxvtc", "-e", "/usr/bin/vim", "-f", "{}"]
+c.scrolling.smooth = True
 c.tabs.background = True
 c.url.searchengines = {"DEFAULT": "https://searx.eu/?q={}", "awk": "https://wiki.archlinux.org/?search={}", "aur": "https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&outdated=&SB=p&SO=d&PP=250&do_Search=Go"}
 c.url.start_pages = 'https://www.archlinux.org' 
 
 # Aliases
+#  -----------------------------------------------------------------------------
 config.bind('gh', 'open https://github.com')
 config.bind('tw', 'open https://twitter.com')
 config.bind('yt', 'open https://www.youtube.com')
