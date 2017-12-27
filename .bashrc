@@ -18,7 +18,7 @@ if [ "$PS1" ]; then
 fi
 
 # Launch GNOME keyring
-# Needed with standalon i3
+# Needed with standalone i3
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
@@ -96,6 +96,7 @@ alias iii='vim ~/.config/i3/config'
 alias mmm='vim ~/.muttrc'
 alias nnn='vim ~/.config/newsboat/urls'
 alias ppp='vim ~/.config/polybar/config'
+alias qqq='vim ~/.config/qutebrowser/config.py'
 alias rrr='vim ~/.config/ranger/rc.conf'
 alias sss='vim ~/.mutt/mails/signature'
 alias ttt='vim ~/.taskrc'
@@ -166,6 +167,7 @@ alias npmiu='npm install && npm update'
 # ------------------------------------------------
 alias composekey="setxkbmap -option compose:menu"
 alias greeklayout="setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'"
+alias scratchterm="urxvtc -bg '[90]#000000' -fg '#339922' -cr '#339922' -color1 '#bb0000' -color2 '#339922' -color3 '#ccbb00' -color4 '#3355ff' -color5 '#cc55aa' -color6 '#3399bb' -color7 '#cccccc' -color8 '#2a2a2a' -color9 '#dd6600' -color10 '#33bb44' -color11 '#eeee00' -color12 '#5566ff' -color13 '#dd55bb' -color14 '#55bbdd' -color15 '#ffffff'"
 
 # Enable colour output
 alias ls='ls --color=auto'
