@@ -92,7 +92,6 @@ alias v='vim'
 alias bbb='vim ~/.bashrc'
 alias ddd='vim ~/.config/dunst/dunstrc'
 alias iii='vim ~/.config/i3/config'
-# alias kkk='vim ~/.config/kitty/kitty.conf'
 alias mmm='vim ~/.muttrc'
 alias nnn='vim ~/.config/newsboat/urls'
 alias ppp='vim ~/.config/polybar/config'
@@ -111,11 +110,6 @@ alias rxxx='xrdb -merge ~/.Xresources'
 # Curl
 alias cO='curl -O'
 
-# Encryption
-alias gpge='gpg -e -r' # gpg encrypt
-alias gpgde='gpg -d -r' # gpg decrypt
-alias gpgs='gpg -s -r' # gpg sign
-
 # Tasks (taskwarrior)
 alias tl='task list'
 alias ta='task add'
@@ -130,8 +124,9 @@ alias ytmp3='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ex
 # Certbot
 alias certm='sudo certbot certonly -a manual -d'
 
-# Neofetch
-alias neofetchwall='neofetch --w3m --source ~/.config/i3/wallpaper.jpg'
+# Misc
+# alias musvis='urxvtc -bg [50]#000 -e ncmpcpp -s visualizer'
+alias musvis="urxvtc -bg '[45]#18161d' -fg '[45]#68b183' -cr '[45]#68b183' -color0 '[45]#18161d' -color1 '[45]#ff7780' -color2 '[45]#68b183' -color3 '[45]#bda014' -color4 '[45]#54a5ff' -color5 '[45]#da89b2' -color6 '[45]#79a8c3' -color7 '[45]#bd9b87' -color8 '[45]#001b1a' -color9 '[45]#ef873d' -color10 '[45]#08b885' -color11 '[45]#d39710' -color12 '[45]#a294fe' -color13 '[45]#ec7aca' -color14 '[45]#4ab0b9' -color15 '[45]#a4a0ac' -e ncmpcpp -s visualizer"
 
 # Git
 # ------------------------------------------------
@@ -165,9 +160,10 @@ alias npmiu='npm install && npm update'
 
 # Miscellaneous
 # ------------------------------------------------
-alias composekey="setxkbmap -option compose:menu"
-alias greeklayout="setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'"
-alias scratchterm="urxvtc -bg '[90]#000000' -fg '#339922' -cr '#339922' -color1 '#bb0000' -color2 '#339922' -color3 '#ccbb00' -color4 '#3355ff' -color5 '#cc55aa' -color6 '#3399bb' -color7 '#cccccc' -color8 '#2a2a2a' -color9 '#dd6600' -color10 '#33bb44' -color11 '#eeee00' -color12 '#5566ff' -color13 '#dd55bb' -color14 '#55bbdd' -color15 '#ffffff'"
+
+# alias composekey="setxkbmap -option compose:menu"
+# alias greeklayout="setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'"
+# alias scratchterm="urxvtc -bg '[90]#000000' -fg '#339922' -cr '#339922' -color1 '#bb0000' -color2 '#339922' -color3 '#ccbb00' -color4 '#3355ff' -color5 '#cc55aa' -color6 '#3399bb' -color7 '#cccccc' -color8 '#2a2a2a' -color9 '#dd6600' -color10 '#33bb44' -color11 '#eeee00' -color12 '#5566ff' -color13 '#dd55bb' -color14 '#55bbdd' -color15 '#ffffff'"
 
 # Enable colour output
 alias ls='ls --color=auto'
@@ -203,7 +199,6 @@ function mkcd {
 }
 
 # List items after entering a directory
-function cd()
-{
- builtin cd "$*" && ls
+function cd() {
+    builtin cd "$*" && ls -a
 }

@@ -4,7 +4,7 @@
 
 Package names with a short description.
 
-- Window manager `i3-gaps` (AUR). For a keyboard-centric, highly-customisable, tilling window manager.
+- Window manager `i3-gaps`. For a keyboard-centric, highly-customisable, tilling window manager.
 - Bar `polybar`. Flexible, easy-to-use, system bar with easy configs for its various modules.
 - Compositor `compton`. For transparency, no screen tearing, and shadows under windows.
 - Terminal emulator `urxvt`. Customisable, lightweight, effective terminal. NOTE, I use it in a server-client mode. Refer to the i3 config, as well as `.xinitrc` and `.xprofile`.
