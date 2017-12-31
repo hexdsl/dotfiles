@@ -77,14 +77,14 @@ c.colors.tabs.bar.bg = '#202427'
 c.colors.tabs.indicator.start = '#2b92c8'
 c.colors.tabs.indicator.stop = '#589584'
 c.colors.tabs.indicator.error = '#ca7162'
-c.colors.tabs.odd.fg = '#798ba5'
-c.colors.tabs.odd.bg = '#202427'
-c.colors.tabs.even.fg = '#798ba5'
-c.colors.tabs.even.bg = '#202427'
-c.colors.tabs.selected.odd.fg = '#899bb5'
-c.colors.tabs.selected.odd.bg = '#404447'
-c.colors.tabs.selected.even.fg = '#899bb5'
-c.colors.tabs.selected.even.bg = '#404447'
+c.colors.tabs.odd.fg = '#787a7a'
+c.colors.tabs.odd.bg = '#000407'
+c.colors.tabs.even.fg = '#787a7a'
+c.colors.tabs.even.bg = '#000407'
+c.colors.tabs.selected.odd.fg = '#99abc5'
+c.colors.tabs.selected.odd.bg = '#202427'
+c.colors.tabs.selected.even.fg = '#99abc5'
+c.colors.tabs.selected.even.bg = '#202427'
 
 #  Fonts
 #  -----------------------------------------------------------------------------
@@ -119,4 +119,4 @@ c.url.start_pages = 'https://www.archlinux.org'
 config.bind('gh', 'open https://github.com')
 config.bind('tw', 'open https://twitter.com')
 config.bind('yt', 'open https://www.youtube.com')
-config.bind('me', 'open https://protesilaos.com')
+config.bind('ps', 'open https://protesilaos.com')
