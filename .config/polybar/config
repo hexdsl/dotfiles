@@ -3,6 +3,13 @@
 # Xcolors are defined as `*.color[n]`, which exposes them to any program
 # The current setup uses these colours for URxvt, i3, and polybar
 
+[settings]
+screenchange-reload = true
+
+; [global/wm]
+; margin-top = 0
+; margin-bottom = 0
+
 [colors]
 background = ${xrdb:background}
 foreground = ${xrdb:foreground}
@@ -47,35 +54,29 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = DejaVu Sans Condensed:antialias=true:pixelsize=11;2
+font-0 = FontAwesome5Free:style=Solid:antialias=false:pixelsize=10;2
+font-1 = FontAwesome5Brands:style=Solid:antialias=false:pixelsize=10;2
+font-2 = DejaVu Sans Condensed:antialias=true:pixelsize=11;2
 
-# modules-left = hostname
 modules-left = i3 mpd
 modules-right = archpkg volume keyboard date powermenu
 
 # tray-padding = 0
 
-[settings]
-screenchange-reload = true
-
-; [global/wm]
-; margin-top = 0
-; margin-bottom = 0
-
 [module/i3]
 type = internal/i3
-; ws-icon-[0-9]+ = label;icon
-; ws-icon-0 = 1;
-; ws-icon-1 = 2;
-; ws-icon-2 = 3;
-; ws-icon-3 = 4;
-; ws-icon-4 = 5;
-; ws-icon-5 = 6;
-; ws-icon-6 = 7;
-; ws-icon-7 = 8;
-; ws-icon-8 = 9;
-; ws-icon-9 = 10;
-; ws-icon-default = Ϣ
+ws-icon-[0-9]+ = label;icon
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = 
 strip-wsnumbers = false
 format = <label-state> <label-mode>
 index-sort = true
@@ -83,13 +84,13 @@ pin-workspaces = true
 wrapping-scroll = true
 label-mode-padding = 3
 label-mode-background = ${colors.background}
-label-focused =  "%index%"
+label-focused = "%index%   %icon%"
 label-focused-background = ${colors.color10}
 label-focused-foreground = ${colors.color0}
 label-focused-padding = 3
 label-unfocused = "%index%"
 label-unfocused-padding = 3
-label-urgent = "%index% !!! "
+label-urgent = "%index%  "
 label-urgent-background = ${colors.color11}
 label-urgent-foreground = ${colors.color0}
 label-urgent-padding = 3
@@ -98,7 +99,7 @@ label-urgent-padding = 3
 type = internal/mpd
 format-online = <label-song> <label-time> <toggle>
 
-icon-pause =
+icon-pause = 
 icon-play = (Paused)
 
 label-song = %artist% - %title% 
@@ -107,15 +108,32 @@ label-song-ellipsis = true
 
 [module/archpkg]
 type = custom/script
+format-prefix = ""
+format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.color13}
 exec = ~/.config/polybar/scripts/check-arch-aur-updates.sh
 interval = 600
 
 [module/volume]
 type = internal/volume
-format-volume = <label-volume>
+format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage% %
+format-muted-prefix = "  "
+format-muted-prefix-foreground = ${colors.color7}
 label-muted = "Muted"
+ramp-volume-padding-right = 1
+ramp-volume-0 = "  "
+ramp-volume-0-foreground = ${colors.color7}
+ramp-volume-1 = "  "
+ramp-volume-1-foreground = ${colors.color2}
+ramp-volume-2 = "  "
+ramp-volume-2-foreground = ${colors.color10}
+ramp-volume-3 = "  "
+ramp-volume-3-foreground = ${colors.color13}
+ramp-volume-4 = "  "
+ramp-volume-4-foreground = ${colors.color11}
+ramp-volume-5 = "  "
+ramp-volume-5-foreground = ${colors.color9}
 
 [module/keyboard]
 type = internal/xkeyboard
@@ -126,6 +144,10 @@ blacklist-1 = scroll lock
 
 format = <label-layout> <label-indicator>
 format-spacing = 0
+
+format-prefix = 
+format-prefix-padding-right = 1
+format-prefix-foreground = ${colors.color10}
 
 label-layout = %layout%
 label-layout-padding = 1
@@ -138,6 +160,9 @@ label-indicator-foreground = ${colors.color8}
 [module/date]
 type = internal/date
 interval = 1
+format-prefix = " " 
+format-prefix-padding-right = 1
+format-prefix-foreground = ${colors.color10}
 date = %a, %d %b, %H:%M:%S
 label = %date%
 
@@ -147,30 +172,30 @@ format = <label-toggle> <menu>
 format-foreground = ${colors.color9}
 format-padding = 0
 format-margin = 0
-menu-0-0 = "Power Off"
+menu-0-0 = " Power Off"
 menu-0-0-exec = shutdown now
 menu-0-0-padding = 3
 menu-0-0-background = ${colors.color1}
 menu-0-0-foreground = ${colors.color0}
-menu-0-1 = "Reboot"
+menu-0-1 = " Reboot"
 menu-0-1-exec = reboot
 menu-0-1-padding = 3
-menu-0-1-background = ${colors.color3}
+menu-0-1-background = ${colors.color11}
 menu-0-1-foreground = ${colors.color0}
-menu-0-2 = "Log Out"
+menu-0-2 = " Log Out"
 menu-0-2-exec = i3-msg exit, mode "default"
 menu-0-2-padding = 3
-menu-0-2-background = ${colors.color5}
+menu-0-2-background = ${colors.color13}
 menu-0-2-foreground = ${colors.color0}
-menu-0-3 = "Switch Users"
+menu-0-3 = " Switch Users"
 menu-0-3-exec = dm-tool switch-to-greeter
 menu-0-3-padding = 3
-menu-0-3-background = ${colors.color6}
+menu-0-3-background = ${colors.color2}
 menu-0-3-foreground = ${colors.color0}
-menu-0-4 = "Cancel"
+menu-0-4 = " Cancel"
 menu-0-4-padding = 3
 menu-0-4-background = ${colors.color8}
 menu-0-4-foreground = ${colors.color15}
-label-open = " Ø "
+label-open = "  "
 label-open-padding-right = 3
 label-close = 
