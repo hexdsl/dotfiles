@@ -111,7 +111,7 @@ c.fonts.tabs = '13px my_sans'
 c.editor.command = ["/usr/bin/urxvtc", "-e", "/usr/bin/vim", "-f", "{}"]
 c.scrolling.smooth = True
 c.tabs.background = True
-c.url.searchengines = {"DEFAULT": "https://searx.eu/?q={}", "awk": "https://wiki.archlinux.org/?search={}", "aur": "https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&outdated=&SB=p&SO=d&PP=250&do_Search=Go"}
+c.url.searchengines = {"DEFAULT": "https://searx.eu/?q={}", "wk": "https://en.wikipedia.org/?search={}", "awk": "https://wiki.archlinux.org/?search={}", "aur": "https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&outdated=&SB=p&SO=d&PP=250&do_Search=Go"}
 c.url.start_pages = 'https://www.archlinux.org' 
 
 # Aliases
