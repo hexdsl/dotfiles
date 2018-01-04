@@ -59,7 +59,7 @@ font-1 = FontAwesome5Brands:style=Solid:antialias=false:pixelsize=10;2
 font-2 = DejaVu Sans Condensed:antialias=true:pixelsize=11;2
 
 modules-left = bspwm mpd
-modules-right = archpkg volume backlight keyboard date battery powermenu
+modules-right = archpkg battery volume backlight keyboard date powermenu
 
 # tray-padding = 0
 
@@ -140,7 +140,7 @@ interval = 600
 type = internal/volume
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage% %
-format-muted-prefix = ""
+format-muted-prefix = "  "
 format-muted-prefix-foreground = ${colors.color7}
 label-muted = "Muted"
 ramp-volume-padding-right = 1
@@ -202,22 +202,17 @@ menu-0-0-foreground = ${colors.color0}
 menu-0-1 = " Reboot"
 menu-0-1-exec = reboot
 menu-0-1-padding = 3
-menu-0-1-background = ${colors.color11}
+menu-0-1-background = ${colors.color3}
 menu-0-1-foreground = ${colors.color0}
 menu-0-2 = " Log Out"
 menu-0-2-exec = i3-msg exit, mode "default"
 menu-0-2-padding = 3
-menu-0-2-background = ${colors.color13}
+menu-0-2-background = ${colors.color2}
 menu-0-2-foreground = ${colors.color0}
-menu-0-3 = " Switch Users"
-menu-0-3-exec = dm-tool switch-to-greeter
+menu-0-3 = " Cancel"
 menu-0-3-padding = 3
-menu-0-3-background = ${colors.color2}
-menu-0-3-foreground = ${colors.color0}
-menu-0-4 = " Cancel"
-menu-0-4-padding = 3
-menu-0-4-background = ${colors.color8}
-menu-0-4-foreground = ${colors.color15}
+menu-0-3-background = ${colors.color8}
+menu-0-3-foreground = ${colors.color15}
 label-open = "  "
 label-open-padding-right = 3
 label-close = 
