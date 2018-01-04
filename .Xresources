@@ -15,7 +15,7 @@ Xft.lcdfilter: lcddefault
 ! Xcolors are defined as `*.color[n]`, which exposes them to any program
 ! The current setup uses these colours for URxvt, i3, and polybar
 ! Refer to their respective configs
-#include </home/prot/.Xcolors/tempus_winter.Xcolors>
+#include </home/prot/.Xcolors/tempus_future.Xcolors>
 
 ! Preferences
 URxvt.termName: rxvt-unicode
@@ -35,9 +35,12 @@ URxvt.scrollBar: false
 URxvt.scrollTtyOutput: true
 URxvt.scrollTtyKeypress: true
 Urxvt.secondaryScroll: true
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard,font-size
-URxvt.url-launcher:	firefox
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard,font-size,keyboard-select
+URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button: 1
+
+URxvt.keysym.C-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-s: perl:keyboard-select:search
 
 ! Key Bindings
 ! NOTE see https://superuser.com/questions/1247281/how-to-configure-rxvt-unicode-to-behave-similar-to-gnome-terminal-or-others-f
