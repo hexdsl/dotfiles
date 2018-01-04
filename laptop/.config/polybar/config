@@ -131,7 +131,7 @@ label-song-ellipsis = true
 [module/archpkg]
 type = custom/script
 format-prefix = ""
-format-prefix-padding-right = 1
+format-prefix-padding-right = 3
 format-prefix-foreground = ${colors.color13}
 exec = ~/.config/polybar/scripts/check-arch-aur-updates.sh
 interval = 600
@@ -140,21 +140,21 @@ interval = 600
 type = internal/volume
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage% %
-format-muted-prefix = "  "
+format-muted-prefix = ""
 format-muted-prefix-foreground = ${colors.color7}
 label-muted = "Muted"
 ramp-volume-padding-right = 1
-ramp-volume-0 = "  "
+ramp-volume-0 = ""
 ramp-volume-0-foreground = ${colors.color7}
-ramp-volume-1 = "  "
+ramp-volume-1 = ""
 ramp-volume-1-foreground = ${colors.color2}
-ramp-volume-2 = "  "
+ramp-volume-2 = ""
 ramp-volume-2-foreground = ${colors.color10}
-ramp-volume-3 = "  "
+ramp-volume-3 = ""
 ramp-volume-3-foreground = ${colors.color13}
-ramp-volume-4 = "  "
+ramp-volume-4 = ""
 ramp-volume-4-foreground = ${colors.color11}
-ramp-volume-5 = "  "
+ramp-volume-5 = ""
 ramp-volume-5-foreground = ${colors.color9}
 
 [module/keyboard]
@@ -229,7 +229,7 @@ output = LVDS1
 enable-scroll = false
 
 format-prefix = 
-format-prefix-padding-right = 3
+format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.color10}
 format = <label>
 
