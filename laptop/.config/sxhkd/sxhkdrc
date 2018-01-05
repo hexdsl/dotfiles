@@ -139,11 +139,11 @@ super + Return
 
 # program launcher
 super + d
-    dmenu_run -l 20 -p 'Execute binary' -m 0 -fn 'DejaVu Sans Mono-12' -nb '#202427' -nf '#798ba5' -sb '#2c9a81' -sf '#202427'
+    dmenu_run -l 10 -p 'Execute binary' -m 0 -fn 'DejaVu Sans Mono-12' -nb '#141a19' -nf '#928f90' -sb '#3aa43a' -sf '#141a19'
 
 # passmenu
 super + shift + d
-    passmenu -f -i -l 20 -p 'Copy password' -m 0 -fn 'DejaVu Sans Mono-12' -nb '#202427' -nf '#798ba5' -sb '#2b92c8' -sf '#202427'
+    passmenu -f -i -l 10 -p 'Copy password' -m 0 -fn 'DejaVu Sans Mono-12' -nb '#141a19' -nf '#928f90' -sb '#b38a00' -sf '#141a19'
 
 # common programs
 alt + 1

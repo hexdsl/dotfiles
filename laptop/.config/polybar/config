@@ -102,8 +102,8 @@ label-empty =
 ;
 ; Available tokens:
 ;   None
-label-monocle = 
-label-monocle-background = ${colors.color6}
+label-monocle = 
+label-monocle-background = ${colors.color3}
 label-monocle-foreground = ${colors.color0}
 label-monocle-padding = 3
 ; label-tiled =
@@ -111,7 +111,7 @@ label-monocle-padding = 3
 ; label-floating = 
 ; label-pseudotiled = 
 label-locked = 
-label-locked-background = ${colors.color9}
+label-locked-background = ${colors.color11}
 label-locked-foreground = ${colors.color0}
 label-locked-padding = 3
 ; label-sticky = 
