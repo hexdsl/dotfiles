@@ -17,13 +17,6 @@ if [ "$PS1" ]; then
     complete -cf sudo
 fi
 
-# Launch GNOME keyring
-# Needed with standalone i3
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -32,7 +25,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # Default browser
-export BROWSER=firefox
+export BROWSER=/usr/bin/xdg-open
 
 # Aliases
 # ====================================================================
@@ -105,6 +98,7 @@ alias xxx='vim ~/.Xresources'
 # Reload config files
 alias rbbb='source ~/.bashrc'
 alias rddd='killall dunst && eval $(dbus-launch)'
+alias rppp='. $HOME/.config/polybar/launch.sh'
 alias rxxx='xrdb -merge ~/.Xresources'
 
 # Curl

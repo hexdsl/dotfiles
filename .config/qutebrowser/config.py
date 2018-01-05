@@ -6,6 +6,8 @@ c.content.headers.accept_language = 'en-GB,en-US,en,el-GR'
 c.content.pdfjs = True
 c.content.plugins = True
 c.url.default_page = 'about:blank' 
+c.downloads.location.directory = "~/Downloads"
+c.downloads.location.prompt = False
 
 #  User interface
 #  =============================================================================

@@ -10,4 +10,4 @@ urxvtd --quiet --opendisplay --fork &
 xrdb -merge ~/.Xresources
 setxkbmap -option compose:menu
 setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'
-/usr/bin/xcalib -d :0 /usr/share/color/icc/colord/Gamma5500K.icc
+mpd
