@@ -1,32 +1,28 @@
 #! /bin/sh
 
-# TODO add feh bg
-# TODO adjust ranger set bg command
+# autostart
 sxhkd &
 . $HOME/.config/polybar/launch.sh &
 feh --bg-fill ~/.wallpaper.jpg
-compton -b
+compton -b &
 
+# workspaces
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 # Visual options
-bspc config border_width         5
+bspc config border_width         2
 bspc config window_gap           5
 
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
-bspc config focus_follows_pointer true
+bspc config focus_follows_pointer false
 bspc config auto_alternate true
 bspc config auto_cancel true
+
+# TODO update colours
 bspc config normal_border_color "#202427"
-bspc config active_border_color "#798ba5"
+bspc config active_border_color "#68b183"
 bspc config focused_border_color "#589584"
 bspc config presel_border_color "#a2864b"
 bspc config urgent_border_color "#ca7162"
-
-# bspc rule -a Gimp desktop='^8' state=floating follow=on
-# bspc rule -a Chromium desktop='^2'
-# bspc rule -a mplayer2 state=floating
-# bspc rule -a Kupfer.py focus=on
-# bspc rule -a Screenkey manage=off

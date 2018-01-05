@@ -136,6 +136,42 @@ format-prefix-foreground = ${colors.color13}
 exec = ~/.config/polybar/scripts/check-arch-aur-updates.sh
 interval = 600
 
+[module/battery]
+type = internal/battery
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+full-at = 99
+
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.color2}
+label-charging = Charging %percentage% %
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.color7}
+label-discharging = %percentage% %
+
+format-full-prefix = 
+format-full-prefix-foreground = ${colors.color10}
+format-full-prefix-padding-right = 1
+format-full = <label-full>
+label-full = %percentage% %
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
 [module/volume]
 type = internal/volume
 format-volume = <ramp-volume> <label-volume>
@@ -147,15 +183,28 @@ ramp-volume-padding-right = 1
 ramp-volume-0 = ""
 ramp-volume-0-foreground = ${colors.color7}
 ramp-volume-1 = ""
-ramp-volume-1-foreground = ${colors.color2}
+ramp-volume-1-foreground = ${colors.color6}
 ramp-volume-2 = ""
-ramp-volume-2-foreground = ${colors.color10}
+ramp-volume-2-foreground = ${colors.color2}
 ramp-volume-3 = ""
-ramp-volume-3-foreground = ${colors.color13}
+ramp-volume-3-foreground = ${colors.color10}
 ramp-volume-4 = ""
 ramp-volume-4-foreground = ${colors.color11}
 ramp-volume-5 = ""
 ramp-volume-5-foreground = ${colors.color9}
+
+[module/backlight]
+type = internal/xbacklight
+
+output = LVDS1
+enable-scroll = false
+
+format-prefix = 
+format-prefix-padding-right = 1
+format-prefix-foreground = ${colors.color10}
+format = <label>
+
+label = %percentage% %
 
 [module/keyboard]
 type = internal/xkeyboard
@@ -204,62 +253,10 @@ menu-0-1-exec = reboot
 menu-0-1-padding = 3
 menu-0-1-background = ${colors.color3}
 menu-0-1-foreground = ${colors.color0}
-menu-0-2 = " Log Out"
-menu-0-2-exec = i3-msg exit, mode "default"
+menu-0-2 = " Cancel"
 menu-0-2-padding = 3
-menu-0-2-background = ${colors.color2}
-menu-0-2-foreground = ${colors.color0}
-menu-0-3 = " Cancel"
-menu-0-3-padding = 3
-menu-0-3-background = ${colors.color8}
-menu-0-3-foreground = ${colors.color15}
+menu-0-2-background = ${colors.color8}
+menu-0-2-foreground = ${colors.color15}
 label-open = "  "
 label-open-padding-right = 3
 label-close = 
-
-[module/backlight]
-type = internal/xbacklight
-
-output = LVDS1
-enable-scroll = false
-
-format-prefix = 
-format-prefix-padding-right = 1
-format-prefix-foreground = ${colors.color10}
-format = <label>
-
-label = %percentage% %
-
-[module/battery]
-type = internal/battery
-; $ ls -1 /sys/class/power_supply/
-battery = BAT0
-adapter = AC
-full-at = 99
-
-format-charging = <animation-charging> <label-charging>
-format-charging-foreground = ${colors.color2}
-label-charging = Charging %percentage% %
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-foreground = ${colors.color7}
-label-discharging = %percentage% %
-
-format-full = <ramp-capacity> <label-full>
-format-full-foreground = ${colors.color15}
-label-full = Full
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-
-; Framerate in milliseconds
-animation-charging-framerate = 750
