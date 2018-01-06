@@ -1,6 +1,9 @@
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/administration.svg "Reloaded key bindings"
+
+super + shift + Escape
+    polybar -r top
 
 # bspwm hotkeys
 # ==============================================================================
@@ -85,10 +88,12 @@ super + {Left,Down,Up,Right}
 # ==============================================================================
 
 # screenshots
+# NOTE notify-send timeout `-t` is set to 1000 miliseconds
+# NOTE higher values interfere with multiple scrots in quick succession
 Print
-    scrot -u -z '%Y-%m-%d_%H:%M:%S_$wx$h$n.png' -e 'mv $f ~/Desktop'
+    scrot -u -z '%Y-%m-%d_%H:%M:%S_$wx$h$n.png' -e 'mv $f ~/Desktop' && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/ksnapshot.svg "Window view screenshot" "Saved image to Desktop"
 super + Print
-    scrot -z '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Desktop'
+    scrot -z '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Desktop' && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/ksnapshot.svg "Screen view screenshot" "Saved image to Desktop"
 
 # screen brightness
 XF86MonBrightness{Down,Up}
@@ -113,10 +118,14 @@ super + alt + {u,i,o}
 # ------------------------------------------------------------------------------
 
 # mpd
+# alt + {a,s,d}
+    # mpc {toggle,prev,next}
+# XF86Audio{Play,Prev,Next}
+    # mpc {toggle,prev,next}
 alt + {a,s,d}
-    mpc {toggle,prev,next}
+    mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)"}
 XF86Audio{Play,Prev,Next}
-    mpc {toggle,prev,next}
+    mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)"}
 
 # speaker volume
 alt + {z,x,c}
