@@ -55,6 +55,8 @@ set $scratchterm urxvtc -bg '[90]#18161d' -fg '#68b183' -cr '#68b183' -color0 '#
 
 # Bar
 # ------------------------------------------------------------------------------
+
+# Polybar
 bar {
         i3bar_command $HOME/.config/polybar/launch.sh
 }
@@ -175,13 +177,13 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # Move focused window
-bindsym $mod+Mod1+h move left
-bindsym $mod+Mod1+j move down
-bindsym $mod+Mod1+k move up
-bindsym $mod+Mod1+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Toggle tiling / floating state
-bindsym $mod+Mod1+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -221,28 +223,28 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # Move focused container to workspace
-bindsym $mod+Mod1+1 move container to workspace $ws1; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 1"
-bindsym $mod+Mod1+2 move container to workspace $ws2; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 2"
-bindsym $mod+Mod1+3 move container to workspace $ws3; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 3"
-bindsym $mod+Mod1+4 move container to workspace $ws4; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 4"
-bindsym $mod+Mod1+5 move container to workspace $ws5; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 5"
-bindsym $mod+Mod1+6 move container to workspace $ws6; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 6"
-bindsym $mod+Mod1+7 move container to workspace $ws7; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 7"
-bindsym $mod+Mod1+8 move container to workspace $ws8; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 8"
-bindsym $mod+Mod1+9 move container to workspace $ws9; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 9"
-bindsym $mod+Mod1+0 move container to workspace $ws10; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 10"
+bindsym $mod+Shift+1 move container to workspace $ws1; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 1"
+bindsym $mod+Shift+2 move container to workspace $ws2; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 2"
+bindsym $mod+Shift+3 move container to workspace $ws3; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 3"
+bindsym $mod+Shift+4 move container to workspace $ws4; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 4"
+bindsym $mod+Shift+5 move container to workspace $ws5; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 5"
+bindsym $mod+Shift+6 move container to workspace $ws6; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 6"
+bindsym $mod+Shift+7 move container to workspace $ws7; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 7"
+bindsym $mod+Shift+8 move container to workspace $ws8; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 8"
+bindsym $mod+Shift+9 move container to workspace $ws9; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 9"
+bindsym $mod+Shift+0 move container to workspace $ws10; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/places/folder-brown-desktop.svg "Moved window to workspace 10"
 
 # Move focused container to workspace and switch to it
-bindsym Ctrl+$mod+Mod1+1 move container to workspace $ws1, workspace $ws1
-bindsym Ctrl+$mod+Mod1+2 move container to workspace $ws2, workspace $ws2
-bindsym Ctrl+$mod+Mod1+3 move container to workspace $ws3, workspace $ws3
-bindsym Ctrl+$mod+Mod1+4 move container to workspace $ws4, workspace $ws4
-bindsym Ctrl+$mod+Mod1+5 move container to workspace $ws5, workspace $ws5
-bindsym Ctrl+$mod+Mod1+6 move container to workspace $ws6, workspace $ws6
-bindsym Ctrl+$mod+Mod1+7 move container to workspace $ws7, workspace $ws7
-bindsym Ctrl+$mod+Mod1+8 move container to workspace $ws8, workspace $ws8
-bindsym Ctrl+$mod+Mod1+9 move container to workspace $ws9, workspace $ws9
-bindsym Ctrl+$mod+Mod1+0 move container to workspace $ws10, workspace $ws10
+bindsym Ctrl+$mod+Shift+1 move container to workspace $ws1, workspace $ws1
+bindsym Ctrl+$mod+Shift+2 move container to workspace $ws2, workspace $ws2
+bindsym Ctrl+$mod+Shift+3 move container to workspace $ws3, workspace $ws3
+bindsym Ctrl+$mod+Shift+4 move container to workspace $ws4, workspace $ws4
+bindsym Ctrl+$mod+Shift+5 move container to workspace $ws5, workspace $ws5
+bindsym Ctrl+$mod+Shift+6 move container to workspace $ws6, workspace $ws6
+bindsym Ctrl+$mod+Shift+7 move container to workspace $ws7, workspace $ws7
+bindsym Ctrl+$mod+Shift+8 move container to workspace $ws8, workspace $ws8
+bindsym Ctrl+$mod+Shift+9 move container to workspace $ws9, workspace $ws9
+bindsym Ctrl+$mod+Shift+0 move container to workspace $ws10, workspace $ws10
 
 # Dashboard
 bindsym $mod+Delete workspace 0; exec $term -e ranger; exec $term -e htop; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/administration.svg "Switched to dashboard"
@@ -268,8 +270,8 @@ bindsym Ctrl+Mod1+End exec --no-startup-id systemctl poweroff -i, mode "default"
 # NOTE thus Mod1+<Number> is scalable (whereas $mod + first letter is tricky)
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec --no-startup-id $scratchterm -name dropdown; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/urxvt.svg "Dropdown terminal" "Launch with super+grave"
-bindsym Mod1+1 exec $fm; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/system-file-manager.svg "File manager" "Launching application"
-bindsym Mod1+2 exec $browser; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/qutebrowser.svg "Internet browser" "Launching application"
+bindsym Mod1+1 exec $browser; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/qutebrowser.svg "Internet browser" "Launching application"
+bindsym Mod1+2 exec $fm; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/system-file-manager.svg "File manager" "Launching application"
 bindsym Mod1+3 exec $rss; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/RSS_feeds.svg "Feed reader" "Launching application"
 bindsym Mod1+4 exec $mail; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/mail-client.svg "Mail client" "Launching application"
 bindsym Mod1+5 exec $music; exec notify-send -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/musique.svg "Music player" "Launching application"
@@ -365,18 +367,21 @@ bindsym Mod1+d exec $next; exec $songnotify
 # Wallpaper
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg 
 
-# GNOME keyring
-exec --no-startup-id "eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
+# NOTE moved to ~/.xprofile
+# # GNOME keyring
+# exec --no-startup-id "eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
 
-# Hide the mouse
-exec --no-startup-id unclutter
+# NOTE moved to ~/.xprofile
+# # Hide the mouse
+# exec --no-startup-id unclutter
 
 # Compositor for transparency and no screen tearing
 exec --no-startup-id compton -b
 
-# Start the Music Player Daemon
-# NOTE Do not use this together with the systemd autostart method
-exec --no-startup-id mpd
+# NOTE moved to ~/.xprofile
+# # Start the Music Player Daemon
+# # NOTE Do not use this together with the systemd autostart method
+# exec --no-startup-id mpd
 
 # NOTE moved them to ~/.xprofile
 # # Keyboard settings
