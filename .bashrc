@@ -35,6 +35,7 @@ export BROWSER=/usr/bin/xdg-open
 
 # General package management
 alias pSyu='sudo pacman -Syu' # system upgrade
+alias pSyyu='sudo pacman -Syyu' # NOTE only necessary when updating mirrors
 alias ySyu='yay -Syu' # upgrade aur
 alias pD='sudo pacman -D' # control package install state with `--asdeps` or `--asexplicit`
 
