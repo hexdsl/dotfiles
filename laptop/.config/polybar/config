@@ -226,7 +226,7 @@ label = %date%
 [module/powermenu]
 type = custom/menu
 format = <label-toggle> <menu>
-format-foreground = ${colors.color3}
+format-foreground = ${colors.color11}
 format-padding = 0
 format-margin = 0
 menu-0-0 = " Power Off"
