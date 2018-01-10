@@ -7,9 +7,9 @@
 
 # Custom prompt
 if [ -n "$SSH_CONNECTION" ]; then
-export PS1="\n\[[\e[32m\]\u\[\e[m\]] [\[\e[36m\]\h\[\e[m\]] [\[\e[34m\]\w\[\e[m\]]\n\[\e[35m\]$ >\[\e[m\] "
+    export PS1="\n[\[\e[32m\]\u\[\e[m\]] [\[\e[36m\]\h\[\e[m\]] [\[\e[34m\]\w\[\e[m\]]\n\[\e[35m\]$ >\[\e[m\] "
 else
-export PS1="\n[\[\e[34m\]\w\[\e[m\]] \[\e[35m\]$ >\[\e[m\] "
+    export PS1="\n[\[\e[34m\]\w\[\e[m\]] \[\e[35m\]$ >\[\e[m\] "
 fi
 
 # Autocomplete with sudo
@@ -113,8 +113,8 @@ alias tm='task modify'
 alias tx='task delete'
 
 # YouTube dl
-alias mp3='youtube-dl -x --audio-format mp3 -o "~/Music/%(title)s.%(ext)s"'
-alias ytmp3='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
+# alias ytmp3='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
+alias ytdl='youtube-dl --no-playlist --no-part --write-description --newline --prefer-free-formats -o "~/Videos/Youtube/%(title)s.%(ext)s" '
 
 # Certbot
 alias certm='sudo certbot certonly -a manual -d'
