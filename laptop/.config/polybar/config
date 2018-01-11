@@ -125,7 +125,7 @@ icon-pause =
 icon-play = (Paused)
 
 label-song = %artist% - %title% 
-label-song-maxlen = 100
+label-song-maxlen = 60
 label-song-ellipsis = true
 
 [module/archpkg]
