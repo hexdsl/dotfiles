@@ -2,12 +2,14 @@
 
 ![bspwm sample](https://raw.githubusercontent.com/protesilaos/dotfiles/master/bspwm-sample.png)
 
-Managed with GNU Stow.
+Managed with GNU Stow. Here is a [short blog post](http://protesilaos.com/codelog/gnu-stow-dotfiles/) on how I use that program.
 
-To copy these configs, either do so manually, or do the following:
+## Getting started
+
+To copy these configs, either do so manually, or prepare a terminal for the following:
 
 ```sh
-# Shallow clone this repo
+# Shallow clone this repo (only latest commit)
 
 ## With ssh
 git@github.com:protesilaos/dotfiles.git ~/dotfiles-prot --depth 1
@@ -33,6 +35,14 @@ stow xorg
 stow system-general
 ```
 
+To remove the symlinks, use the same commands with the `--delete` flag, such as:
+
+```sh
+stow --delete bspwm
+```
+
+For more options, run `man stow`.
+
 ## Setup overview (Arch Linux)
 
 Package names with a short description.
@@ -44,10 +54,11 @@ Package names with a short description.
 - Text editor `vim`. The decent text editor that is not included with Emacs.
 - File Manager `ranger`. Console application, extensible, and straightforward.
 - Mail client `neomutt`. Robust, reliable, email client for communicating via the console. Neomutt aims to revive or otherwise improve `mutt`.
+- Console browser `w3m`. Used as a backend for displaying images in the terminal (e.g. with `ranger`), or to view html files in `neomutt`.
 - Feed reader `newsboat`. Simple RSS reader with podcasting capabilities.
 - Music server `mpd`. Music Player Daemon works in the background, enabling all sorts of clients to interface with it.
-- Music client `ncmpcpp`. Console based MPD interface.
-- Program launcher `dmenu`.
+- Music client `ncmpcpp`. Console based MPD interface (bonus: use `cantata` if you need a GUI).
+- Program launcher `dmenu`. Dead simple way to run items in your `$PATH`
 - Password manager `pass` called with `passmenu`. Essential to taking control of all your passwords, without losing out on ease-of-use.
 - Notifications `dunst`. Configurable. Gets the job done.
 - Fonts `ttf-dejavu`.
