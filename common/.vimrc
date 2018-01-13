@@ -6,14 +6,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
-  Plug 'dpelle/vim-LanguageTool'
+  " Plug 'dpelle/vim-LanguageTool'
   Plug 'scrooloose/nerdcommenter'
   Plug 'ervandew/supertab'
   Plug 'protesilaos/prot16-vim'
   Plug 'protesilaos/tempus-themes-vim'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'sheerun/vim-polyglot'
-  Plug 'qpkorr/vim-renamer'
+  " Plug 'qpkorr/vim-renamer'
   Plug 'junegunn/goyo.vim'
 
 call plug#end()
