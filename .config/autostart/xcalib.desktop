@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/usr/bin/xcalib -d :0 /usr/share/color/icc/colord/Gamma5500K.icc
-Hidden=false
-X-MATE-Autostart-enabled=true
-Name[en_GB]=Set colour profile
-Name=Set colour profile
-Comment[en_GB]=Calibrate LG monitor
-Comment=Calibrate LG monitor

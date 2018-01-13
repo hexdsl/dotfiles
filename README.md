@@ -1,14 +1,45 @@
 # Configurations for GNU/Linux
 
+'Fake busy'  
+![bspwm sample](https://raw.githubusercontent.com/protesilaos/dotfiles/master/bspwm-sample.png)
+
+Managed with GNU Stow. To copy these configs, either do so manually, or do the following:
+
+```sh
+# Shallow clone this repo
+
+## With ssh
+git@github.com:protesilaos/dotfiles.git ~/dotfiles-prot --depth 1
+
+## With https
+https://github.com/protesilaos/dotfiles.git ~/dotfiles-prot --depth 1
+
+# enter the new directory
+cd dotfiles-prot
+
+# use stow to create symlinks to the configs you need
+# NOTE linking will fail if files/directories already exist
+
+## examples:
+
+### Creates symlinks for the base bspwm setup
+stow bspwm
+
+### Create symlinks to all xorg files (urxvt, Xresources, etc)
+stow xorg
+
+### Sets up the general configurations for the environment
+stow system-general
+```
+
 ## Setup overview (Arch Linux)
 
 Package names with a short description.
 
-- Window manager `i3-gaps`. For a keyboard-centric, highly-customisable, tilling window manager.
+- Window manager `bspwm`. For a keyboard-centric, highly-customisable, tilling window manager.
 - Bar `polybar` (AUR). Flexible, easy-to-use, system bar with easy configs for its various modules.
 - Compositor `compton`. For transparency, no screen tearing, and shadows under windows.
-- Terminal emulator `urxvt`. Customisable, lightweight, effective terminal. NOTE, I use it in a server-client mode. Refer to the i3 config, as well as `.xinitrc` and `.xprofile`.
-- Drop down terminal is yet another `urxvt` instance. Search the i3 config file for `$scratchterm` as well as `dropdown` to see how it is implemented.
+- Terminal emulator `rxvt-unicode`. Customisable, lightweight, effective terminal.
 - Text editor `vim`. The decent text editor that is not included with Emacs.
 - File Manager `ranger`. Console application, extensible, and straightforward.
 - Mail client `neomutt`. Robust, reliable, email client for communicating via the console. Neomutt aims to revive or otherwise improve `mutt`.
@@ -18,15 +49,9 @@ Package names with a short description.
 - Music client `ncmpcpp`. Console based MPD interface.
 - Music client GUI `cantata-git` (AUR). Qt app to interface with MPD. Fully featured. I use the git version because it does not depend on VLC.
 - Program launcher `dmenu`.
+- Password manager `pass` called with `passmenu`. Essential to taking control of all your passwords, without losing out on ease-of-use.
 - Notifications `dunst`. Configurable. Gets the job done.
 - Fonts `ttf-dejavu`.
-- GTK and Qt theme is *Adwaita Dark*, but setting it up requires a few extra packages: `adwaita-qt4` (AUR), `adwaita-qt5` (AUR), `qgnomeplatform-git` (AUR), `qt5ct` (refer to the Arch Wiki for [a unified look for GTK and QT](https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications)).
-- GTK and Qt icon themes `papirus-icon-theme` and `breeze-icons`. Both icon themes seem to work across GTK and Qt. I just keep Papirus for GTK and Breeze for Qt as those seem to be their respective targets.
-
-## Sample of my current setup
-
-'Fake busy'  
-![i3 sample](https://raw.githubusercontent.com/protesilaos/dotfiles/master/Pictures/i3-sample.png)
 
 ## License
 
@@ -34,8 +59,8 @@ Unless otherwise noted, all code herein is distributed under the terms of the GN
 
 ## Credits
 
-The wallpaper image file is courtesy of [Mohamed Nohasi on Unsplash](https://unsplash.com/photos/odxB5oIG_iA). Used under the terms of the Unsplash license.
+The wallpaper image file is taken from [pexels.com](https://www.pexels.com/) under the terms of the CC0 license.
 
-The lock screen background is courtesy of [Jeremy Bishop on Unsplash](https://unsplash.com/photos/_EBv1BKtbvs). Used under the terms of the Unsplash license.
+The lock screen background is taken from [unsplash.com](https://unsplash.com/) under the terms of the Unsplash license.
 
 All code herein is a combination of my own work, adaptations from others' contributions, man pages, and wiki articles.

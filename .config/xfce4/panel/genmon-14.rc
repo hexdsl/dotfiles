@@ -1,6 +1,0 @@
-Command=sh -c "bash ~/.local/bin/genmon-package-updates.sh"
-UseLabel=0
-Text=(genmon)
-UpdatePeriod=3600000
-Font=DejaVu Sans Semi-Condensed 12
-

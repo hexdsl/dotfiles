@@ -1,0 +1,163 @@
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/administration.svg "Reloaded key bindings"
+
+super + shift + Escape
+    polybar -r top
+
+# bspwm hotkeys
+# ==============================================================================
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# state/flags
+# ------------------------------------------------------------------------------
+
+# set the window state
+super + {t,space,f}
+ 	bspc node -t {tiled,floating,fullscreen}
+
+# set the node flags
+super + shift + {x,y,z}
+	bspc node -g {locked,sticky,private}
+
+# focus/swap
+# ------------------------------------------------------------------------------
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,commaeriod}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# preselect
+# ------------------------------------------------------------------------------
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# move/resize
+# ------------------------------------------------------------------------------
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + ctrl + alt + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# custom key bindings
+# ==============================================================================
+
+# screenshots
+# NOTE notify-send timeout `-t` is set to 1000 miliseconds
+# NOTE higher values interfere with multiple scrots in quick succession
+Print
+    scrot -u -z '%Y-%m-%d_%H:%M:%S_$wx$h$n.png' -e 'mv $f ~/Desktop' && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/ksnapshot.svg "Window view screenshot" "Saved image to Desktop"
+super + Print
+    scrot -z '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Desktop' && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/ksnapshot.svg "Screen view screenshot" "Saved image to Desktop"
+
+# screen brightness
+XF86MonBrightness{Down,Up}
+    xbacklight {-dec 15,-inc 15} 
+
+# session
+ctrl + alt + o
+	bspc quit
+ctrl + alt {r,End}
+   systemctl {reboot,poweroff} 
+ctrl + alt + Delete
+    i3lock -i ~/.lockscreen.png
+
+# functionality
+# ------------------------------------------------------------------------------
+# TODO add dropdown terminal 
+# TODO session recording
+
+# switch between gap presets
+super + alt + {y,u,i,o}
+    bspc config window_gap {0,5,10,20}
+
+# media controls
+# ------------------------------------------------------------------------------
+
+# mpd
+# alt + {a,s,d}
+    # mpc {toggle,prev,next}
+# XF86Audio{Play,Prev,Next}
+    # mpc {toggle,prev,next}
+alt + {a,s,d}
+    mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)"}
+XF86Audio{Play,Prev,Next,Stop}
+    mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/32x32/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",stop}
+
+# speaker volume
+alt + {z,x,c}
+    amixer set Master {toggle,5%-,5%+}
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+    amixer set Master {toggle,5%-,5%+}
+
+# microphone volume
+XF86AudioMicMute
+    amixer set Capture toggle
+super + XF86Audio{Mute,LowerVolume,RaiseVolume}
+    amixer set Capture {toggle,5%-,5%+}
+
+# launchers
+# ------------------------------------------------------------------------------
+
+# terminal emulator
+super + Return
+	urxvtc
+
+# program launcher
+super + d
+    dmenu_run -l 10 -p 'Execute binary' -m 0 -fn 'DejaVu Sans Mono-12' -nb '#141a19' -nf '#928f90' -sb '#3aa43a' -sf '#141a19'
+
+# passmenu
+super + shift + d
+    passmenu -f -i -l 10 -p 'Copy password' -m 0 -fn 'DejaVu Sans Mono-12' -nb '#141a19' -nf '#928f90' -sb '#b38a00' -sf '#141a19'
+
+# common programs
+alt + 1
+    waterfox
+alt + {2,3,4,5,6,7}
+    urxvtc -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
