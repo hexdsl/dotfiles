@@ -1,9 +1,10 @@
 # Configurations for GNU/Linux
 
-'Fake busy'  
 ![bspwm sample](https://raw.githubusercontent.com/protesilaos/dotfiles/master/bspwm-sample.png)
 
-Managed with GNU Stow. To copy these configs, either do so manually, or do the following:
+Managed with GNU Stow.
+
+To copy these configs, either do so manually, or do the following:
 
 ```sh
 # Shallow clone this repo
