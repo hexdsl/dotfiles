@@ -1,0 +1,29 @@
+# Files
+data.location=~/.config/task
+
+# General
+editor=vim
+list.all.projects=yes
+fontunderline=off
+
+# Time
+due=3
+dateformat=YMD
+dateformat.report=yMD (a)
+weekstart=Monday
+
+# Aliases
+alias.ad=add
+alias.pro=project
+alias.du=due
+alias.mo=modify
+alias.rm=delete
+alias.ta=tag
+
+# Theme
+include ~/.config/task/themes/prot16-dark.theme
+
+# Colour coding
+color.tag.work=color15 on color5
+color.tag.important=color15 on color3
+color.project.website=color13 on color8
