@@ -1,0 +1,59 @@
+# vim: set ts=2 sw=2 tw=0 :
+# ncmpcpp
+egrep -v '^#' .config/ncmpcpp/config
+mpd_music_dir = "~/Music/"
+
+# General
+user_interface = "classic"
+message_delay_time = 2
+autocenter_mode = "yes"
+centered_cursor = "yes"
+cyclic_scrolling = "yes"
+default_find_mode = "wrapped"
+jump_to_now_playing_song_at_start = "yes"
+
+# Visualiser
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = 30 
+visualizer_in_stereo = "no"
+visualizer_type = "spectrum"
+visualizer_look = "◆▋"
+visualizer_color = 6, 14, 13, 15, 11, 7
+
+# Playlist
+now_playing_prefix = "$b > "
+now_playing_suffix = "$/b"
+playlist_display_mode = "classic" (classic/columns)
+playlist_disable_highlight_delay = 2
+playlist_separate_albums = "no"
+
+# Bars
+# progressbar_look = "=>"
+# progressbar_look = "—|—"
+# progressbar_look = "─┅─"
+# progressbar_look = "─╼ "
+# progressbar_look = "▪▪▫"
+progressbar_look = "┅┅┄"
+titles_visibility = "no"
+header_visibility = "no"
+statusbar_visibility = "no"
+
+# Colors
+discard_colors_if_item_is_selected = "yes"
+state_line_color = "11"
+state_flags_color = "3"
+main_window_color = "15"
+current_item_prefix = "$(3)$r"
+current_item_suffix = "$/r$(end)"
+color1 = "15"
+color2 = "12"
+statusbar_color = "6"
+progressbar_color = "6"
+progressbar_elapsed_color = "14"
+
+# Others
+search_engine_display_mode = "columns" (classic/columns)
+startup_screen = "playlist"
+# startup_slave_screen = "visualizer"
+# startup_slave_screen_focus = no
