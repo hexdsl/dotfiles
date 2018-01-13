@@ -30,9 +30,6 @@ stow bspwm
 
 ### Create symlinks to all xorg files (urxvt, Xresources, etc)
 stow xorg
-
-### Sets up the general configurations for the environment
-stow system-general
 ```
 
 To remove the symlinks, use the same commands with the `--delete` flag, such as:
