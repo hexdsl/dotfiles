@@ -13,22 +13,22 @@ Xft.lcdfilter: lcddefault
 
 ! NOTE XXX With the following `include` directive colours are defined here
 ! Xcolors are defined as `*.color[n]`, which exposes them to any program
-! The current setup uses these colours for URxvt, i3, and polybar
+! The current setup uses these colours for URxvt and polybar
 ! Refer to their respective configs
-#include </home/prot/.Xcolors/tempus_future.Xcolors>
+#include </home/prot/.Xcolors/tempus_warp.Xcolors>
 
 ! Preferences
 URxvt.termName: rxvt-unicode
 URxvt.cursorBlink: true
-URxvt.cursorUnderline: false
+URxvt.cursorUnderline: true
 URxvt.saveLines: 5000
 URxvt.intensityStyles: false
 URxvt.depth: 32
 URxvt.allow_bold: true
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
-URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=16:bold
-URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=16:italic
-URxvt.bolditalicFont: xft:DejaVu Sans Mono:pixelsize=16:bold:italic
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=14
+URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=14:bold
+URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=14:italic
+URxvt.bolditalicFont: xft:DejaVu Sans Mono:pixelsize=14:bold:italic
 URxvt.letterSpace: 0
 URxvt.lineSpace: 3
 URxvt.scrollBar: false
@@ -70,4 +70,3 @@ URxvt.keysym.C-Down:   perl:font-size:decrease
 ! URxvt.keysym.C-S-Down: perl:font-size:decglobal
 URxvt.keysym.C-equal:  perl:font-size:reset
 URxvt.keysym.C-slash:  perl:font-size:show
-
