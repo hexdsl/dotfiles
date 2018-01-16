@@ -79,6 +79,19 @@ alias paccount='sudo pacman -Qq | wc -l'
 # Helper shortcuts
 # ------------------------------------------------------------------------------
 
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# ls
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+
+# rm
+alias rm='rm -I'
+
 # Editor
 alias v='vim'
 
@@ -158,8 +171,9 @@ alias dmesg='dmesg --color'
 # Functions
 # ==============================================================================
 
-# Colour man pages
-man() {
+# Colourise man pages
+function man ()
+{
 	env \
 		LESS_TERMCAP_mb=$(printf "\e[1;32m") \
 		LESS_TERMCAP_md=$(printf "\e[1;32m") \
@@ -172,12 +186,36 @@ man() {
 }
 
 # Make directory and enter it
-function mkcd {
-  if [ ! -n "$1" ]; then
-    echo "Specify a name for this directory"
-  elif [ -d $1 ]; then
-    echo "\`$1' already exists"
-  else
-    mkdir $1 && cd $1
-  fi
+function mkcd ()
+{
+    if [ ! -n "$1" ]; then
+        echo "Specify a name for this directory"
+    elif [ -d $1 ]; then
+        echo "\`$1' already exists"
+    else
+        mkdir $1 && cd $1
+    fi
+}
+
+# Enter directory and list contents
+function cd ()
+{
+    if [ -n "$1" ]; then
+        builtin cd "$@" && ls -A --color=auto --group-directories-first 
+    else
+        builtin cd ~ && ls -A --color=auto --group-directories-first
+    fi
+}
+
+# Display current IP if connected to the internet
+function mypubip ()
+{
+    lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | awk '{ print $4 }' | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g'
+}
+
+
+# Back up a file. Usage "backfile filename.txt"
+function backupthis ()
+{
+    cp $1 ${1}-`date +%Y%m%d%H%M`.backup;
 }
