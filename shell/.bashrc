@@ -3,7 +3,7 @@
 #
 
 # General
-# ====================================================================
+# ==============================================================================
 
 # Custom prompt
 if [ -n "$SSH_CONNECTION" ]; then
@@ -28,10 +28,10 @@ export EDITOR="$VISUAL"
 export BROWSER=/usr/bin/xdg-open
 
 # Aliases
-# ====================================================================
+# ==============================================================================
 
 # Admin (Arch Linux)
-# ------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # General package management
 alias pSyu='sudo pacman -Syu' # system upgrade
@@ -77,7 +77,7 @@ alias pQqgback='sudo pacman -Qqg > packages-groups.txt'
 alias paccount='sudo pacman -Qq | wc -l'
 
 # Helper shortcuts
-# ------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # Editor
 alias v='vim'
@@ -85,11 +85,9 @@ alias v='vim'
 # Common configs
 alias bbb='vim ~/.bashrc'
 alias ddd='vim ~/.config/dunst/dunstrc'
-alias iii='vim ~/.config/i3/config'
 alias mmm='vim ~/.muttrc'
 alias nnn='vim ~/.config/newsboat/urls'
 alias ppp='vim ~/.config/polybar/config'
-alias qqq='vim ~/.config/qutebrowser/config.py'
 alias rrr='vim ~/.config/ranger/rc.conf'
 alias sss='vim ~/.mutt/mails/signature'
 alias ttt='vim ~/.taskrc'
@@ -99,7 +97,6 @@ alias xxx='vim ~/.Xresources'
 # Reload config files
 alias rbbb='source ~/.bashrc'
 alias rddd='killall dunst && eval $(dbus-launch)'
-alias rppp='. $HOME/.config/polybar/launch.sh'
 alias rxxx='xrdb -merge ~/.Xresources'
 
 # Curl
@@ -112,19 +109,15 @@ alias td='task done'
 alias tm='task modify'
 alias tx='task delete'
 
-# YouTube dl
-# alias ytmp3='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
-alias ytdl='youtube-dl --no-playlist --no-part --write-description --newline --prefer-free-formats -o "~/Videos/Youtube/%(title)s.%(ext)s" '
+# # YouTube dl
+# alias ytaud='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
+# alias ytvid='youtube-dl --no-playlist --no-part --write-description --newline --prefer-free-formats -o "~/Videos/Youtube/%(title)s.%(ext)s" '
 
 # Certbot
 alias certm='sudo certbot certonly -a manual -d'
 
-# Misc
-# alias musvis='urxvtc -bg [50]#000 -e ncmpcpp -s visualizer'
-alias musvis="urxvtc -bg '[45]#18161d' -fg '[45]#68b183' -cr '[45]#68b183' -color0 '[45]#18161d' -color1 '[45]#ff7780' -color2 '[45]#68b183' -color3 '[45]#bda014' -color4 '[45]#54a5ff' -color5 '[45]#da89b2' -color6 '[45]#79a8c3' -color7 '[45]#bd9b87' -color8 '[45]#001b1a' -color9 '[45]#ef873d' -color10 '[45]#08b885' -color11 '[45]#d39710' -color12 '[45]#a294fe' -color13 '[45]#ec7aca' -color14 '[45]#4ab0b9' -color15 '[45]#a4a0ac' -e ncmpcpp -s visualizer"
-
 # Git
-# ------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # Common commands
 alias gadd='git add'
@@ -140,11 +133,11 @@ alias gbd='git branch -d'
 alias gpd='git push origin --delete'
 
 # Jekyll
-# ------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # Bundler
-alias buibuu='bundle install && bundle update'
-alias buu='bundle update'
+alias bibu='bundle install --path vendor/bundle && bundle update'
+alias bu='bundle update'
 
 # Jekyll serve
 alias bejs='bundle exec jekyll serve'
@@ -154,11 +147,7 @@ alias bejsdev='bundle exec jekyll serve --config _config.yml,_config-dev.yml'
 alias npmiu='npm install && npm update'
 
 # Miscellaneous
-# ------------------------------------------------
-
-# alias composekey="setxkbmap -option compose:menu"
-# alias greeklayout="setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'"
-# alias scratchterm="urxvtc -bg '[90]#000000' -fg '#339922' -cr '#339922' -color1 '#bb0000' -color2 '#339922' -color3 '#ccbb00' -color4 '#3355ff' -color5 '#cc55aa' -color6 '#3399bb' -color7 '#cccccc' -color8 '#2a2a2a' -color9 '#dd6600' -color10 '#33bb44' -color11 '#eeee00' -color12 '#5566ff' -color13 '#dd55bb' -color14 '#55bbdd' -color15 '#ffffff'"
+# ------------------------------------------------------------------------------
 
 # Enable colour output
 alias ls='ls --color=auto'
@@ -167,7 +156,7 @@ alias grep='grep --color=auto'
 alias dmesg='dmesg --color'
 
 # Functions
-# ================================================
+# ==============================================================================
 
 # Colour man pages
 man() {
@@ -191,9 +180,4 @@ function mkcd {
   else
     mkdir $1 && cd $1
   fi
-}
-
-# List items after entering a directory
-function cd() {
-    builtin cd "$*" && ls -a
 }
