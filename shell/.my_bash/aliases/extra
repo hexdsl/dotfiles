@@ -9,7 +9,7 @@ alias tm='task modify'
 alias tx='task delete'
 
 # YouTube dl
-alias ytaud='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
+alias ytaud='youtube-dl -ci --extract-audio --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
 alias ytvid='youtube-dl --no-playlist --no-part --write-description --newline --prefer-free-formats -o "~/Videos/Youtube/%(title)s.%(ext)s" '
 
 # Certbot

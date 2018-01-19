@@ -32,7 +32,19 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Common configs
+# shortcuts to bash aliases
+alias mybaa='vim ~/.my_bash/aliases/apt'
+alias mybac='vim ~/.my_bash/aliases/common'
+alias mybaf='vim ~/.my_bash/aliases/flatpak'
+alias mybag='vim ~/.my_bash/aliases/git'
+alias mybap='vim ~/.my_bash/aliases/pacman'
+alias mybaw='vim ~/.my_bash/aliases/web'
+alias mybax='vim ~/.my_bash/aliases/extra'
+
+# shortcuts to bash functions
+alias mybfc='vim ~/.my_bash/functions/common'
+
+# shortcuts to common configs
 alias bbb='vim ~/.bashrc'
 alias ddd='vim ~/.config/dunst/dunstrc'
 alias mmm='vim ~/.muttrc'
@@ -44,7 +56,7 @@ alias ttt='vim ~/.taskrc'
 alias vvv='vim ~/.vimrc'
 alias xxx='vim ~/.Xresources'
 
-# Reload config files
+# reload config files
 alias rbbb='source ~/.bashrc'
 alias rddd='killall dunst && eval $(dbus-launch)'
 alias rxxx='xrdb -merge ~/.Xresources'
