@@ -1,8 +1,10 @@
 # vi: ft=sh
 
 # editor
-alias v='vim'
-alias vi='vim'
+if [ -x /usr/bin/vim ]; then
+    alias v='vim'
+    alias vi='vim'
+fi
 
 # cd
 alias ..='cd ..'

@@ -1,12 +1,14 @@
 # vi: ft=sh
 
-# Bundler
-alias bibu='bundle install --path vendor/bundle && bundle update'
-alias bu='bundle update'
-
-# Jekyll serve
-alias bejs='bundle exec jekyll serve'
-alias bejsdev='bundle exec jekyll serve --config _config.yml,_config-dev.yml'
+# bundle (jekyll)
+if [ -x /usr/bin/bundler ]; then
+    alias bibu='bundle install --path vendor/bundle && bundle update'
+    alias bu='bundle update'
+    alias bejs='bundle exec jekyll serve'
+    alias bejsdev='bundle exec jekyll serve --config _config.yml,_config-dev.yml'
+fi
 
 # npm
-alias npmiu='npm install && npm update'
+if [ -x /usr/bin/npm ]; then
+    alias npmiu='npm install && npm update'
+fi

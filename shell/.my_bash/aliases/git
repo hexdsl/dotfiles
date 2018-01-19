@@ -1,14 +1,16 @@
 # vi: ft=sh
 
-# Common commands
-alias gadd='git add'
-alias gall='git add -A'
-alias gcom='git commit -m'
-alias gpm='git push -u origin master'
-alias gph='git push -u origin HEAD'
+if [ -x /usr/bin/git ]; then
+    # common commands
+    alias gadd='git add'
+    alias gall='git add -A'
+    alias gcom='git commit -m'
+    alias gpm='git push -u origin master'
+    alias gph='git push -u origin HEAD'
 
-# Branching
-alias gch='git checkout'
-alias gchb='git checkout -b'
-alias gbd='git branch -d'
-alias gpd='git push origin --delete'
+    # branching
+    alias gch='git checkout'
+    alias gchb='git checkout -b'
+    alias gbd='git branch -d'
+    alias gpd='git push origin --delete'
+fi

@@ -1,0 +1,8 @@
+# vi: ft=sh
+
+if [ -x /usr/bin/yay ]; then
+    alias ySyu='yay -Syu' # upgrade aur
+    alias yS='yay -S' # sync download AUR
+    alias ySs='yay -Ss' # search aur
+    alias ySi='yay -Si' # see remote package details
+fi

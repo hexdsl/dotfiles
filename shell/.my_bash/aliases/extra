@@ -1,15 +1,21 @@
 # vi: ft=sh
 
 # task (taskwarrior)
-alias tl='task list'
-alias ta='own_script_todo add' # call my own script for easier syntax 
-alias td='task done'
-alias tm='task modify'
-alias tx='task delete'
+if [ -x /usr/bin/task ]; then
+    alias tl='task list'
+    alias ta='own_script_todo add' # call my own script for easier syntax 
+    alias td='task done'
+    alias tm='task modify'
+    alias tx='task delete'
+fi
 
-# YouTube dl
-alias ytaud='youtube-dl -ci --extract-audio --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
-alias ytvid='youtube-dl --no-playlist --no-part --write-description --newline --prefer-free-formats -o "~/Videos/Youtube/%(title)s.%(ext)s" '
+# youtube-dl
+if [ -x /usr/bin/youtube-dl ]; then
+    alias ytaud='youtube-dl -ci --extract-audio --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
+    alias ytvid='youtube-dl --no-playlist --no-part --write-description --newline --prefer-free-formats -o "~/Videos/Youtube/%(title)s.%(ext)s" '
+fi
 
 # Certbot
-alias certm='sudo certbot certonly -a manual -d'
+if [ -x /usr/bin/certbot ]; then
+    alias certm='sudo certbot certonly -a manual -d'
+fi

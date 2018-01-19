@@ -1,14 +1,16 @@
 # vi: ft=sh
 
-# Compatibility with Pacman
+# check compatibility with pacman
 # https://wiki.archlinux.org/index.php/Pacman/Rosetta
-alias auu="sudo apt update && sudo apt upgrade"
-alias aufu="sudo apt update && sudo apt full-upgrade"
-alias ai="sudo apt install"
-alias ar="sudo apt remove"
-alias as="sudo apt search"
-alias ash="sudo apt show"
-alias aac="sudo apt autoclean"
-alias aar="sudo apt autoremove"
-alias ama="sudo apt-mark auto"
-alias amm="sudo apt-mark manual"
+if [ -x /usr/bin/apt ]; then
+    alias auu="sudo apt update && sudo apt upgrade"
+    alias aufu="sudo apt update && sudo apt full-upgrade"
+    alias ai="sudo apt install"
+    alias ar="sudo apt remove"
+    alias as="sudo apt search"
+    alias ash="sudo apt show"
+    alias aac="sudo apt autoclean"
+    alias aar="sudo apt autoremove"
+    alias ama="sudo apt-mark auto"
+    alias amm="sudo apt-mark manual"
+fi

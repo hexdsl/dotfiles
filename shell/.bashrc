@@ -24,20 +24,15 @@ else
     export PS1="\n[\[\e[34m\]\w\[\e[m\]] \[\e[35m\]$ >\[\e[m\] "
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+# enable tab completion 
+# paths are from Arch Linux
+if [ -f /usr/share/bash-completion/completions ]; then
+    . /usr/share/bash-completion/completions
 fi
 
-# task (taskwarrior) tab completion
-if [ -f ~/.my_bash/completion/task.sh ]; then
-    . ~/.my_bash/completion/task.sh
+# sudo tab completion
+if [ "$PS1" ]; then
+    complete -cf sudo
 fi
 
 # If not running interactively, don't do anything
@@ -81,6 +76,11 @@ shopt -s checkwinsize
 # Arch Linux
 if [ -f ~/.my_bash/aliases/pacman ]; then
     . ~/.my_bash/aliases/pacman
+fi
+
+# Arch Linux (Arch User Repository)
+if [ -f ~/.my_bash/aliases/aur ]; then
+    . ~/.my_bash/aliases/aur
 fi
 
 # Debian
