@@ -1,29 +1,33 @@
-# Files
-data.location=~/.config/task
+# NOTE see local bin for mytd script
+# instead of working with `task` aliases, use a simple script to customise
 
 # General
-editor=vim
+data.location=~/.config/task
+detection=on
+defaultwidth=80
+defaultheight=0
+hyphenate=on
+indent.annotation=4
+abbreviation.minimum=2
+nag="There are tasks with a set date"
 list.all.projects=yes
+complete.all.tags=yes
+list.all.tags=yes
+undo.style=diff
+
+# interface
+color=on
 fontunderline=off
 
 # Time
 due=3
 dateformat=YMD
-dateformat.report=yMD (a)
+# dateformat.report=yMD (a)
 weekstart=Monday
-
-# Aliases
-alias.ad=add
-alias.pro=project
-alias.du=due
-alias.mo=modify
-alias.rm=delete
-alias.ta=tag
 
 # Theme
 include ~/.config/task/themes/prot16-dark.theme
+# include $HOME/.config/task/themes/generic-dark.theme
 
 # Colour coding
-color.tag.work=color15 on color5
-color.tag.important=color15 on color3
-color.project.website=color13 on color8
+color.tag.important=color0 on color3

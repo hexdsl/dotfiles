@@ -1,9 +1,8 @@
 # vi: ft=sh
 
-# TODO review task workflow
-# Tasks (taskwarrior)
+# task (taskwarrior)
 alias tl='task list'
-alias ta='task add'
+alias ta='own_script_todo add' # call my own script for easier syntax 
 alias td='task done'
 alias tm='task modify'
 alias tx='task delete'
