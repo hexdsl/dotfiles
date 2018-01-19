@@ -44,5 +44,14 @@ application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-ca
 
 [Added Associations]
 x-scheme-handler/about=userapp-Waterfox-YIOJCZ.desktop;
-x-scheme-handler/http=userapp-Waterfox-YIOJCZ.desktop;
-x-scheme-handler/https=userapp-Waterfox-YIOJCZ.desktop;
+x-scheme-handler/http=userapp-Waterfox-YIOJCZ.desktop;firefox.desktop;
+x-scheme-handler/https=userapp-Waterfox-YIOJCZ.desktop;firefox.desktop;
+x-scheme-handler/ftp=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
+x-scheme-handler/chrome=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
+text/html=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
+application/x-extension-htm=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
+application/x-extension-html=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
+application/x-extension-shtml=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
+application/xhtml+xml=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
+application/x-extension-xhtml=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
+application/x-extension-xht=firefox.desktop;userapp-Waterfox-YIOJCZ.desktop;
