@@ -1,0 +1,44 @@
+# vi: ft=sh
+
+# General package management
+alias pSyu='sudo pacman -Syu' # system upgrade
+alias pSyyu='sudo pacman -Syyu' # NOTE only necessary when updating mirrors
+alias ySyu='yay -Syu' # upgrade aur
+alias pD='sudo pacman -D' # control package install state with `--asdeps` or `--asexplicit`
+
+# Search remote database and download packages
+alias pSs='sudo pacman -Ss' # query database for package
+alias ySs='yay -Ss' # search aur
+alias pS='sudo pacman -S' # sync download
+alias yS='yay -S' # sync download AUR
+
+# Search local database
+alias pQs='sudo pacman -Qs' # list packages based on query
+alias pQmq='sudo pacman -Qmq' # list foreign packages
+alias pQdt='sudo pacman -Qdt' # list orphans
+
+# Inspect packages (remote and local)
+alias pSi='sudo pacman -Si' # see remote package details
+alias ySi='yay -Si' # see remote package details
+alias pQi='sudo pacman -Qi' # see local package details
+
+# Remove packages
+alias pRnsc='sudo pacman -Rnsc' # remove recursively
+alias pRnscQdtq='sudo pacman -Rnsc $(pacman -Qdtq)' # remove orphans recursively
+
+# Clear cache
+alias pcache1='sudo paccache -rk 1' # remove cache except last item
+alias pcache0='sudo paccache -ruk0' # remove all cache
+
+# Backup package lists (main)
+alias pQqback='sudo pacman -Qq > packages-all.txt'
+alias pQnqback='sudo pacman -Qnq > packages-native.txt'
+alias pQmqback='sudo pacman -Qmq > packages-foreign.txt'
+
+# Backup package lists (auxiliary)
+alias pQqeback='sudo pacman -Qqe > packages-explicit.txt'
+alias pQqdback='sudo pacman -Qqd > packages-deps.txt'
+alias pQqgback='sudo pacman -Qqg > packages-groups.txt'
+
+# Package count
+alias paccount='sudo pacman -Qq | wc -l'

@@ -1,0 +1,50 @@
+# vi: ft=sh
+
+# Colourise man pages
+function man ()
+{
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;32m") \
+		LESS_TERMCAP_md=$(printf "\e[1;32m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[0;44;30m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;35m") \
+			man "$@"
+}
+
+# Make directory and enter it
+function mkcd ()
+{
+    if [ ! -n "$1" ]; then
+        echo "Specify a name for this directory"
+    elif [ -d $1 ]; then
+        echo "\`$1' already exists"
+    else
+        mkdir $1 && cd $1
+    fi
+}
+
+# Enter directory and list contents
+function cd ()
+{
+    if [ -n "$1" ]; then
+        builtin cd "$@" && ls -A --color=auto --group-directories-first 
+    else
+        builtin cd ~ && ls -A --color=auto --group-directories-first
+    fi
+}
+
+# Display current IP if connected to the internet
+function mypubip ()
+{
+    lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | awk '{ print $4 }' | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g'
+}
+
+
+# Back up a file. Usage "backfile filename.txt"
+function backupthis ()
+{
+    cp $1 ${1}-`date +%Y%m%d%H%M`.backup;
+}

@@ -1,0 +1,8 @@
+# vi: ft=sh
+
+alias fuall="flatpak update"
+# alias fuall="flatpak update $(flatpak list)"
+alias fls="flatpak list"
+alias fif="flatpak install --from"
+alias fiu="flatpak uninstall"
+alias fiuall="flatpak uninstall $(flatpak list)"

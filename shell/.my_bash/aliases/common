@@ -1,0 +1,50 @@
+# vi: ft=sh
+
+# editor
+alias v='vim'
+alias vi='vim'
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# ls
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+
+# rm
+alias rm='rm -I'
+
+# curl
+alias cO='curl -O'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Common configs
+alias bbb='vim ~/.bashrc'
+alias ddd='vim ~/.config/dunst/dunstrc'
+alias mmm='vim ~/.muttrc'
+alias nnn='vim ~/.config/newsboat/urls'
+alias ppp='vim ~/.config/polybar/config'
+alias rrr='vim ~/.config/ranger/rc.conf'
+alias sss='vim ~/.mutt/mails/signature'
+alias ttt='vim ~/.taskrc'
+alias vvv='vim ~/.vimrc'
+alias xxx='vim ~/.Xresources'
+
+# Reload config files
+alias rbbb='source ~/.bashrc'
+alias rddd='killall dunst && eval $(dbus-launch)'
+alias rxxx='xrdb -merge ~/.Xresources'
