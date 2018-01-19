@@ -5,6 +5,9 @@
 # General
 # ==============================================================================
 
+# include my scripts
+export PATH=$PATH:"$HOME/bin"
+
 # Custom prompt
 if [ -n "$SSH_CONNECTION" ]; then
     export PS1="\n[\[\e[32m\]\u\[\e[m\]] [\[\e[36m\]\h\[\e[m\]] [\[\e[34m\]\w\[\e[m\]]\n\[\e[35m\]$ >\[\e[m\] "
@@ -21,6 +24,11 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# task (taskwarrior) tab completion
+if [ -f ~/.my_bash/completion/task.sh ]; then
+    . ~/.my_bash/completion/task.sh
 fi
 
 # If not running interactively, don't do anything
