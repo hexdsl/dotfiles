@@ -6,9 +6,18 @@
 # ==============================================================================
 
 # include my scripts
-export PATH=$PATH:"$HOME/bin"
+if [ -d "$HOME/bin" ] ; then
+    export PATH=$PATH:"$HOME/bin"
+fi
 
-# Custom prompt
+# default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# default browser
+export BROWSER=/usr/bin/xdg-open
+
+# custom prompt
 if [ -n "$SSH_CONNECTION" ]; then
     export PS1="\n[\[\e[32m\]\u\[\e[m\]] [\[\e[36m\]\h\[\e[m\]] [\[\e[34m\]\w\[\e[m\]]\n\[\e[35m\]$ >\[\e[m\] "
 else
@@ -36,13 +45,6 @@ case $- in
     *i*) ;;
       *) return;;
 esac
-
-# Default editor
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
-# Default browser
-export BROWSER=/usr/bin/xdg-open
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
