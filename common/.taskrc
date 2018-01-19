@@ -26,8 +26,7 @@ dateformat=YMD
 weekstart=Monday
 
 # Theme
-include ~/.config/task/themes/prot16-dark.theme
-# include $HOME/.config/task/themes/generic-dark.theme
+include ~/.config/task/themes/generic-dark.theme
 
 # Colour coding
 color.tag.important=color0 on color3
