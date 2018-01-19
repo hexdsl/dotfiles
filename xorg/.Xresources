@@ -1,5 +1,7 @@
-! Font settings
-! ================================================
+! generic X defaults
+! =============================================================================
+
+! fonts
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
@@ -8,65 +10,14 @@ Xft.autohint: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
+! colours
+#include </home/prot/.my_Xcolors/tempus/tempus_warp.Xcolors>
+
 ! urxvt
-! ================================================
+! =============================================================================
 
-! NOTE XXX With the following `include` directive colours are defined here
-! Xcolors are defined as `*.color[n]`, which exposes them to any program
-! The current setup uses these colours for URxvt and polybar
-! Refer to their respective configs
-#include </home/prot/.Xcolors/tempus_warp.Xcolors>
+! configurations
+#include </home/prot/.my_urxvt/config>
 
-! Preferences
-URxvt.termName: rxvt-unicode
-URxvt.cursorBlink: true
-URxvt.cursorUnderline: true
-URxvt.saveLines: 5000
-URxvt.intensityStyles: false
-URxvt.depth: 32
-URxvt.allow_bold: true
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=14
-URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=14:bold
-URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=14:italic
-URxvt.bolditalicFont: xft:DejaVu Sans Mono:pixelsize=14:bold:italic
-URxvt.letterSpace: 0
-URxvt.lineSpace: 3
-URxvt.scrollBar: false
-URxvt.scrollTtyOutput: true
-URxvt.scrollTtyKeypress: true
-Urxvt.secondaryScroll: true
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard,font-size,keyboard-select
-URxvt.url-launcher:	/usr/bin/xdg-open
-URxvt.matcher.button: 1
-
-URxvt.keysym.C-Escape: perl:keyboard-select:activate
-URxvt.keysym.C-s: perl:keyboard-select:search
-
-! Key Bindings
-! NOTE see https://superuser.com/questions/1247281/how-to-configure-rxvt-unicode-to-behave-similar-to-gnome-terminal-or-others-f
-!
-! Disable ISO 14755 unicode input so we can use Ctrl-Shift bindings
-URxvt.iso14755:        false
-URxvt.iso14755_52:     false
-! Disable Ctrl-Alt-c & Ctrl-Alt-v bindings (optional)
-URxvt.keysym.C-M-c:    builtin-string:
-URxvt.keysym.C-M-v:    builtin-string:
-! Bind Ctrl-c & Ctrl-v to copy and paste
-! I dont know why, but I needed to use hex keysym values to get it to work
-URxvt.keysym.C-c: eval:selection_to_clipboard
-URxvt.keysym.C-v: eval:paste_clipboard
-
-URxvt.keysym.Home: \033[H
-URxvt.keysym.End:  \033[F
-
-! clear the scrollback
-URxvt.keysym.Control-l: command:\033c
-
-! Font resizing
-! Script from ~/.urxvt/ext/font-size
-URxvt.keysym.C-Up:     perl:font-size:increase
-URxvt.keysym.C-Down:   perl:font-size:decrease
-! URxvt.keysym.C-S-Up:   perl:font-size:incglobal
-! URxvt.keysym.C-S-Down: perl:font-size:decglobal
-URxvt.keysym.C-equal:  perl:font-size:reset
-URxvt.keysym.C-slash:  perl:font-size:show
+! colours (urxvt specific)
+#include </home/prot/.my_urxvt/themes/tempus/tempus_warp.Xcolors>

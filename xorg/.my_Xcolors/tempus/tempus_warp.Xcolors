@@ -3,7 +3,7 @@
 ! By Protesilaos Stavrou
 *background: #141a19
 *foreground: #928f90
-*cursorColor: #3aa43a
+*cursorColor: #928f90
 *color0: #141a19
 *color1: #ff1414
 *color2: #009600
@@ -11,7 +11,7 @@
 *color4: #4f76ff
 *color5: #dd38bc
 *color6: #358aaa
-*color7: #828083
+*color7: #927b80
 *color8: #201428
 *color9: #ff5500
 *color10: #3aa43a
