@@ -1,16 +1,17 @@
 # vi: ft=sh
-# Run commands
 
-# GNOME keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+# run unless session is GNOME on Xorg
+if ! [[ "$XDG_CURRENT_DESKTOP" = "GNOME" ]]; then
+    eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+    export SSH_AUTH_SOCK
+    dunst &
+    unclutter &
+    redshift -c .config/redshift.conf &
+fi
 
-# Environment agnostic
+# environment agnostic
 urxvtd --quiet --opendisplay --fork &
 xrdb -merge ~/.Xresources
 setxkbmap -option compose:menu
 setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'
 mpd
-dunst &
-unclutter &
-redshift -c .config/redshift.conf &
