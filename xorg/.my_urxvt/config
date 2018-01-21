@@ -2,8 +2,8 @@
 
 URxvt.termName: rxvt-unicode
 URxvt.cursorBlink: true
-URxvt.cursorUnderline: true
-URxvt.saveLines: 5000
+URxvt.cursorUnderline: false
+URxvt.saveLines: 9999
 URxvt.intensityStyles: false
 URxvt.depth: 32
 URxvt.allow_bold: true
