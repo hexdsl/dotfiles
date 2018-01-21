@@ -1,15 +1,19 @@
 # vi: ft=sh
 
+# environment specific
+# --------------------
+
 # run unless session is GNOME on Xorg
 if ! [[ "$XDG_CURRENT_DESKTOP" = "GNOME" ]]; then
-    eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-    export SSH_AUTH_SOCK
     dunst &
     unclutter &
     redshift -c .config/redshift.conf &
 fi
 
 # environment agnostic
+# --------------------
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 urxvtd --quiet --opendisplay --fork &
 xrdb -merge ~/.Xresources
 setxkbmap -option compose:menu
