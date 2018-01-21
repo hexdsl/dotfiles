@@ -40,6 +40,8 @@ stow --delete bspwm
 
 For more options, run `man stow`.
 
+NOTE: The directory 'sudo' is not managed with stow. I copy files manually, if necessary.
+
 ## Setup overview (Arch Linux)
 
 Package names with a short description.
