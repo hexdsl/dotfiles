@@ -158,6 +158,6 @@ super + shift + d
 
 # common programs
 alt + 1
-    waterfox
+    epiphany
 alt + {2,3,4,5,6,7}
     urxvtc -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
