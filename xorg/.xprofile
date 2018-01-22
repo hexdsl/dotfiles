@@ -7,7 +7,7 @@
 if ! [[ "$XDG_CURRENT_DESKTOP" = "GNOME" ]]; then
     dunst &
     unclutter &
-    redshift -c .config/redshift.conf &
+    redshift -c ~/.config/redshift.conf &
 fi
 
 # environment agnostic

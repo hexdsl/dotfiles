@@ -7,8 +7,7 @@
 **/.config/mpd/state
 **/.config/mpd/sticker.sql
 **/.config/ncmpcpp/error.log
-**/.config/ranger/colorschemes/__init.py
-**/.config/ranger/colorschemes/__pycache
+**/.config/ranger/colorschemes/
 **/.config/ranger/bookmarks
 **/.config/ranger/tagged
 **/.config/newsboat/cache.db
