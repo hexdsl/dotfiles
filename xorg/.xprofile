@@ -4,10 +4,9 @@
 # --------------------
 
 # run unless session is GNOME on Xorg
+# NOTE autostarting for bspwm is done within ~/.config/bspwm/bspwmrc
 if ! [[ "$XDG_CURRENT_DESKTOP" = "GNOME" ]]; then
     dunst &
-    unclutter &
-    redshift -c ~/.config/redshift.conf &
 fi
 
 # environment agnostic
