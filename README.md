@@ -1,6 +1,6 @@
 # Configurations for GNU/Linux
 
-![bspwm sample](https://raw.githubusercontent.com/protesilaos/dotfiles/master/bspwm-sample.png)
+![bspwm sample](https://raw.githubusercontent.com/protesilaos/dotfiles/master/screenshot.png)
 
 Managed with GNU Stow. Here is a [short blog post](http://protesilaos.com/codelog/gnu-stow-dotfiles/) on how I use that program.
 
