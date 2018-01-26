@@ -1,13 +1,10 @@
 # vi: ft=sh
 
-# environment specific
-# --------------------
+# this file is sourced from .xinitrc
+# it is used to run programs at the start of the X session
 
-# run unless session is GNOME on Xorg
-# NOTE autostarting for bspwm is done within ~/.config/bspwm/bspwmrc
-if ! [[ "$XDG_CURRENT_DESKTOP" = "GNOME" ]]; then
-    dunst &
-fi
+# NOTE bspwm autostart defined in ~/.config/bspwm/bspwmrc
+# the idea is to start programs after the window manager
 
 # environment agnostic
 # --------------------
@@ -18,3 +15,17 @@ xrdb -merge ~/.Xresources
 setxkbmap -option compose:menu
 setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'
 mpd
+redshift -c ~/.config/redshift.conf &
+
+# environment specific
+# --------------------
+
+# # run if on any of the following
+# if [[ "$XDG_CURRENT_DESKTOP" = "GNOME" ]]; then
+# fi
+
+# if [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
+# fi
+
+# if [[ "$XDG_CURRENT_DESKTOP" = "MATE" ]]; then
+# fi

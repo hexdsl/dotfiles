@@ -6,6 +6,7 @@ sxhkd &
 . $HOME/.config/polybar/launch.sh &
 feh --bg-fill ~/.wallpaper.jpg
 compton -b &
+dunst &
 redshift -c ~/.config/redshift.conf &
 unclutter &
 
