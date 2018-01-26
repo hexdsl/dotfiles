@@ -37,7 +37,7 @@ indicate_hidden = yes
 
 # Alignment of message text.
 # Possible values are "left", "center" and "right".
-alignment = center
+alignment = left
 
 # The frequency with wich text that is longer than the notification
 # window allows bounces back and forth.
@@ -69,7 +69,7 @@ ignore_newline = no
 # the top and down respectevly.
 # The width can be negative.  In this case the actual width is the
 # screen width minus the width defined in within the geometry option.
-geometry = "452+452+35"
+geometry = "300-15-15"
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
