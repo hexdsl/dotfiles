@@ -2,13 +2,31 @@
 
 # autostart
 # ==============================================================================
+# NOTE sxhkd and polybar are core parts of [my] bspwm
+# the rest are loaded only if they are in the PATH
+
 sxhkd &
 . $HOME/.config/polybar/launch.sh &
-feh --bg-fill ~/.wallpaper.jpg
-compton -b &
-dunst &
-redshift -c ~/.config/redshift.conf &
-unclutter &
+
+if [ -x /usr/bin/feh ]; then
+    feh --bg-fill ~/.wallpaper.jpg
+fi
+
+if [ -x /usr/bin/compton ]; then
+    compton -b &
+fi
+
+if [ -x /usr/bin/dunst ]; then
+    dunst &
+fi
+
+if [ -x /usr/bin/redshift ]; then
+    redshift -c ~/.config/redshift.conf &
+fi
+
+if [ -x /usr/bin/unclutter ]; then
+    unclutter &
+fi
 
 # Visual options
 # ==============================================================================
