@@ -46,6 +46,10 @@ URxvt.keysym.End:  \033[F
 ! clear the scrollback
 URxvt.keysym.Control-l: command:\033c
 
+! vi-like for scrollback
+URxvt.keysym.Meta-k: command:\033]720;1\007
+URxvt.keysym.Meta-j: command:\033]721;1\007
+
 ! keybindings for `urxvt-perls` package (Arch Linux)
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
