@@ -49,8 +49,8 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = FontAwesome5Free:style=Solid:antialias=false:pixelsize=10;2
-font-1 = FontAwesome5Brands:style=Solid:antialias=false:pixelsize=10;2
+font-0 = FontAwesome5Free:style=Solid:antialias=true:pixelsize=10;2
+font-1 = FontAwesome5Brands:style=Solid:antialias=true:pixelsize=10;2
 font-2 = DejaVu Sans Condensed:antialias=true:pixelsize=9;2
 font-3 = DejaVu Sans Condensed:style=bold:antialias=true:pixelsize=9;2
 
