@@ -8,13 +8,29 @@
 
 # environment agnostic
 # --------------------
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+
+# unclock keyring for terminal sessions
+# see https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
+# also check relevant files in ~/.config/autostart
+if [ -n "$DESKTOP_SESSION" ]; then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
+# start URxvt server
 urxvtd --quiet --opendisplay --fork &
+
+# load Xresources
 xrdb -merge ~/.Xresources
+
+# specify keyboard layouts and compose key
 setxkbmap -option compose:menu
 setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'
+
+# music server
 mpd
+
+# use local config for setting screen temperature
 redshift -c ~/.config/redshift.conf &
 
 # environment specific
