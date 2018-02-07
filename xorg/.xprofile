@@ -12,11 +12,7 @@
 # unclock keyring for terminal sessions
 # see https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
 if [ -n "$DESKTOP_SESSION" ]; then
-    # only start if no autostart entries are available
-    if [ ! -f ~/.config/autostart/gnome-keyring-*.desktop ]; then
-        eval $(gnome-keyring-daemon --start)
-    fi
-    # environment variable for ssh sessions
+    eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
 
