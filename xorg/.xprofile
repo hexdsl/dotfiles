@@ -11,27 +11,39 @@
 
 # unclock keyring for terminal sessions
 # see https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
-# also check relevant files in ~/.config/autostart
 if [ -n "$DESKTOP_SESSION" ]; then
-    eval $(gnome-keyring-daemon --start)
+    # only start if no autostart entries are available
+    if [ ! -f ~/.config/autostart/gnome-keyring-*.desktop ]; then
+        eval $(gnome-keyring-daemon --start)
+    fi
+    # environment variable for ssh sessions
     export SSH_AUTH_SOCK
 fi
 
 # start URxvt server
-urxvtd --quiet --opendisplay --fork &
+if [ -x /usr/bin/urxvtd ]; then
+    urxvtd --quiet --opendisplay --fork &
+fi
 
 # load Xresources
 xrdb -merge ~/.Xresources
 
 # specify keyboard layouts and compose key
-setxkbmap -option compose:menu
-setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'
+if [ -x /usr/bin/setxkbmap ]; then
+    setxkbmap -option compose:menu
+    setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'
+fi
 
-# music server
-mpd
+# music player daemon
+if [ -x /usr/bin/mpd ]; then
+    mpd
+fi
 
-# use local config for setting screen temperature
-redshift -c ~/.config/redshift.conf &
+# screen temperature
+if [ -x /usr/bin/redshift ]; then
+    # use local config
+    redshift -c ~/.config/redshift.conf &
+fi
 
 # environment specific
 # --------------------
