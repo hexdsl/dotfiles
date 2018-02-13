@@ -28,6 +28,16 @@ if [ -x /usr/bin/unclutter ]; then
     unclutter &
 fi
 
+
+if [ -x /usr/bin/xinput ]; then
+    # `xinput list` devices
+    # `xinput list-props` device properties
+
+    # syntax is [id] [prop] [boolean]
+    # enable touchpad tap to click
+    xinput set-prop 11 277 1
+fi
+
 # Visual options
 # ==============================================================================
 
