@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Display number of available updates from the Arch main repos and the AUR
-
     # This program is free software: you can redistribute it and/or modify
     # it under the terms of the GNU General Public License as published by
     # the Free Software Foundation, either version 3 of the License, or
@@ -15,8 +13,10 @@
     # You should have received a copy of the GNU General Public License
     # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# Display number of available updates from the Arch main repos and the AUR
+
 arch_updates=$(checkupdates 2> /dev/null | wc -l)
-aur_updates=$(cower -u 2> /dev/null | wc -l)
+aur_updates=$(yay --print --upgrades 2> /dev/null | wc -l)
 
 if [ "$arch_updates" -gt 0 ]; then
     echo "Arch: $arch_updates";
