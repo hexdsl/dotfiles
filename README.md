@@ -60,7 +60,7 @@ Package names with a short description.
 - Program launcher `dmenu`. Dead simple way to run items in your `$PATH`
 - Password manager `pass` called with `passmenu`. Essential to taking control of all your passwords, without losing out on ease-of-use.
 - Notifications `dunst`. Configurable. Gets the job done.
-- Fonts `ttf-dejavu`.
+- Fonts `ttf-dejavu` and `ttf-iosevka-term-ss04` (AUR).
 
 ## License
 
