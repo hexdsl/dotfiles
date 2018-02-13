@@ -1,7 +1,7 @@
 # vi: ft=dosini
 # NOTE XXX Colours are sourced from ~/.Xresources
 # Xcolors are defined as `*.color[n]`, which exposes them to any program
-# The current setup uses these colours for URxvt, i3, and polybar
+# The current setup uses these colours for URxvt, bspwm, and polybar
 
 [settings]
 screenchange-reload = true
@@ -49,8 +49,8 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = DejaVu Sans Condensed:style=Book:antialias=true:pixelsize=9;1
-font-1 = DejaVu Sans Condensed:style=Bold:antialias=true:pixelsize=9;1
+font-0 = DejaVu Sans Condensed:style=Book:antialias=true:pixelsize=10;1
+font-1 = DejaVu Sans Condensed:style=Bold:antialias=true:pixelsize=10;1
 
 modules-left = bspwm mpd
 modules-right = archpkg battery volume backlight keyboard date powermenu
@@ -73,19 +73,19 @@ ws-icon-9 = 10;
 
 format = <label-state> <label-mode>
 
-label-focused = "%index%"
+label-focused = %index%
 label-focused-background = ${colors.color0}
 label-focused-foreground = ${colors.color10}
 label-focused-overline = ${colors.color10}
 label-focused-padding = 3
 label-focused-font = 2
 
-label-occupied = "%index%"
+label-occupied = %index%
 label-occupied-background = ${colors.color0}
 label-occupied-foreground = ${colors.color7}
 label-occupied-padding = 3
 
-label-urgent = "%index%"
+label-urgent = %index%
 label-urgent-background = ${colors.color11}
 label-urgent-foreground = ${colors.color0}
 label-urgent-padding = 3
@@ -116,13 +116,15 @@ label-locked-padding = 3
 type = internal/mpd
 format-online = <label-song> <label-time> <toggle>
 
-format-playing-prefix = "§"
+format-playing-prefix = §
+format-playing-prefix-font = 2
 format-playing-prefix-foreground = ${colors.color10}
 format-playing-prefix-padding-right = 3
 format-playing = ${self.format-online}
 
-format-paused-prefix = "§"
-format-paused-prefix-foreground = ${colors.color7}
+format-paused-prefix = §
+format-paused-prefix-font = 2
+format-paused-prefix-foreground = ${colors.color11}
 format-paused-prefix-padding-right = 3
 format-paused = ${self.format-online}
 
@@ -138,7 +140,8 @@ label-song-ellipsis = true
 [module/archpkg]
 type = custom/script
 format-prefix = "#"
-format-prefix-padding-right = 3
+format-prefix-font = 2
+format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.color13}
 exec = ~/.config/polybar/scripts/check-arch-aur-updates.sh
 interval = 600
@@ -150,17 +153,23 @@ battery = BAT0
 adapter = AC
 full-at = 99
 
-format-charging-prefix = Ḃŭ
+format-charging-prefix = Ḃç
+format-charging-prefix-font = 2
 format-charging-prefix-foreground = ${colors.color10}
 format-charging-prefix-padding-right = 1
 format-charging = <label-charging>
 label-charging = %percentage% %
 
+format-discharging-prefix= Ḃđ 
+format-discharging-prefix-font = 2
+format-discharging-prefix-foreground = ${colors.color2}
+format-discharging-prefix-padding-right = 1
 format-discharging = <label-discharging>
 format-discharging-foreground = ${colors.color7}
 label-discharging = %percentage% %
 
-format-full-prefix = Ḃþ
+format-full-prefix = Ḃḟ
+format-full-prefix-font = 2
 format-full-prefix-foreground = ${colors.color10}
 format-full-prefix-padding-right = 1
 format-full = <label-full>
@@ -168,7 +177,8 @@ label-full = %percentage% %
 
 [module/volume]
 type = internal/volume
-format-volume-prefix = ṡV
+format-volume-prefix = Š
+format-volume-prefix-font = 2
 format-volume-prefix-foreground = ${colors.color10}
 format-volume-prefix-padding-right = 1
 format-volume = <label-volume>
@@ -184,6 +194,7 @@ output = LVDS1
 enable-scroll = false
 
 format-prefix = Ł
+format-prefix-font = 2
 format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.color10}
 format = <label>
@@ -201,6 +212,7 @@ format = <label-layout> <label-indicator>
 format-spacing = 0
 
 format-prefix = Ķ
+format-prefix-font = 2
 format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.color10}
 
@@ -215,7 +227,8 @@ label-indicator-foreground = ${colors.color8}
 [module/date]
 type = internal/date
 interval = 1
-format-prefix = Æ
+format-prefix = Ŧ
+format-prefix-font = 2
 format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.color10}
 date = %a, %d %b, %H:%M:%S
@@ -229,7 +242,7 @@ format = <label-toggle> <menu>
 format-foreground = ${colors.color11}
 format-padding = 0
 format-margin = 0
-menu-0-0 = "ø Power Off"
+menu-0-0 = "Ø Power Off"
 menu-0-0-exec = shutdown now
 menu-0-0-padding = 3
 menu-0-0-background = ${colors.color1}
@@ -242,7 +255,8 @@ menu-0-1-foreground = ${colors.color0}
 menu-0-2 = "× Cancel"
 menu-0-2-padding = 3
 menu-0-2-background = ${colors.color8}
-menu-0-2-foreground = ${colors.color15}
-label-open = " Ø "
+menu-0-2-foreground = ${colors.color7}
+label-open = " O "
+label-open-font = 2
 label-open-padding-right = 3
 label-close = 
