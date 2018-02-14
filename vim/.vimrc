@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
   " Plug 'dpelle/vim-LanguageTool'
   Plug 'scrooloose/nerdcommenter'
   Plug 'ervandew/supertab'
-  Plug 'protesilaos/prot16-vim'
+  " Plug 'protesilaos/prot16-vim'
   Plug 'protesilaos/tempus-themes-vim'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'sheerun/vim-polyglot'
