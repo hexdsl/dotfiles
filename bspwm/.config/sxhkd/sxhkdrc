@@ -148,12 +148,16 @@ super + Return
 	urxvtc
 
 # program launcher
+# NOTE XXX must run `stow shell` and `stow bin` from my dotfiles
+# runs dmenu using Xcolors defined as shell variables
 super + d
-    dmenu_run -l 10 -p 'Execute binary' -m 0 -fn 'DejaVu Sans Mono-12' -nb '#141a19' -nf '#928f90' -sb '#3aa43a' -sf '#141a19'
+    own_script_dmenu_xcolors
 
 # passmenu
+# NOTE XXX must run `stow shell` and `stow bin` from my dotfiles
+# runs passmenu using Xcolors defined as shell variables
 super + shift + d
-    passmenu -f -i -l 10 -p 'Copy password' -m 0 -fn 'DejaVu Sans Mono-12' -nb '#141a19' -nf '#928f90' -sb '#b38a00' -sf '#141a19'
+    own_script_passmenu_xcolors
 
 # common programs
 alt + 1
