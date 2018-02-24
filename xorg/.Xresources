@@ -11,7 +11,7 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 ! colours
-#include </home/prot/.my_Xcolors/tempus/tempus_warp.Xcolors>
+#include </home/prot/.my_Xcolors/tempus/tempus_rift.Xcolors>
 
 ! urxvt
 ! =============================================================================
@@ -20,4 +20,4 @@ Xft.lcdfilter: lcddefault
 #include </home/prot/.my_urxvt/config>
 
 ! colours (urxvt specific)
-#include </home/prot/.my_urxvt/themes/tempus/tempus_warp.Xcolors>
+#include </home/prot/.my_urxvt/themes/tempus/tempus_rift.Xcolors>
