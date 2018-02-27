@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# IMPORTANT do not edit manually!!!
+# All themes (Xcolors, URxvt, bspwm, etc.) are changed by a single script.
+# See my `~/bin/own_script_update_environment_theme`
+
+# This file is referenced by my own dmenu* wrappers.
+# See https://github.com/protesilaos/dotfiles, especially `bin`
+
+# It is also used by bspwm to draw window borders and the like
+
+source "$HOME/.my_Xcolors/shell/tempus_past.sh"

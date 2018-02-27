@@ -19,7 +19,7 @@
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
-class prot16(ColorScheme):
+class tempus(ColorScheme):
     progress_bar_color = 7
 
     def use(self, context):
@@ -64,13 +64,13 @@ class prot16(ColorScheme):
                 if context.device:
                     attr |= bold
             if context.link:
-                fg = context.good and 7 or 8
+                fg = context.good and 7 or 15
                 bg = 0
             if context.bad:
                 fg = 1
             if context.tag_marker and not context.selected:
                 attr |= bold
-                if fg in (7, 8):
+                if fg in (7, 15):
                     fg = 0
                 else:
                     fg = 1

@@ -1,0 +1,8 @@
+color background color15 color0
+color info color7 color8
+color article color15 color0
+color listnormal color15 color0
+color listfocus color0 color2
+color listnormal_unread color15 color0
+color listfocus_unread color0 color2
+highlight article "^(Feed|Title|Author|Link|Date):.*" color7 color0

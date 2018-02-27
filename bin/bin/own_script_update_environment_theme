@@ -1,0 +1,201 @@
+#!/bin/bash
+
+# Replaces existing theme with the one provided as a shell argument
+
+# Usage:
+# own_script_update_environment_theme [theme]
+
+# For available arguments run:
+# ls ~/.my_Xcolors/tempus/
+# ls ~/.my_Xcolors/shell/
+
+# PREREQUISITES
+# git clone --depth 1 git@github.com:protesilaos/dotfiles ~/dotfiles-prot
+# cd dotfiles-prot
+# stow bin
+# stow bspwm
+# stow common
+# stow neomutt-bare
+# stow vim
+# stow xorg
+# NOTE `stow` will fail if paths to files/directories already exist
+
+# pass name of theme as argument
+tempus_scheme=$1
+
+# define array with Tempus light themes
+tempus_light_themes=(fugit past totus)
+
+# require exactly one command line argument, otherwise sed would just remove the selection
+if [ "$#" -ne 1 ]
+then
+    echo "ERROR Exactly 1 argument expected"
+    echo "Exiting..."
+    echo ""
+    echo "SOLUTION own_script_update_environment_theme [theme]"
+    echo "EXAMPLE using Tempus Winter"
+    echo "own_script_update_environment_theme winter"
+    echo ""
+    echo "For available arguments run:"
+    echo "ls ~/.my_Xcolors/tempus/"
+    echo "OR"
+    echo "ls ~/.my_Xcolors/shell/"
+    exit 1
+fi
+
+# if argument is light, set light bg, else switch to dark
+# NOTE there could be more arrays, resulting in more wallpapers
+modify_wallpaper()
+{
+	if [[ " ${tempus_light_themes[*]} " == *" $tempus_scheme "* ]]; then
+		cp -rf $HOME/Pictures/theme/light.jpg $HOME/.wallpaper.jpg && feh --bg-fill $HOME/.wallpaper.jpg
+	else
+		cp -rf $HOME/Pictures/theme/dark.jpg $HOME/.wallpaper.jpg && feh --bg-fill $HOME/.wallpaper.jpg
+	fi
+}
+
+# change the X theme, used by URxvt, polybar, etc. See ~/.Xresources.
+modify_xcolors()
+{
+	sed -i -e "s/_[a-z]*\./_$tempus_scheme./g" $HOME/.my_Xcolors/active-tempus-theme.Xcolors
+
+	# reload the Xresources
+	xrdb -merge $HOME/.Xresources
+}
+
+# change the vim colorscheme value
+# particularly important when switching between light and dark themes
+modify_vim()
+{
+	sed -i -e "s/tempus_[a-z]*/tempus_$tempus_scheme/g" $HOME/.vimrc
+}
+
+# reload polybar
+modify_polybar()
+{
+    pkill polybar
+    . $HOME/.config/polybar/launch.sh
+	# update the theme name in polybar
+	sed -i -e "s/tempus_[a-z]*/tempus_$tempus_scheme/g" $HOME/.config/polybar/config
+}
+
+# change the shell variables theme, used by dmenu, bspwm, dunst
+modify_shell_theme()
+{
+	sed -i -e "s/_[a-z]*\./_$tempus_scheme./g" $HOME/.my_Xcolors/active-tempus-theme.sh
+}
+
+# change the man pages colour output based on whether the theme is light or dark
+# this assumes the $PAGER or $MANPAGER is `less`
+modify_less_manpages()
+{
+	if [[ " ${tempus_light_themes[*]} " == *" $tempus_scheme "* ]]; then
+        sed -i -e "s/tput setaf [0-9][0-5]*; tput setab [0-9][0-5]*/tput setaf 15; tput setab 0/g" $HOME/.my_bash/functions/common
+	else
+        sed -i -e "s/tput setaf [0-9][0-5]*; tput setab [0-9][0-5]*/tput setaf 0; tput setab 15/g" $HOME/.my_bash/functions/common
+	fi
+    source $HOME/.bashrc
+}
+
+# switch ranger theme to light or dark depending on the argument
+modify_ranger()
+{
+	if [[ " ${tempus_light_themes[*]} " == *" $tempus_scheme "* ]]; then
+        sed -i -e "s/set colorscheme [a-z_-]*/set colorscheme tempus_theme_light/g" $HOME/.config/ranger/rc.conf
+	else
+        sed -i -e "s/set colorscheme [a-z_-]*/set colorscheme tempus_theme_dark/g" $HOME/.config/ranger/rc.conf
+	fi
+}
+
+# switch task theme to light or dark depending on the argument
+modify_task()
+{
+	if [[ " ${tempus_light_themes[*]} " == *" $tempus_scheme "* ]]; then
+        sed -i -e "s/tempus_theme_[a-z]*/tempus_theme_light/g" $HOME/.taskrc
+	else
+        sed -i -e "s/tempus_theme_[a-z]*/tempus_theme_dark/g" $HOME/.taskrc
+	fi
+}
+
+# switch task theme to light or dark depending on the argument
+modify_newsboat()
+{
+	if [[ " ${tempus_light_themes[*]} " == *" $tempus_scheme "* ]]; then
+        sed -i -e "s/tempus_theme_[a-z]*/tempus_theme_light/g" $HOME/.config/newsboat/config
+	else
+        sed -i -e "s/tempus_theme_[a-z]*/tempus_theme_dark/g" $HOME/.config/newsboat/config
+	fi
+}
+
+# switch neomutt theme to light or dark depending on the argument
+# IMPORTANT for security purposes, core neomutt files are not in the dotfiles
+modify_neomutt()
+{
+	if [[ " ${tempus_light_themes[*]} " == *" $tempus_scheme "* ]]; then
+        sed -i -e "s/tempus_theme_[a-z]*/tempus_theme_light/g" $HOME/.neomuttrc
+	else
+        sed -i -e "s/tempus_theme_[a-z]*/tempus_theme_dark/g" $HOME/.neomuttrc
+	fi
+}
+
+# reload the relevant options of bspwm
+modify_bspwm()
+{
+    # window decorations
+    bspc config normal_border_color "$background"
+    bspc config active_border_color "$color8"
+    bspc config focused_border_color "$color10"
+    bspc config presel_feedback_color "$color13"
+}
+
+modify_xfce4_terminal()
+{
+    xfce4_terminal_palette="$color0;$color1;$color2;$color3;$color4;$color5;$color6;$color7;$color8;$color9;$color10;$color11;$color12;$color13;$color14;$color15"
+
+    sed -i -e "s/ColorPalette=[#;0-9a-f]*/ColorPalette=$xfce4_terminal_palette/g" $HOME/.config/xfce4/terminal/terminalrc
+    sed -i -e "s/ColorForeground=\#[0-9a-f]*/ColorForeground=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
+    sed -i -e "s/ColorBackground=\#[0-9a-f]*/ColorBackground=$background/g" $HOME/.config/xfce4/terminal/terminalrc
+    sed -i -e "s/ColorCursor=\#[0-9a-f]*/ColorCursor=$cursorColor/g" $HOME/.config/xfce4/terminal/terminalrc
+    sed -i -e "s/ColorSelection=\#[0-9a-f]*/ColorSelection=$background/g" $HOME/.config/xfce4/terminal/terminalrc
+    sed -i -e "s/ColorSelectionBackground=\#[0-9a-f]*/ColorSelectionBackground=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
+    sed -i -e "s/ColorBold=\#[0-9a-f]*/ColorBold=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
+}
+
+# reload dunst
+modify_dunst()
+{
+    # simple colours for dunst
+    # does not distinguish urgency levels
+	sed -i -e "s/frame_color = \"\#[0-9a-f]*\"/frame_color = \"$background\"/g" $HOME/.config/dunst/dunstrc
+	sed -i -e "s/background = \"\#[0-9a-f]*\"/background = \"$background\"/g" $HOME/.config/dunst/dunstrc
+    sed -i -e "s/foreground = \"\#[0-9a-f]*\"/foreground = \"$foreground\"/g" $HOME/.config/dunst/dunstrc
+
+    # kill and reload dunst
+    killall dunst && eval $(dbus-launch)
+}
+
+update_environment_theme()
+{
+    modify_wallpaper
+    modify_xcolors
+    modify_vim
+    modify_polybar
+    # the shell is reloaded first, so that others can take the new variables it exposes
+    modify_shell_theme
+    modify_less_manpages
+    modify_ranger
+    modify_task
+    modify_newsboat
+    modify_neomutt
+    # define scheme for shell substitution in subsequent commands
+    source "$HOME/.my_Xcolors/active-tempus-theme.sh"
+    modify_bspwm
+    # modify_xfce4_terminal
+    modify_dunst
+}
+
+# run commands for everything
+update_environment_theme
+
+# send notification
+notify-send -i /usr/share/icons/Papirus/16x16/apps/terminal.svg "Environment theme" "Updated colours to <b>Tempus $tempus_scheme</b>"

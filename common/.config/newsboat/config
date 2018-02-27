@@ -32,34 +32,4 @@ bind-key K prev article
 # Tempus themes
 # By Protesilaos Stavrou
 # https://github.com/protesilaos/tempus-themes
-
-color background color15 color0
-color info color7 color8
-color article color15 color0
-color listnormal color15 color0
-color listfocus color8 color7
-color listnormal_unread color15 color0
-color listfocus_unread color8 color7
-highlight article "^(Feed|Title|Author|Link|Date):.*" color7 color0
-
-# # Prot16 themes <https://protesilaos.com/schemes>
-
-# # Dark variant
-# color background color14 color0
-# color info color10 color0
-# color article color14 color0
-# color listnormal color14 color0
-# color listfocus color7 color2
-# color listnormal_unread color14 color0
-# color listfocus_unread color7 color2
-# highlight article "^(Feed|Title|Author|Link|Date):.*" color11 color0
-
-# # Light variant
-# color background color10 color15
-# color info color12 color7
-# color article color10 color15
-# color listnormal color14 color7
-# color listfocus color10 color15
-# color listnormal_unread color10 color15
-# color listfocus_unread color10 color15
-# highlight article "^(Feed|Title|Author|Link|Date):.*" color12 color15
+include ~/.config/newsboat/themes/tempus_theme_light.theme

@@ -1,5 +1,4 @@
-# NOTE see local bin for mytd script
-# instead of working with `task` aliases, use a simple script to customise
+# NOTE see local bin for my task add wrapper
 
 # General
 data.location=~/.config/task
@@ -26,7 +25,4 @@ dateformat=YMD
 weekstart=Monday
 
 # Theme
-include ~/.config/task/themes/generic-dark.theme
-
-# Colour coding
-color.tag.important=color0 on color3
+include ~/.config/task/themes/tempus_theme_dark.theme
