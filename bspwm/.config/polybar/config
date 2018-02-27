@@ -1,7 +1,5 @@
 # vi: ft=dosini
-# NOTE XXX Colours are sourced from ~/.Xresources
-# Xcolors are defined as `*.color[n]`, which exposes them to any program
-# The current setup uses these colours for URxvt, bspwm, and polybar
+# Current theme: tempus_past by Protesilaos Stavrou (https://protesilaos.com)
 
 [settings]
 screenchange-reload = true
@@ -74,20 +72,20 @@ ws-icon-9 = 10;
 format = <label-state> <label-mode>
 
 label-focused = %index%
-label-focused-background = ${colors.color0}
+label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.color10}
 label-focused-overline = ${colors.color10}
 label-focused-padding = 3
 label-focused-font = 2
 
 label-occupied = %index%
-label-occupied-background = ${colors.color0}
-label-occupied-foreground = ${colors.color7}
+label-occupied-background = ${colors.background}
+label-occupied-foreground = ${colors.foreground}
 label-occupied-padding = 3
 
 label-urgent = %index%
 label-urgent-background = ${colors.color11}
-label-urgent-foreground = ${colors.color0}
+label-urgent-foreground = ${colors.background}
 label-urgent-padding = 3
 
 label-empty = 
@@ -99,7 +97,7 @@ label-empty =
 ;   None
 label-monocle = Monocle
 label-monocle-background = ${colors.color3}
-label-monocle-foreground = ${colors.color0}
+label-monocle-foreground = ${colors.background}
 label-monocle-padding = 3
 ; label-tiled =
 ; label-fullscreen = 
@@ -107,7 +105,7 @@ label-monocle-padding = 3
 ; label-pseudotiled = 
 label-locked = Locked
 label-locked-background = ${colors.color11}
-label-locked-foreground = ${colors.color0}
+label-locked-foreground = ${colors.background}
 label-locked-padding = 3
 ; label-sticky = 
 ; label-private = 
@@ -165,7 +163,7 @@ format-discharging-prefix-font = 2
 format-discharging-prefix-foreground = ${colors.color2}
 format-discharging-prefix-padding-right = 1
 format-discharging = <label-discharging>
-format-discharging-foreground = ${colors.color7}
+format-discharging-foreground = ${colors.foreground}
 label-discharging = %percentage% %
 
 format-full-prefix = Ḃḟ
@@ -183,8 +181,10 @@ format-volume-prefix-foreground = ${colors.color10}
 format-volume-prefix-padding-right = 1
 format-volume = <label-volume>
 label-volume = %percentage% %
-format-muted-prefix = "  "
-format-muted-prefix-foreground = ${colors.color7}
+format-muted-prefix = "X"
+format-muted-prefix-font = 2
+format-muted-prefix-padding-right = 1
+format-muted-prefix-foreground = ${colors.color3}
 label-muted = "Muted"
 
 [module/backlight]
@@ -221,8 +221,8 @@ label-layout-padding = 1
 
 label-indicator = %name%
 label-indicator-padding = 2
-label-indicator-background = ${colors.color7}
-label-indicator-foreground = ${colors.color8}
+label-indicator-background = ${colors.foreground}
+label-indicator-foreground = ${colors.background}
 
 [module/date]
 type = internal/date
@@ -246,16 +246,16 @@ menu-0-0 = "Ø Power Off"
 menu-0-0-exec = shutdown now
 menu-0-0-padding = 3
 menu-0-0-background = ${colors.color1}
-menu-0-0-foreground = ${colors.color0}
+menu-0-0-foreground = ${colors.background}
 menu-0-1 = "± Reboot"
 menu-0-1-exec = reboot
 menu-0-1-padding = 3
 menu-0-1-background = ${colors.color9}
-menu-0-1-foreground = ${colors.color0}
+menu-0-1-foreground = ${colors.background}
 menu-0-2 = "× Cancel"
 menu-0-2-padding = 3
-menu-0-2-background = ${colors.color8}
-menu-0-2-foreground = ${colors.color7}
+menu-0-2-background = ${colors.background}
+menu-0-2-foreground = ${colors.foreground}
 label-open = " O "
 label-open-font = 2
 label-open-padding-right = 3
