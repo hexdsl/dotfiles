@@ -1,0 +1,123 @@
+# General settings ------------------------------
+# Works with NeoMutt 20171215-3
+
+# Mailcap
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+set mailcap_path=~/.neomutt/mailcap
+
+# Colours
+source "~/.neomutt/themes/tempus_theme_dark"
+
+# Receiving
+set mail_check = 600
+unset imap_check_subscribed
+set imap_keepalive = 300
+unset imap_passive
+
+# Cache
+set header_cache='~/.neomutt/.cache/headercache'
+set message_cachedir='~/.neomutt/.cache/messagecache'
+set certificate_file='~/.neomutt/.cache/certificates'
+
+# Messages
+set beep_new = yes
+set delete = yes
+set confirmappend = no
+set confirmcreate = yes
+unset markers
+set pager_index_lines = 10
+
+# Composing
+set editor = "vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
+set askcc = no
+set ispell = "aspell -e -c"
+set edit_headers = no
+set signature="~/.neomutt/mails/signature"
+
+# Replies
+set fast_reply = yes
+set include = no
+set reverse_name
+
+# Sorting
+set date_format="%m/%d %R"
+set index_format="[%Z] %2C %d %-25.25F %-80.80s"
+set sort = threads
+set strict_threads = "yes"
+set sort_browser = "date"
+set sort_aux = reverse-last-date-received
+
+# GPG
+source ~/.neomutt/gpg.rc
+set crypt_use_gpgme = yes
+set crypt_autosign = no
+set crypt_autosmime = yes
+set crypt_replyencrypt = yes
+set crypt_replysignencrypted = yes
+set pgp_timeout = 3600
+
+# Mailboxes -------------------------------------
+# First retrieve passwords from secure file
+source "gpg2 -dq ~/.neomutt/mails/passwords.gpg |"
+
+source "~/.neomutt/mails/email-one"
+folder-hook $folder 'source ~/.neomutt/mails/email-one'
+
+source "~/.neomutt/mails/email-three"
+folder-hook $folder 'source ~/.neomutt/mails/email-three'
+
+source "~/.neomutt/mails/email-two"
+folder-hook $folder 'source ~/.neomutt/mails/email-two'
+
+# Sidebar settings ------------------------------
+set sidebar_visible = no
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+set sidebar_short_path # Shorten mailbox names
+set sidebar_delim_chars="/" # Delete everything up to the last / character
+
+# Bindings --------------------------------------
+bind pager j next-line
+bind pager k previous-line
+bind pager g noop # As suggested here https://www.neomutt.org/guide/configuration.html#bind-warnings
+bind pager gg top
+bind pager G bottom
+bind attach,index g noop # As suggested here https://www.neomutt.org/guide/configuration.html#bind-warnings
+bind attach,index gg first-entry
+bind attach,index G last-entry
+
+bind editor <Tab> complete-query
+bind index,pager F flag-message
+bind index,pager P purge-message
+bind index,pager S save-message
+bind index,pager R group-reply
+
+# Account switching
+macro index,pager ,1 '<sync-mailbox><enter-command>source ~/.neomutt/mails/email-one<enter><change-folder>!<enter>'
+macro index,pager ,2 '<sync-mailbox><enter-command>source ~/.neomutt/mails/email-two<enter><change-folder>!<enter>'
+macro index,pager ,3 '<sync-mailbox><enter-command>source ~/.neomutt/mails/email-three<enter><change-folder>!<enter>'
+
+# Sidebar
+bind index,pager <left> sidebar-toggle-visible
+bind index,pager <up> sidebar-prev
+bind index,pager <down> sidebar-next
+bind index,pager <right> sidebar-open
+
+# Moving messages
+# Move message(s) to Archive
+macro index A "<tag-prefix><enter-command>unset resolve<enter><tag-prefix><clear-flag>N<tag-prefix><enter-command>set resolve<enter><tag-prefix><save-message>=Archive<enter>" "Archive message"
+macro pager A "<save-message>=Archive<enter>" "Archive message"
+
+# Move message(s) to Junk
+macro index J "<tag-prefix><enter-command>unset resolve<enter><tag-prefix><clear-flag>N<tag-prefix><enter-command>set resolve<enter><tag-prefix><save-message>=Junk<enter>" "file as Spam"
+macro pager J "<save-message>=Junk<enter>" "file as Spam"
+
+# Return to Inbox by pressing "."
+macro index . "<change-folder>=INBOX<enter>" "Inbox"
+
+# Contact management ----------------------------
+## Abook
+set query_command= "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"

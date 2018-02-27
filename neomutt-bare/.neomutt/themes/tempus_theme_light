@@ -1,0 +1,64 @@
+# tested with NeoMutt 20171208-1
+
+# basic colours ----------------------------------------------------------------
+color error color7 color1
+color search color7 color5
+color indicator color7 color8
+color tree color3 color15
+
+# defaults
+color index color2 default '.*'
+color index_author color13 default '.*'
+color index_number color3 default
+color index_subject color5 default '.s'
+
+# deleted messages
+color index color7 color1 "~D"
+color index_author color15 color1 "~D"
+color index_subject color15 color1 "~D"
+
+# read messages
+color index color8 default "~R"
+color index_author color8 default "~R"
+color index_subject color8 default "~R"
+
+# read but marked as important
+color index color4 default "~R~F"
+color index_author color4 default "~R~F"
+color index_subject color4 default "~R~F"
+
+# read but marked for deletion
+color index color15 color9 "~R~D"
+color index_author color15 color9 "~R~D"
+color index_subject color15 color9 "~R~D"
+
+# message headers --------------------------------------------------------------
+color hdrdefault color11 default
+color header color4 default "^(Date)"
+color header color2 default "^(From)"
+color header color3 default "^(To)"
+color header color9 default "^(Subject)"
+
+# body -------------------------------------------------------------------------
+color normal color0 default
+color bold default default
+color underline default default
+color attachment color11 default
+
+color quoted color2 default
+color quoted1 color4 default
+color quoted2 color6 default
+color quoted3 color3 default
+color quoted4 color12 default
+
+color signature color10 default
+
+color body color5 default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body color4 default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+# encryption -------------------------------------------------------------------
+color body color7 color1 "(BAD signature)"
+color body color7 color2 "(Good signature)"
+color body color7 color2 "^gpg: Good signature .*"
+color body color3 default "^gpg: "
+color body color7 color1 "^gpg: BAD signature from.*"
