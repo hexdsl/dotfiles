@@ -2,7 +2,7 @@
 
 # autostart
 # ==============================================================================
-# NOTE sxhkd and polybar are core parts of [my] bspwm
+# NOTE sxhkd and polybar are core parts of my bspwm
 # the rest are loaded only if they are in the PATH
 
 sxhkd &
@@ -56,6 +56,9 @@ bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config single_monocle true
 bspc config focus_follows_pointer false
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
 bspc config click_to_focus true
 bspc config auto_alternate true
 bspc config auto_cancel true
