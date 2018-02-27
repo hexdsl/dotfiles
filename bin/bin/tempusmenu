@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# customised dmenu command
+source $HOME/.my_Xcolors/active-tempus-theme.sh
+
+# pipe list of theme names to dmenu
+tempus_themes_choice=$(ls ~/tempus-themes-generator/schemes/ | dmenu -l 10 -p 'Select Tempus theme' -nb $background -nf $foreground -sb $color5 -sf $background -fn 'DejaVu Sans Mono-12')
+
+if [ $tempus_themes_choice ]; then
+    own_script_update_environment_theme $tempus_themes_choice
+fi

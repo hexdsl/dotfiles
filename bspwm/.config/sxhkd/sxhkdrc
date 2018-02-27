@@ -159,6 +159,10 @@ super + d
 super + shift + d
     own_script_run_passmenu_xcolors
 
+# tempus theme switcher
+super + shift + t
+    tempusmenu
+
 # common programs
 alt + 1
     firefox
