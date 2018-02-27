@@ -1,6 +1,11 @@
 #!/bin/bash
 
-# customised dmenu command
+# PREREQUISITES
+# git clone --depth 1 git@github.com:protesilaos/tempus-themes-generator
+# All of my dotfiles (stow everything)
+# https://github.com/protesilaos/dotfiles
+
+# customise dmenu command
 source $HOME/.my_Xcolors/active-tempus-theme.sh
 
 # pipe list of theme names to dmenu
