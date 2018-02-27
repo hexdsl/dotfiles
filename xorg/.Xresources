@@ -1,5 +1,5 @@
 ! generic X defaults
-! =============================================================================
+! ==============================================================================
 
 ! fonts
 Xft.dpi: 96
@@ -11,13 +11,20 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 ! colours
-#include </home/prot/.my_Xcolors/tempus/tempus_rift.Xcolors>
+! NOTE that file sources an actual colour scheme which is updated on demand.
+! The command is `own_script_update_environment_theme [tempus theme slug]`
+! e.g. for `tempus winter`:
+! own_script_update_environment_theme winter
+! See https://github.com/protesilaos/dotfiles especially its `bin`
+#include </home/prot/.my_Xcolors/active-tempus-theme.Xcolors>
 
 ! urxvt
-! =============================================================================
+! ==============================================================================
 
 ! configurations
 #include </home/prot/.my_urxvt/config>
 
-! colours (urxvt specific)
-#include </home/prot/.my_urxvt/themes/tempus/tempus_rift.Xcolors>
+! ! colours (urxvt specific)
+! NOTE URxvt will use the colours specified in the generic X defaults
+! uncomment below to use different theme for URxvt
+! #include </home/prot/.my_urxvt/themes/tempus/tempus_rift.Xcolors>
