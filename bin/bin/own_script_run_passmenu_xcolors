@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# get the colours
+source "$HOME/.my_Xcolors/active-tempus-theme.sh"
+
+# run passmenu with custom colours, font, and prompt
+passmenu -f -i -l 10 -p "Copy password" -m 0 -nb "$background" -nf "$foreground" -sb "$color3" -sf "$background" -fn "DejaVu Sans Mono-12"
