@@ -10,9 +10,13 @@ if [ -d "$HOME/bin" ] ; then
     export PATH=$PATH:"$HOME/bin"
 fi
 
+# default pager
+export PAGER="less --quit-at-eof"
+export MANPAGER=$PAGER
+
 # default editor
 export VISUAL=vim
-export EDITOR="$VISUAL"
+export EDITOR=$VISUAL
 
 # default browser
 export BROWSER=/usr/bin/xdg-open
