@@ -1,12 +1,21 @@
 # Configurations for GNU/Linux
 
-![bspwm sample](https://raw.githubusercontent.com/protesilaos/dotfiles/master/screenshot.png)
+Managed with GNU Stow. Here is a [short blog post](http://protesilaos.com/codelog/gnu-stow-dotfiles/) on how I use that program.
 
+## Demo
+
+'Dirty' screenshot  
+![bspwm sample screenshot](https://raw.githubusercontent.com/protesilaos/dotfiles/master/screenshot.png)
+
+Demo of a script that changes all themes on demand  
 ![bspwm demo of theme change](https://thumbs.gfycat.com/AnguishedConventionalEland-size_restricted.gif)
 
-[Higher quality of the GIF](https://gfycat.com/gifs/detail/AnguishedConventionalEland)
+Demo of a dmenu script for doing the above more efficiently  
+![bspwm demo of theme change](https://thumbs.gfycat.com/BlushingAmpleGopher-size_restricted.gif)
 
-Managed with GNU Stow. Here is a [short blog post](http://protesilaos.com/codelog/gnu-stow-dotfiles/) on how I use that program.
+[Higher quality of GIF 1](https://gfycat.com/AnguishedConventionalEland)
+
+[Higher quality of GIF 2](https://gfycat.com/BlushingAmpleGopher)
 
 ## Getting started
 
