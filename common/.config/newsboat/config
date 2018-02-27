@@ -9,12 +9,12 @@ show-read-articles no
 show-read-feeds no
 prepopulate-query-feeds yes
 feed-sort-order name
-show-keymap-hint yes
+show-keymap-hint no
 swap-title-and-hints no
 text-width 80
 save-path "~/Documents/rss-archived"
 browser /usr/bin/xdg-open %u
-pager "less -e %f"
+confirm-exit yes
 
 # Podcasts
 player mpv
@@ -22,7 +22,7 @@ download-path "~/podcasts/%n"
 max-downloads 3
 
 # Key bindings ----------------------------------
-bind-key h prev-dialog
+bind-key h quit
 bind-key j next
 bind-key k prev
 bind-key l open
