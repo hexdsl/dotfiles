@@ -1,16 +1,73 @@
 #!/bin/bash
 
+# tempusmenu: a dmenu script to switch between Tempus themes.
+# `tempusmenu` invokes a script that executes the actual theme change.
+# That script applies to a variety of programs, including X resources, bspwm, dunst, polybar, etc.
+
+    # This program is free software: you can redistribute it and/or modify
+    # it under the terms of the GNU General Public License as published by
+    # the Free Software Foundation, either version 3 of the License, or
+    # (at your option) any later version.
+
+    # This program is distributed in the hope that it will be useful,
+    # but WITHOUT ANY WARRANTY; without even the implied warranty of
+    # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    # GNU General Public License for more details.
+
+    # You should have received a copy of the GNU General Public License
+    # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 # PREREQUISITES
-# git clone --depth 1 git@github.com:protesilaos/tempus-themes-generator
 # All of my dotfiles (stow everything)
 # https://github.com/protesilaos/dotfiles
 
-# customise dmenu command
+# define length of tempus themes list (for use in dmenu -l)
+tempus_themes_length=$(ls $HOME/.my_Xcolors/tempus/ | wc -l)
+
+# pass custom colours to dmenu command
 source $HOME/.my_Xcolors/active-tempus-theme.sh
 
-# pipe list of theme names to dmenu
-tempus_themes_choice=$(ls ~/tempus-themes-generator/schemes/ | dmenu -l 10 -p 'Select Tempus theme' -nb $background -nf $foreground -sb $color5 -sf $background -fn 'DejaVu Sans Mono-12')
+# dmenu wrapper with the list of tempus themes
+tempus_themes_selection()
+{
+    ls $HOME/.my_Xcolors/tempus/ | \
+    sed 's/\([a-z]*_\)\([a-z]*\)\(\.[a-zA-Z]*\)/\2 /g' | \
+    dmenu -l $tempus_themes_length -p 'Select Tempus theme' -nb $background -nf $foreground -sb $color5 -sf $background -fn 'DejaVu Sans Mono-12'
+}
 
+# capture dmenu output
+tempus_themes_choice=$(tempus_themes_selection)
+
+# run script to update all themes with the choice as its argument
 if [ $tempus_themes_choice ]; then
     own_script_update_environment_theme $tempus_themes_choice
 fi
+
+
+# ANNEX with further explanations
+
+# I store my generic X colors in $HOME/.my_Xcolors/.
+# The tempus themes are within the subdirectory $HOME/.my_Xcolors/tempus/.
+# Each item's name is prefixed with 'tempus_' and suffixed with '.Xcolors'.
+
+# $ ls $HOME/.my_Xcolors/tempus/
+# tempus_autumn.Xcolors  tempus_rift.Xcolors    tempus_warp.Xcolors
+# tempus_fugit.Xcolors   tempus_spring.Xcolors  tempus_winter.Xcolors
+# tempus_future.Xcolors  tempus_summer.Xcolors
+# tempus_past.Xcolors    tempus_totus.Xcolors
+
+# The sed regex is used to omit the prefix 'tempus_' and the suffix '.Xcolors'.
+# $ ls $HOME/.my_Xcolors/tempus/ | sed 's/\([a-z]*_\)\([a-z]*\)\(\.[a-zA-Z]*\)/\2 /g'
+# autumn
+# fugit
+# future
+# past
+# rift
+# spring
+# summer
+# totus
+# warp
+# winter
+
+# This is needed to pass the corect argument to the `own_script_update_environment_theme`.
+# That script, as with all of my scripts, is stored in my dotfiles, under `bin`.
