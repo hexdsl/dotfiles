@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# A wrapper around `task` (taskwarrior) to speed up item creation
+# A simplistic wrapper around `task` (taskwarrior) to speed up item creation.
 
     # This program is free software: you can redistribute it and/or modify
     # it under the terms of the GNU General Public License as published by
