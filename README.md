@@ -1,6 +1,8 @@
-# Configurations for GNU/Linux
+# Custom environment and configurations for GNU/Linux
 
-Managed with GNU Stow. Here is a [short blog post](http://protesilaos.com/codelog/gnu-stow-dotfiles/) on how I use that program.
+#### Managed with GNU Stow
+
+Here is a [short blog post](http://protesilaos.com/codelog/gnu-stow-dotfiles/) on how I use that program.
 
 ## Demo
 
@@ -10,12 +12,12 @@ Managed with GNU Stow. Here is a [short blog post](http://protesilaos.com/codelo
 Demo of a script that changes all themes on demand  
 ![bspwm demo of theme change](https://thumbs.gfycat.com/AnguishedConventionalEland-size_restricted.gif)
 
-Demo of a dmenu script for doing the above more efficiently  
+[Higher quality of environment theme change](https://gfycat.com/AnguishedConventionalEland)
+
+Demo of `tempusmenu`: a dmenu script for doing the above more efficiently  
 ![bspwm demo of theme change](https://thumbs.gfycat.com/BlushingAmpleGopher-size_restricted.gif)
 
-[Higher quality of GIF 1](https://gfycat.com/AnguishedConventionalEland)
-
-[Higher quality of GIF 2](https://gfycat.com/BlushingAmpleGopher)
+[Higher quality of tempusmenu demo](https://gfycat.com/BlushingAmpleGopher)
 
 ## Getting started
 
