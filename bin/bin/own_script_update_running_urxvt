@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# EXPERIMENTAL !!!
+
+# Applies theme change to all active terminals that read X colours. `urxvtc` in my case.
+# Adapted from https://www.reddit.com/r/unixporn/comments/80nidw/bspwm_script_to_change_all_themes_on_demand/duxjw1e/
+# My changes apply to the broadening of the query's scope. My X colours are not set specifically for URxvt.
+
+xcolors_array=$(xrdb -query | grep -e '\#[a-z0-9]*')
+
+xrdb_query()
+{
+    for i in $xcolors_array
+    do
+        if [ -n "${xcolors_array}" ]; then
+            echo "${xcolors_array}"
+            return 0
+        fi
+    done
+    return 1
+}
+
+sequences=""
+
+for i in $(seq 0 15)
+do
+    sequences+="\033]4;${i};$(xrdb_query | grep "color${i}:" | cut -f 2)\007"
+done
+
+sequences+="\033]10;$(xrdb_query | grep "foreground:" | cut -f 2)\007"
+sequences+="\033]11;$(xrdb_query | grep "background:" | cut -f 2)\007"
+sequences+="\033]12;$(xrdb_query | grep "cursorColor:" | cut -f 2)\007"
+sequences+="\033]13;$(xrdb_query | grep "cursorColor2:" | cut -f 2)\007"
+sequences+="\033]17;$(xrdb_query | grep "highlightColor:" | cut -f 2)\007"
+sequences+="\033]708;$(xrdb_query | grep "borderColor:" | cut -f 2)\007"
+sequences+="\033]708;$(xrdb_query | grep "background:" | cut -f 2)\007"
+
+for term in /dev/pts/[0-9]*; do
+    printf "%b" "${sequences}" > "${term}" &
+done
