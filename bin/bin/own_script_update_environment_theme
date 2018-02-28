@@ -166,18 +166,18 @@ modify_bspwm()
     bspc config presel_feedback_color "$color13"
 }
 
-modify_xfce4_terminal()
-{
-    xfce4_terminal_palette="$color0;$color1;$color2;$color3;$color4;$color5;$color6;$color7;$color8;$color9;$color10;$color11;$color12;$color13;$color14;$color15"
+# modify_xfce4_terminal()
+# {
+    # xfce4_terminal_palette="$color0;$color1;$color2;$color3;$color4;$color5;$color6;$color7;$color8;$color9;$color10;$color11;$color12;$color13;$color14;$color15"
 
-    sed -i -e "s/ColorPalette=[#;0-9a-f]*/ColorPalette=$xfce4_terminal_palette/g" $HOME/.config/xfce4/terminal/terminalrc
-    sed -i -e "s/ColorForeground=\#[0-9a-f]*/ColorForeground=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
-    sed -i -e "s/ColorBackground=\#[0-9a-f]*/ColorBackground=$background/g" $HOME/.config/xfce4/terminal/terminalrc
-    sed -i -e "s/ColorCursor=\#[0-9a-f]*/ColorCursor=$cursorColor/g" $HOME/.config/xfce4/terminal/terminalrc
-    sed -i -e "s/ColorSelection=\#[0-9a-f]*/ColorSelection=$background/g" $HOME/.config/xfce4/terminal/terminalrc
-    sed -i -e "s/ColorSelectionBackground=\#[0-9a-f]*/ColorSelectionBackground=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
-    sed -i -e "s/ColorBold=\#[0-9a-f]*/ColorBold=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
-}
+    # sed -i -e "s/ColorPalette=[#;0-9a-f]*/ColorPalette=$xfce4_terminal_palette/g" $HOME/.config/xfce4/terminal/terminalrc
+    # sed -i -e "s/ColorForeground=\#[0-9a-f]*/ColorForeground=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
+    # sed -i -e "s/ColorBackground=\#[0-9a-f]*/ColorBackground=$background/g" $HOME/.config/xfce4/terminal/terminalrc
+    # sed -i -e "s/ColorCursor=\#[0-9a-f]*/ColorCursor=$cursorColor/g" $HOME/.config/xfce4/terminal/terminalrc
+    # sed -i -e "s/ColorSelection=\#[0-9a-f]*/ColorSelection=$background/g" $HOME/.config/xfce4/terminal/terminalrc
+    # sed -i -e "s/ColorSelectionBackground=\#[0-9a-f]*/ColorSelectionBackground=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
+    # sed -i -e "s/ColorBold=\#[0-9a-f]*/ColorBold=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
+# }
 
 # reload dunst
 modify_dunst()
@@ -214,6 +214,9 @@ update_environment_theme()
 
 # run commands for everything
 update_environment_theme
+
+# update running urxvt instances
+own_script_update_running_urxvt
 
 # send notification
 notify-send -i /usr/share/icons/Papirus/16x16/apps/terminal.svg "Environment theme" "Updated colours to <b>Tempus $tempus_scheme</b>"
