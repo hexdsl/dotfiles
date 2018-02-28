@@ -1,13 +1,31 @@
 #!/bin/bash
 
-# Replaces existing theme with the one provided as a shell argument
+# Replaces existing themes with the one provided as a shell argument.
 
-# Usage:
+# The usefulness of this script is fully fledged out with my `tempusmenu`.
+# All my scripts are stored in my dotfiles, under `bin`.
+# https://github.com/protesilaos/dotfiles
+
+    # This program is free software: you can redistribute it and/or modify
+    # it under the terms of the GNU General Public License as published by
+    # the Free Software Foundation, either version 3 of the License, or
+    # (at your option) any later version.
+
+    # This program is distributed in the hope that it will be useful,
+    # but WITHOUT ANY WARRANTY; without even the implied warranty of
+    # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    # GNU General Public License for more details.
+
+    # You should have received a copy of the GNU General Public License
+    # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# USAGE
 # own_script_update_environment_theme [theme]
 
 # For available arguments run:
-# ls ~/.my_Xcolors/tempus/
-# ls ~/.my_Xcolors/shell/
+# ls $HOME/.my_Xcolors/tempus/ | sed 's/\([a-z]*_\)\([a-z]*\)\(\.[a-zA-Z]*\)/\2 /g'
+# or
+# ls $HOME/.my_Xcolors/shell/ | sed 's/\([a-z]*_\)\([a-z]*\)\(\.[a-zA-Z]*\)/\2 /g'
 
 # PREREQUISITES
 # git clone --depth 1 git@github.com:protesilaos/dotfiles ~/dotfiles-prot
