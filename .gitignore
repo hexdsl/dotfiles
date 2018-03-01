@@ -8,9 +8,12 @@
 **/.config/mpd/pid
 **/.config/mpd/state
 **/.config/mpd/sticker.sql
-**/.config/ncmpcpp/error.log
 **/.config/ranger/bookmarks
+**/.config/ranger/history
 **/.config/ranger/tagged
+**/.config/ranger/colorschemes/__pycache__
+**/.config/ranger/colorschemes/__*.py
+**/.config/ncmpcpp/error.log
 **/.config/newsboat/cache.db
 **/.config/newsboat/cache.db.lock
 **/.config/newsboat/history.cmdline
