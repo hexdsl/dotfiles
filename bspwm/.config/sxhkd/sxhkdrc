@@ -163,6 +163,10 @@ super + shift + d
 super + shift + t
     tempusmenu
 
+# tempus theme switcher
+super + r
+    screencastmenu
+
 # common programs
 alt + 1
     firefox
