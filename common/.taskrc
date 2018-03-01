@@ -25,4 +25,4 @@ dateformat=YMD
 weekstart=Monday
 
 # Theme
-include ~/.config/task/themes/tempus_theme_dark.theme
+include ~/.config/task/themes/tempus_theme_light.theme
