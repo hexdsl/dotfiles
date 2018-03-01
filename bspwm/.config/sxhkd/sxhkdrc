@@ -1,9 +1,8 @@
-# TODO remove papirus icons dependency for all notify-send
-
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/administration.svg "sxhkd config" "Reloaded key bindings"
 
+# reload polybar
 super + shift + Escape
     pkill polybar && . $HOME/.config/polybar/launch.sh
 
@@ -86,8 +85,6 @@ super + {Left,Down,Up,Right}
 # ==============================================================================
 
 # screenshots
-# NOTE notify-send timeout `-t` is set to 1000 miliseconds
-# NOTE higher values interfere with multiple scrots in quick succession
 Print
     scrot -u -z '%Y-%m-%d_%H:%M:%S_$wx$h$n.png' -e 'mv $f ~/Desktop' && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/ksnapshot.svg "Window view screenshot" "Saved image to Desktop"
 super + Print
@@ -98,22 +95,29 @@ XF86MonBrightness{Down,Up}
     xbacklight {-dec 15,-inc 15} 
 
 # session
-ctrl + alt + o
+ctrl + alt + Delete
 	bspc quit
 ctrl + alt {r,End}
    systemctl {reboot,poweroff} 
-ctrl + alt + Delete
-    i3lock -i ~/.lockscreen.png
+ctrl + alt + l
+   mpc pause && i3lock -i ~/.lockscreen.png
 
 # functionality
 # ------------------------------------------------------------------------------
-# TODO add dropdown terminal 
-# TODO session recording
 
 # switch between gap presets
 super + alt + {y,u,i,o}
     bspc config window_gap {0,5,10,20}
 #   bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
+# tempus theme switcher
+# NOTE XXX must run `stow` for all my dotfiles
+super + shift + t
+    tempusmenu
+
+# interface for screencasting
+super + r
+    screencastmenu
 
 # media controls
 # ------------------------------------------------------------------------------
@@ -159,15 +163,7 @@ super + d
 super + shift + d
     own_script_run_passmenu_xcolors
 
-# tempus theme switcher
-super + shift + t
-    tempusmenu
-
-# tempus theme switcher
-super + r
-    screencastmenu
-
-# common programs
+# common program
 alt + 1
     firefox
 alt + {2,3,4,5,6,7}
