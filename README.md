@@ -50,31 +50,38 @@ stow --delete bspwm
 
 For more options, run `man stow`.
 
+**IMPORTANT.** If you want to reproduce my environment, make sure you search and replace all absolute paths to my home directory `/home/prot/`.
+
 NOTE: The directory 'sudo' is not managed with stow. I copy files manually, if necessary.
 
 ## Setup overview (Arch Linux)
 
-Package names with a short description.
+From A-Z:
 
-- Window manager `bspwm`. For a keyboard-centric, highly-customisable, tilling window manager.
-- Bar `polybar` (AUR). Flexible, easy-to-use, system bar with easy configs for its various modules.
-- Compositor `compton`. For transparency, no screen tearing, and shadows under windows.
-- Terminal emulator `rxvt-unicode`. Customisable, lightweight, effective terminal.
-- Text editor `vim`. The decent text editor that is not included with Emacs.
-- File Manager `ranger`. Console application, extensible, and straightforward.
-- Mail client `neomutt`. Robust, reliable, email client for communicating via the console. Neomutt aims to revive or otherwise improve `mutt`.
-- Console browser `w3m`. Used as a backend for displaying images in the terminal (e.g. with `ranger`), or to view html files in `neomutt`.
-- Feed reader `newsboat`. Simple RSS reader with podcasting capabilities.
-- Music server `mpd`. Music Player Daemon works in the background, enabling all sorts of clients to interface with it.
-- Music client `ncmpcpp`. Console based MPD interface (bonus: use `cantata` if you need a GUI).
-- Program launcher `dmenu`. Dead simple way to run items in your `$PATH`
-- Password manager `pass` called with `passmenu`. Essential to taking control of all your passwords, without losing out on ease-of-use.
-- Notifications `dunst`. Configurable. Gets the job done.
-- Fonts `ttf-dejavu` and `ttf-iosevka-term-ss04` (AUR).
+- `bspwm`. Tiling window manager.
+- `compton`. Display compositor.
+- `dmenu`. Program launcher.
+- `dunst`. Notification daemon.
+- `mpd`. Music server daemon.
+- `mpv`. Media player.
+- `ncmpcpp`. Console music client for `mpd`.
+- `neomutt`. Console email client.
+- `newsboat`. Feed reader and podcast client.
+- `papirus-icon-theme`. Icon theme used in my `notify-send` actions.
+- `pass`. Password manager.
+- `polybar` (AUR). System status bar.
+- `ranger`. Console file manager.
+- `redshift`. Screen colour temparature daemon.
+- `rxvt-unicode`. Terminal emulator.
+- `task` (aka taskwarrior). Task manager.
+- `ttf-dejavu`. System interface fonts.
+- `ttf-iosevka-term-ss04` (AUR). Fonts used in terminals.
+- `vim`. Text editor.
+- `w3m`. Console browser.
 
 ## License
 
-Unless otherwise noted, all code herein is distributed under the terms of the GNU General Public License v3.0. In cases where that cannot apply (e.g. a picture), the Creative Commons Attribution-ShareAlike 4.0 License shall be used instead.
+Unless otherwise noted, all code herein is distributed under the terms of the GNU General Public License Version 3. In cases where that cannot apply (e.g. a picture), the Creative Commons Attribution-ShareAlike 4.0 License shall be used instead.
 
 ## Credits
 
