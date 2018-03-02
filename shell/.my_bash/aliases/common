@@ -23,8 +23,9 @@ alias rm='rm -I'
 alias cO='curl -O'
 
 # enable color support of ls and also add handy aliases
+dircolors_data="$HOME/.my_bash/dircolors"
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r $dircolors_data && eval "$(dircolors -b ${dircolors_data})" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
