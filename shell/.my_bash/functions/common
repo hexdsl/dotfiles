@@ -1,7 +1,7 @@
 # vi: ft=sh
 
 # Colourise man pages
-function man ()
+man ()
 {
     env \
     LESS_TERMCAP_mb=$(tput bold; tput setaf 5) \
@@ -21,7 +21,7 @@ function man ()
 }
 
 # Make directory and enter it
-function mkcd ()
+mkcd ()
 {
     if [ ! -n "$1" ]; then
         echo "Specify a name for this directory"
@@ -33,7 +33,7 @@ function mkcd ()
 }
 
 # Enter directory and list contents
-function cd ()
+cd ()
 {
     if [ -n "$1" ]; then
         builtin cd "$@" && ls -A --color=auto --group-directories-first 
@@ -43,14 +43,14 @@ function cd ()
 }
 
 # Display current IP if connected to the internet
-function mypubip ()
+mypubip ()
 {
     lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | awk '{ print $4 }' | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g'
 }
 
 
 # Back up a file. Usage "backfile filename.txt"
-function backupthis ()
+backupthis ()
 {
     cp $1 ${1}-`date +%Y%m%d%H%M`.backup;
 }
