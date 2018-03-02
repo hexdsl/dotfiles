@@ -1,3 +1,6 @@
+# vi: ft=sh
+# filetype needed to set right comment style
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/administration.svg "sxhkd config" "Reloaded key bindings"
@@ -7,7 +10,7 @@ super + shift + Escape
     pkill polybar && . $HOME/.config/polybar/launch.sh
 
 # bspwm hotkeys
-# ==============================================================================
+# ============================
 
 # close and kill
 super + {_,shift + }q
@@ -18,26 +21,25 @@ super + m
 	bspc desktop -l next
 
 # state/flags
-# ------------------------------------------------------------------------------
+# ----------------------------
 
-# set the window state
-super + {t,space,f}
- 	bspc node -t {tiled,floating,fullscreen}
+# toggle tiled, pseudo_tiled, floating, fullscreen view
+# NOTE the presence of ~
+# if current state matches the given state, then the argument is
+# interpreted as the last state.
+super + {t,shift + space,space,f}
+ 	bspc node -t ~{tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + shift + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
 # focus/swap
-# ------------------------------------------------------------------------------
+# ----------------------------
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
-
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -47,42 +49,54 @@ super + {grave,Tab}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# focus on older/newer window in history
+super + {o,n}
+	bspc wm --record-history off; \
+	bspc node --focus {older,newer}; \
+    bspc wm --record-history on
+
+# rotate desktop
+super + {_,shift + }r
+    bspc node @/ --rotate {90,-90}
+
 # preselect
-# ------------------------------------------------------------------------------
+# ----------------------------
 
 # preselect the direction
+# cancel the preselection
+# by pointing at given direction twice
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+    bspc node --presel-dir '~{north,south,west,east}'
 
 # preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
 # move/resize
-# ------------------------------------------------------------------------------
+# ----------------------------
 
-# expand a window by moving one of its side outward
+# expand a window by moving one of its sides outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    bspc node @{west -r -10,south -r +10,north -r -10,east -r +10}
 
-# contract a window by moving one of its side inward
+# contract a window by moving one of its sides inward
 super + ctrl + alt + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+    bspc node @{east -r -10,north -r +10,south -r -10,west -r +10}
 
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# make split ratios equal
+super + equal
+	bspc node @/ --equalize
+
+# make split ratios balanced
+super + minus
+    bspc node @/ --balance
+
 # custom key bindings
-# ==============================================================================
+# ============================
 
 # screenshots
 Print
@@ -99,28 +113,31 @@ ctrl + alt + Delete
 	bspc quit
 ctrl + alt {r,End}
    systemctl {reboot,poweroff} 
-ctrl + alt + l
+{ctrl + alt + l,XF86ScreenSaver}
    mpc pause && i3lock -i ~/.lockscreen.png
 
 # functionality
-# ------------------------------------------------------------------------------
+# ----------------------------
 
 # switch between gap presets
 super + alt + {y,u,i,o}
     bspc config window_gap {0,5,10,20}
-#   bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
+# dynamic gaps
+super + bracket{left,right}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
 
 # tempus theme switcher
 # NOTE XXX must run `stow` for all my dotfiles
 super + shift + t
     tempusmenu
 
-# interface for screencasting
-super + r
-    screencastmenu
+# open interface for screencasting or stop recording
+super + {_,shift + }s
+    {screencastmenu, own_script_ffmpeg_screencast rec_stop}
 
 # media controls
-# ------------------------------------------------------------------------------
+# ----------------------------
 
 # mpd
 # alt + {a,s,d}
@@ -145,7 +162,7 @@ super + XF86Audio{Mute,LowerVolume,RaiseVolume}
     amixer set Capture {toggle,5%-,5%+}
 
 # launchers
-# ------------------------------------------------------------------------------
+# ----------------------------
 
 # terminal emulator
 super + Return
