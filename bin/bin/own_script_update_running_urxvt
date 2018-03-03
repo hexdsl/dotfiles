@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# EXPERIMENTAL !!!
-
 # Applies theme change to all active terminals that read X colours. `urxvtc` in my case.
 # Adapted from https://www.reddit.com/r/unixporn/comments/80nidw/bspwm_script_to_change_all_themes_on_demand/duxjw1e/
 # My changes apply to the broadening of the query's scope. My X colours are not set specifically for URxvt.
@@ -22,12 +20,13 @@
 # capture all colour related settings from the X resources
 xcolors_array=$(xrdb -query | grep -e '\#[a-z0-9]*')
 
-xrdb_query()
+xrdb_query_get_hex_value()
 {
     for i in $xcolors_array
     do
         if [ -n "${xcolors_array}" ]; then
-            echo "${xcolors_array}"
+            # the grep and cut operations leave only the HEX colour value
+            echo "${xcolors_array}" | grep "$1:" | cut -f 2
             return 0
         fi
     done
@@ -41,18 +40,18 @@ ansi_sequences=""
 # the cut operation, leaves nothing but the HEX colour value
 for i in $(seq 0 15)
 do
-    ansi_sequences+="\033]4;${i};$(xrdb_query | grep "color${i}:" | cut -f 2)\007"
+    ansi_sequences+="\033]4;${i};$(xrdb_query_get_hex_value color${i})\007"
 done
 
 # prepare ANSI sequences for base values
-# the cut operation, leaves nothing but the HEX colour value
-ansi_sequences+="\033]10;$(xrdb_query | grep "foreground:" | cut -f 2)\007"
-ansi_sequences+="\033]11;$(xrdb_query | grep "background:" | cut -f 2)\007"
-ansi_sequences+="\033]12;$(xrdb_query | grep "cursorColor:" | cut -f 2)\007"
-ansi_sequences+="\033]19;$(xrdb_query | grep "cursorColor2:" | cut -f 2)\007"
-ansi_sequences+="\033]17;$(xrdb_query | grep "foreground:" | cut -f 2)\007"
-ansi_sequences+="\033]708;$(xrdb_query | grep "background:" | cut -f 2)\007"
-ansi_sequences+="\033]708;$(xrdb_query | grep "background:" | cut -f 2)\007"
+# NOTE cursorColor2 needs to be addressed
+ansi_sequences+="\033]10;$(xrdb_query_get_hex_value foreground)\007"
+ansi_sequences+="\033]11;$(xrdb_query_get_hex_value background)\007"
+ansi_sequences+="\033]12;$(xrdb_query_get_hex_value cursorColor)\007"
+ansi_sequences+="\033]19;$(xrdb_query_get_hex_value cursorColor2)\007"
+ansi_sequences+="\033]17;$(xrdb_query_get_hex_value foreground)\007"
+ansi_sequences+="\033]708;$(xrdb_query_get_hex_value background)\007"
+ansi_sequences+="\033]708;$(xrdb_query_get_hex_value background)\007"
 
 # apply ANSI sequences to running terminals
 for term in /dev/pts/[0-9]*; do
