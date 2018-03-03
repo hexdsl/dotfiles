@@ -47,8 +47,8 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = DejaVu Sans Condensed:style=Book:antialias=true:pixelsize=10;1
-font-1 = DejaVu Sans Condensed:style=Bold:antialias=true:pixelsize=10;1
+font-0 = DejaVuSansCondensed:style=Book:antialias=true:pixelsize=10;1
+font-1 = DejaVuSansCondensed:style=Bold:antialias=true:pixelsize=10;1
 
 modules-left = bspwm mpd
 modules-right = archpkg battery volume backlight keyboard date powermenu
