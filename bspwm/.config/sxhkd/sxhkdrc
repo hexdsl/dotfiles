@@ -49,6 +49,10 @@ super + {grave,Tab}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# send and follow to given desktop	
+super + ctrl + alt + {1-9}
+    id=$(bspc query -N -n); bspc node -d ^{1-9}; bspc node -f ${id}
+
 # focus on older/newer window in history
 super + {o,n}
 	bspc wm --record-history off; \
@@ -133,7 +137,7 @@ super + shift + t
     tempusmenu
 
 # open interface for screencasting or stop recording
-super + {_,shift + }s
+super + ctrl + {_,shift + }s
     {screencastmenu, own_script_ffmpeg_screencast rec_stop}
 
 # media controls
