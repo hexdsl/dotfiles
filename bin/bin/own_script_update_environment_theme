@@ -85,7 +85,7 @@ modify_xcolors()
 # particularly important when switching between light and dark themes
 modify_vim()
 {
-	sed -i -e "s/tempus_[a-z]*/tempus_$tempus_scheme/g" $HOME/.vimrc
+	sed -i -e "s/tempus_[a-z]*/tempus_$tempus_scheme/g" $HOME/.vim/vimrc_modules/theme_settings.vimrc
 }
 
 # reload polybar
