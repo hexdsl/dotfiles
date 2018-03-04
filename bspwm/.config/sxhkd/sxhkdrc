@@ -50,7 +50,7 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # send and follow to given desktop	
-super + ctrl + alt + {1-9}
+super + ctrl + shift + {1-9}
     id=$(bspc query -N -n); bspc node -d ^{1-9}; bspc node -f ${id}
 
 # focus on older/newer window in history
@@ -80,11 +80,11 @@ super + ctrl + {1-9}
 # ----------------------------
 
 # expand a window by moving one of its sides outward
-super + alt + {h,j,k,l}
+super + ctrl + {h,j,k,l}
     bspc node @{west -r -10,south -r +10,north -r -10,east -r +10}
 
 # contract a window by moving one of its sides inward
-super + ctrl + alt + {h,j,k,l}
+super + ctrl + shift + {h,j,k,l}
     bspc node @{east -r -10,north -r +10,south -r -10,west -r +10}
 
 # move a floating window
@@ -114,21 +114,21 @@ XF86MonBrightness{Down,Up}
 
 # session
 ctrl + alt + Delete
-	bspc quit
-ctrl + alt {r,End}
-   systemctl {reboot,poweroff} 
+    mpc pause && bspc quit
+ctrl + alt {Home,End}
+    mpc pause && systemctl {reboot,poweroff} 
 {ctrl + alt + l,XF86ScreenSaver}
-   mpc pause && i3lock -i ~/.lockscreen.png
+    mpc pause && i3lock -i ~/.lockscreen.png
 
 # functionality
 # ----------------------------
 
 # switch between gap presets
-super + alt + {y,u,i,o}
+super + shift + {y,u,i,o}
     bspc config window_gap {0,5,10,20}
 
 # dynamic gaps
-super + bracket{left,right}
+super + shift + bracket{left,right}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
 
 # tempus theme switcher
@@ -137,25 +137,26 @@ super + shift + t
     tempusmenu
 
 # open interface for screencasting or stop recording
-super + ctrl + {_,shift + }s
+# use chain cords
+super + p ; s
     {screencastmenu, own_script_ffmpeg_screencast rec_stop}
 
 # media controls
 # ----------------------------
 
 # mpd
-# alt + {a,s,d}
-    # mpc {toggle,prev,next}
 # XF86Audio{Play,Prev,Next}
     # mpc {toggle,prev,next}
-alt + {a,s,d}
-    mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)"}
+alt + {Down,Left,Right,Up}
+    mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",stop}
+
 XF86Audio{Play,Prev,Next,Stop}
     mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",stop}
 
 # speaker volume
-alt + {z,x,c}
+alt + shift + {Down,Left,Right}
     amixer set Master {toggle,5%-,5%+}
+
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     amixer set Master {toggle,5%-,5%+}
 
@@ -169,7 +170,8 @@ super + XF86Audio{Mute,LowerVolume,RaiseVolume}
 # ----------------------------
 
 # terminal emulator
-super + Return
+# NOTE `@` means until key is released
+super + @Return
 	urxvtc
 
 # program launcher
@@ -184,8 +186,9 @@ super + d
 super + shift + d
     own_script_run_passmenu_xcolors
 
-# common program
-alt + 1
+# common programs
+# use chain chords
+super + p ; 1
     firefox
-alt + {2,3,4,5,6,7}
+super + p ; {2-7}
     urxvtc -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}

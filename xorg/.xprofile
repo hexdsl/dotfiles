@@ -27,7 +27,7 @@ xrdb -merge ~/.Xresources
 # specify keyboard layouts and compose key
 if [ -x /usr/bin/setxkbmap ]; then
     setxkbmap -option compose:menu
-    setxkbmap -layout 'us,gr' -option 'grp:alt_shift_toggle'
+    setxkbmap -layout 'us,gr' -option 'grp:alt_caps_toggle'
 fi
 
 # music player daemon

@@ -35,4 +35,3 @@ let g:ctrlp_custom_ignore = {
 " Goyo
 let g:goyo_width = 80
 let g:goyo_height = '90%'
-
