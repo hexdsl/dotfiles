@@ -23,7 +23,8 @@
 **/.config/task/completed.data
 **/.config/task/pending.data
 **/.config/task/undo.data
-**/.vim/plugged/**/.git
+**/.vim/plugged
+**/.vim/swap
 *.directory
 *.log
 *.sql

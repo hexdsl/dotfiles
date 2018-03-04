@@ -2,13 +2,12 @@
 " https://github.com/protesilaos/dotfiles
 " last revised 2018-03-03
 
-" Function to source only if file exists {
+" Function to source only if file exists
 function! SourceIfExists(file)
-  if filereadable(expand(a:file))
-    exe 'source' a:file
-  endif
+    if filereadable(expand(a:file))
+        exe 'source' a:file
+    endif
 endfunction
-" }
 
 call SourceIfExists('~/.vim/vimrc_modules/general.vimrc')
 call SourceIfExists('~/.vim/vimrc_modules/plugins.vimrc')
