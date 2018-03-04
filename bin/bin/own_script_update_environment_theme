@@ -97,6 +97,13 @@ modify_polybar()
 	sed -i -e "s/tempus_[a-z]*/tempus_$tempus_scheme/g" $HOME/.config/polybar/config
 }
 
+# change the st theme
+# TODO handle need to recompile st
+modify_st()
+{
+    sed -i -e "s/_[a-z]*\./_$tempus_scheme./g" $HOME/.my_Xcolors/active-tempus-theme.h
+}
+
 # change the shell variables theme, used by dmenu, bspwm, dunst
 modify_shell_theme()
 {
@@ -198,6 +205,7 @@ update_environment_theme()
     modify_xcolors
     modify_vim
     modify_polybar
+    modify_st
     # the shell is reloaded first, so that others can take the new variables it exposes
     modify_shell_theme
     modify_less_manpages
