@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Builds content files for all items of the Tempus Themes collection. For use in my local setup.
+# https://github.com/protesilaos/dotfiles
+# https://protesilaos.com/tempus-themes
+
+# IMPORTANT The script requires the tempus-themes-generator git repo at the home directory
+# git clone https://github.com/protesilaos/tempus-themes-generator.git --depth 1
+
+    # This program is free software: you can redistribute it and/or modify
+    # it under the terms of the GNU General Public License as published by
+    # the Free Software Foundation, either version 3 of the License, or
+    # (at your option) any later version.
+
+    # This program is distributed in the hope that it will be useful,
+    # but WITHOUT ANY WARRANTY; without even the implied warranty of
+    # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    # GNU General Public License for more details.
+
+    # You should have received a copy of the GNU General Public License
+    # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# variables for the operations
+tempus_generator_dir=$HOME/tempus-themes-generator
+tempus_generator_script=$tempus_generator_dir/tempus-themes-generator.sh
+tempus_schemes=$(ls $tempus_generator_dir/schemes)
+local_themes_dir=$HOME/.my_Xcolors
+
+# the generator's command
+invoke_generator ()
+{
+    $tempus_generator_script $1 $2 > $local_themes_dir/$3/tempus_$4
+}
+
+# execute the generator's command for each tempus item
+invoke_generic_loop ()
+{
+    for i in $tempus_schemes
+    do
+        invoke_generator $i $1 $2 $i.$3
+    done
+}
+
+# pass the appropriate arguments for the shell variables
+build_shell ()
+{
+    invoke_generic_loop shell-variables shell sh
+}
+
+# pass the appropriate arguments for st
+build_st ()
+{
+    invoke_generic_loop st st h
+}
+
+# pass the appropriate arguments for generic X colors
+build_xcolors ()
+{
+    invoke_generic_loop xcolors tempus Xcolors
+}
+
+# run all builds
+build_all ()
+{
+    build_shell
+    build_st
+    build_xcolors
+}
+
+# return results
+build_all
+
+# send notification
+notify-send -i /usr/share/icons/Papirus/16x16/mimetypes/text-x-script.svg "Local setup" "All Tempus Themes have been rebuilt. See ~/.my_Xcolors"
