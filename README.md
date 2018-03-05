@@ -72,7 +72,7 @@ From A-Z:
 - `polybar` (AUR). System status bar.
 - `ranger`. Console file manager.
 - `redshift`. Screen colour temparature daemon.
-- `rxvt-unicode`. Terminal emulator.
+- `st`. Terminal emulator (run with `tmux`, to avoid the need of patching a moving target)
 - `task` (aka taskwarrior). Task manager.
 - `ttf-dejavu`. System interface fonts.
 - `ttf-font-awesome-4` (AUR). Icon font used in the system bar.
