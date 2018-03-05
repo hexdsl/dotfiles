@@ -75,6 +75,7 @@ From A-Z:
 - `rxvt-unicode`. Terminal emulator.
 - `task` (aka taskwarrior). Task manager.
 - `ttf-dejavu`. System interface fonts.
+- `ttf-font-awesome-4` (AUR). Icon font used in the system bar.
 - `ttf-iosevka-term-ss04` (AUR). Fonts used in terminals.
 - `vim`. Text editor.
 - `w3m`. Console browser.

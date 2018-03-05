@@ -36,7 +36,7 @@ width = 100%
 radius = 0
 border-left-size = 0
 border-top-size = 0
-line-size = 1
+line-size = 2
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -47,11 +47,14 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = DejaVuSansCondensed:style=Book:antialias=true:pixelsize=10;1
-font-1 = DejaVuSansCondensed:style=Bold:antialias=true:pixelsize=10;1
+# IMPORTANT padding is generous because the sans font is appropriate
+# IMPORTANT a mono font will make the bar look terrible
+font-0 = FontAwesome:style=regular:pixelsize=9;1
+font-1 = DejaVuSansCondensed:style=book:antialias=true:pixelsize=10;1
+font-2 = DejaVuSansCondensed:style=bold:antialias=true:pixelsize=10;1
 
 modules-left = bspwm mpd
-modules-right = archpkg battery volume backlight keyboard date powermenu
+modules-right = archpkg battery backlight temperature volume keyboard date powermenu
 
 # tray-padding = 0
 
@@ -73,10 +76,10 @@ format = <label-state> <label-mode>
 
 label-focused = %index%
 label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.color10}
-label-focused-overline = ${colors.color10}
+label-focused-foreground = ${colors.foreground}
+label-focused-overline = ${colors.foreground}
 label-focused-padding = 3
-label-focused-font = 2
+label-focused-font = 3
 
 label-occupied = %index%
 label-occupied-background = ${colors.background}
@@ -96,17 +99,24 @@ label-empty =
 ; Available tokens:
 ;   None
 label-monocle = Monocle
-label-monocle-background = ${colors.color3}
+label-monocle-background = ${colors.color6}
 label-monocle-foreground = ${colors.background}
 label-monocle-padding = 3
+
 ; label-tiled =
 ; label-fullscreen = 
 ; label-floating = 
-; label-pseudotiled = 
+
+label-pseudotiled = Pseudo Tiled
+label-pseudotiled-background = ${colors.color6}
+label-pseudotiled-foreground = ${colors.background}
+label-pseudotiled-padding = 3
+
 label-locked = Locked
 label-locked-background = ${colors.color11}
 label-locked-foreground = ${colors.background}
 label-locked-padding = 3
+
 ; label-sticky = 
 ; label-private = 
 
@@ -114,14 +124,12 @@ label-locked-padding = 3
 type = internal/mpd
 format-online = <label-song> <label-time> <toggle>
 
-format-playing-prefix = §
-format-playing-prefix-font = 2
-format-playing-prefix-foreground = ${colors.color10}
+format-playing-prefix = 
+format-playing-prefix-foreground = ${colors.color2}
 format-playing-prefix-padding-right = 3
 format-playing = ${self.format-online}
 
-format-paused-prefix = §
-format-paused-prefix-font = 2
+format-paused-prefix = 
 format-paused-prefix-foreground = ${colors.color11}
 format-paused-prefix-padding-right = 3
 format-paused = ${self.format-online}
@@ -137,69 +145,118 @@ label-song-ellipsis = true
 
 [module/archpkg]
 type = custom/script
-format-prefix = "#"
-format-prefix-font = 2
-format-prefix-padding-right = 1
+format-prefix = 
+format-prefix-padding-right = 3
 format-prefix-foreground = ${colors.color13}
 exec = ~/.config/polybar/scripts/check-arch-aur-updates.sh
-interval = 600
+interval = 3600
 
 [module/battery]
 type = internal/battery
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT0
 adapter = AC
-full-at = 99
+full-at = 95
 
-format-charging-prefix = Ḃç
-format-charging-prefix-font = 2
-format-charging-prefix-foreground = ${colors.color10}
-format-charging-prefix-padding-right = 1
+time-format = %H:%M
+
 format-charging = <label-charging>
-label-charging = %percentage% %
+format-charging-prefix = 
+format-charging-prefix-padding = 3
+format-charging-prefix-foreground = ${colors.color4}
 
-format-discharging-prefix= Ḃđ 
-format-discharging-prefix-font = 2
-format-discharging-prefix-foreground = ${colors.color2}
-format-discharging-prefix-padding-right = 1
-format-discharging = <label-discharging>
-format-discharging-foreground = ${colors.foreground}
-label-discharging = %percentage% %
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
 
-format-full-prefix = Ḃḟ
-format-full-prefix-font = 2
-format-full-prefix-foreground = ${colors.color10}
-format-full-prefix-padding-right = 1
-format-full = <label-full>
-label-full = %percentage% %
+label-charging = %percentage%%
+label-discharging = %percentage%% (%time%)
+label-full = %percentage%
 
-[module/volume]
-type = internal/volume
-format-volume-prefix = Š
-format-volume-prefix-font = 2
-format-volume-prefix-foreground = ${colors.color10}
-format-volume-prefix-padding-right = 1
-format-volume = <label-volume>
-label-volume = %percentage% %
-format-muted-prefix = "X"
-format-muted-prefix-font = 2
-format-muted-prefix-padding-right = 1
-format-muted-prefix-foreground = ${colors.color3}
-label-muted = "Muted"
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-padding = 3
+ramp-capacity-foreground = ${colors.color5}
 
 [module/backlight]
 type = internal/xbacklight
 
 output = LVDS1
-enable-scroll = false
+enable-scroll = true
 
-format-prefix = Ł
-format-prefix-font = 2
-format-prefix-padding-right = 1
-format-prefix-foreground = ${colors.color10}
-format = <label>
+format = <ramp> <label>
+label = %percentage%%
 
-label = %percentage% %
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+ramp-foreground = ${colors.color11}
+ramp-padding = 3
+
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 5
+
+; Thermal zone to use
+; To list all the zone types, run
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+
+warn-temperature = 70
+units = true
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature%
+
+label-warn = %temperature%
+label-warn-background = ${colors.color1}
+label-warn-foreground = ${colors.background}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-padding = 3
+ramp-foreground = ${colors.color9}
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+
+format-muted-prefix = 
+format-muted-prefix-padding = 3
+format-muted-prefix-foreground = ${colors.color3}
+label-muted = "Muted"
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
+ramp-volume-6 = 
+ramp-volume-padding = 3
+ramp-volume-foreground = ${colors.color14}
 
 [module/keyboard]
 type = internal/xkeyboard
@@ -211,26 +268,24 @@ blacklist-1 = scroll lock
 format = <label-layout> <label-indicator>
 format-spacing = 0
 
-format-prefix = Ķ
-format-prefix-font = 2
-format-prefix-padding-right = 1
-format-prefix-foreground = ${colors.color10}
+format-prefix = 
+format-prefix-padding = 3
+format-prefix-foreground = ${colors.color12}
 
 label-layout = %layout%
-label-layout-padding = 1
 
 label-indicator = %name%
-label-indicator-padding = 2
+label-indicator-padding = 3
+label-indicator-margin-left = 3
 label-indicator-background = ${colors.foreground}
 label-indicator-foreground = ${colors.background}
 
 [module/date]
 type = internal/date
 interval = 1
-format-prefix = Ŧ
-format-prefix-font = 2
-format-prefix-padding-right = 1
-format-prefix-foreground = ${colors.color10}
+format-prefix = 
+format-prefix-padding = 3
+format-prefix-foreground = ${colors.color4}
 date = %a, %d %b, %H:%M:%S
 label = %date%
 ; toggle on click
@@ -239,24 +294,23 @@ date-alt = %Y-%m-%d
 [module/powermenu]
 type = custom/menu
 format = <label-toggle> <menu>
-format-foreground = ${colors.color11}
+format-foreground = ${colors.color9}
 format-padding = 0
 format-margin = 0
-menu-0-0 = "Ø Power Off"
+menu-0-0 = " Power Off"
 menu-0-0-exec = shutdown now
 menu-0-0-padding = 3
 menu-0-0-background = ${colors.color1}
 menu-0-0-foreground = ${colors.background}
-menu-0-1 = "± Reboot"
+menu-0-1 = " Reboot"
 menu-0-1-exec = reboot
 menu-0-1-padding = 3
-menu-0-1-background = ${colors.color9}
+menu-0-1-background = ${colors.color3}
 menu-0-1-foreground = ${colors.background}
 menu-0-2 = "× Cancel"
 menu-0-2-padding = 3
 menu-0-2-background = ${colors.background}
 menu-0-2-foreground = ${colors.foreground}
-label-open = " O "
-label-open-font = 2
-label-open-padding-right = 3
+label-open = 
+label-open-padding = 3
 label-close = 
