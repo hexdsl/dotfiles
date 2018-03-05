@@ -9,10 +9,10 @@ URxvt.depth: 32
 URxvt.allow_bold: true
 
 ! NOTE font and line spacing are fixed in `rxvt-unicode-patched` (AUR)
-URxvt.font: xft:Iosevka Term:pixelsize=16
-URxvt.boldFont: xft:Iosevka Term:pixelsize=16:bold
-URxvt.italicFont: xft:Iosevka Term:pixelsize=16:italic
-URxvt.bolditalicFont: xft:Iosevka Term:pixelsize=16:bold:italic
+URxvt.font: xft:Iosevka Term:pixelsize=16,xft:DejaVu Sans Mono:pixelsize=14
+URxvt.boldFont: xft:Iosevka Term:pixelsize=16:bold,xft:DejaVu Sans Mono:pixelsize=14:bold
+URxvt.italicFont: xft:Iosevka Term:pixelsize=16:italic,xft:DejaVu Sans Mono:pixelsize=14:italic
+URxvt.bolditalicFont: xft:Iosevka Term:pixelsize=16:bold:italic,xft:DejaVu Sans Mono:pixelsize=14:bold:italic
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 
@@ -22,7 +22,7 @@ URxvt.scrollTtyKeypress: true
 Urxvt.secondaryScroll: true
 
 ! NOTE needs `urxvt-perls` (Arch Linux)
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard,clipboard,url-select,keyboard-select
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard,clipboard
 URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button: 1
 
@@ -45,16 +45,6 @@ URxvt.keysym.C-S-0x56: eval:paste_clipboard
 URxvt.keysym.Home: \033[H
 URxvt.keysym.End:  \033[F
 
-! clear the scrollback
-URxvt.keysym.C-l: command:\033c
-
 ! vi-like for scrollback
-URxvt.keysym.Meta-k: command:\033]720;1\007
-URxvt.keysym.Meta-j: command:\033]721;1\007
-
-! keybindings for `urxvt-perls` package (Arch Linux)
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
-URxvt.keysym.C-u: perl:url-select:select_next
-URxvt.keysym.C-Escape: perl:keyboard-select:activate
-URxvt.keysym.C-s: perl:keyboard-select:search
+URxvt.keysym.M-k: command:\033]720;1\007
+URxvt.keysym.M-j: command:\033]721;1\007

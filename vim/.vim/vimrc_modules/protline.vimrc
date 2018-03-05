@@ -48,39 +48,39 @@ endfunction
 function! ProtLineActiveStatus()
     let statusline=""
     let statusline.="%#StatusLine#"
-    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
-    let statusline.="%{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}\"
-    let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
+    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
+    let statusline.="%{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}"
+    let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
     let statusline.="\ %<"
     let statusline.="%F"
     let statusline.="\ %r"
     let statusline.="%=" 
-    let statusline.="\ %y"
-    let statusline.="\ \ "
+    let statusline.="\ %y "
     let statusline.="\%3l:%L:%c\ "
     return statusline
 endfunction
 
 function! ProtLineActiveStatusInsertMode()
     let statusline=""
-    let statusline.="%#SpellLocal#"
-    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
-    let statusline.="%{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}\"
-    let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
+    let statusline.="%#StatusLineTerm#"
+    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
+    let statusline.="%{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}"
+    let statusline.="%#StatusLine#"
+    let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
     let statusline.="\ %<"
     let statusline.="%F"
     let statusline.="\ %r"
     let statusline.="%=" 
-    let statusline.="\ %y"
-    let statusline.="\ \ "
+    let statusline.="%#StatusLineTerm#"
+    let statusline.="\ %y "
     let statusline.="\%3l:%L:%c\ "
     return statusline
 endfunction
 
 function! ProtLineInactiveStatus()
     let statusline=""
-    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
-    let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
+    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
+    let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
     let statusline.="\ %<"
     let statusline.="%f"
     let statusline.="\ %r"
