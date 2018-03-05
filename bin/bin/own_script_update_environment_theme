@@ -98,10 +98,13 @@ modify_polybar()
 }
 
 # change the st theme
-# TODO handle need to recompile st
+# see my st build (st is rendered functional with tmux)
+# https://github.com/protesilaos/st
 modify_st()
 {
     sed -i -e "s/_[a-z]*\./_$tempus_scheme./g" $HOME/.my_Xcolors/active-tempus-theme.h
+    cd $HOME/st
+    make clean install
 }
 
 # change the shell variables theme, used by dmenu, bspwm, dunst
@@ -223,8 +226,9 @@ update_environment_theme()
 # run commands for everything
 update_environment_theme
 
-# update running urxvt instances
-own_script_update_running_urxvt
+# XXX TODO XXX can st be live reloaded?
+# # update running urxvt instances
+# own_script_update_running_urxvt
 
 # send notification
 notify-send -i /usr/share/icons/Papirus/16x16/apps/terminal.svg "Environment theme" "Updated colours to <b>Tempus $tempus_scheme</b>"

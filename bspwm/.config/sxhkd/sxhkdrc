@@ -172,7 +172,14 @@ super + XF86Audio{Mute,LowerVolume,RaiseVolume}
 # terminal emulator
 # NOTE `@` means until key is released
 super + @Return
-	urxvtc
+	st -e tmux
+
+# common programs
+# use chain chords
+super + p ; 1
+    firefox
+super + p ; {2-7}
+    st -e tmux -c {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
 
 # program launcher
 # NOTE XXX must run `stow shell` and `stow bin` from my dotfiles
@@ -185,10 +192,3 @@ super + d
 # runs passmenu using Xcolors defined as shell variables
 super + shift + d
     own_script_run_passmenu_xcolors
-
-# common programs
-# use chain chords
-super + p ; 1
-    firefox
-super + p ; {2-7}
-    urxvtc -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}

@@ -16,10 +16,10 @@ if [ -n "$DESKTOP_SESSION" ]; then
     export SSH_AUTH_SOCK
 fi
 
-# start URxvt server
-if [ -x /usr/bin/urxvtd ]; then
-    urxvtd --quiet --opendisplay --fork &
-fi
+# # start URxvt server
+# if [ -x /usr/bin/urxvtd ]; then
+    # urxvtd --quiet --opendisplay --fork &
+# fi
 
 # load Xresources
 xrdb -merge ~/.Xresources
