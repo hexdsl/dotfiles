@@ -11,5 +11,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'sheerun/vim-polyglot'
     Plug 'junegunn/goyo.vim'
+    Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()

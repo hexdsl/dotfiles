@@ -35,3 +35,10 @@ let g:ctrlp_custom_ignore = {
 " Goyo
 let g:goyo_width = 80
 let g:goyo_height = '90%'
+
+" tmux-navigator
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
+
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1

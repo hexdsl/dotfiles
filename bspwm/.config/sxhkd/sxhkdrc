@@ -168,18 +168,19 @@ super + XF86Audio{Mute,LowerVolume,RaiseVolume}
 
 # launchers
 # ----------------------------
+# NOTE TODO in case of multiple remotes, write tmux dmenu script
 
 # terminal emulator
 # NOTE `@` means until key is released
 super + @Return
-	st -e tmux
+    st -e tmux
 
 # common programs
 # use chain chords
 super + p ; 1
     firefox
 super + p ; {2-7}
-    st -e tmux -c {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
+    st -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
 
 # program launcher
 # NOTE XXX must run `stow shell` and `stow bin` from my dotfiles

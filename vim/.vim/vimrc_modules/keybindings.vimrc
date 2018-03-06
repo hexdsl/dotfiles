@@ -18,12 +18,13 @@ nmap <leader>qa :qa!<cr>
 " editor interface
 " ----------------------------
 
-" splits
-" pro tip: <c-w>[h|v] creates split directly
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-l> <c-w>l
-nmap <c-h> <c-w>h
+" NOTE disabled to allow vim-tmux-navigator
+" " splits
+" " pro tip: <c-w>[h|v] creates split directly
+" nmap <c-j> <c-w>j
+" nmap <c-k> <c-w>k
+" nmap <c-l> <c-w>l
+" nmap <c-h> <c-w>h
 
 " tabs
 nmap <s-t> :tabnew<cr>
