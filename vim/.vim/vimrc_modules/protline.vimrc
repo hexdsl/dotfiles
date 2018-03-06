@@ -48,44 +48,56 @@ endfunction
 function! ProtLineActiveStatus()
     let statusline=""
     let statusline.="%#StatusLine#"
-    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
-    let statusline.="%{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}"
-    let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
+    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ ':'\ '}%)"
+    let statusline.="%#CursorLineNr#"
+    let statusline.="\ %{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}"
+    let statusline.="%#Todo#"
+    let statusline.="%{fugitive#head()!=''?'\  \'.fugitive#head().'\':'\'}"
     let statusline.="\ %<"
-    let statusline.="%F"
+    let statusline.="%#Normal#"
+    let statusline.="\ %F"
     let statusline.="\ %r"
     let statusline.="%=" 
+    let statusline.="%#DiffChange#"
     let statusline.="\ %y "
+    let statusline.="%#StatusLine#"
     let statusline.="\%3l:%L:%c\ "
     return statusline
 endfunction
 
 function! ProtLineActiveStatusInsertMode()
     let statusline=""
-    let statusline.="%#StatusLineTerm#"
-    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
-    let statusline.="%{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}"
     let statusline.="%#StatusLine#"
-    let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
+    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ ':'\ '}%)"
+    let statusline.="%#StatusLineTerm#"
+    let statusline.="\ %{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}"
+    let statusline.="%#Modemsg#"
+    let statusline.="%{fugitive#head()!=''?'\  \'.fugitive#head().'\':'\'}"
     let statusline.="\ %<"
-    let statusline.="%F"
+    let statusline.="%#Statement#"
+    let statusline.="\ %F"
     let statusline.="\ %r"
     let statusline.="%=" 
-    let statusline.="%#StatusLineTerm#"
+    let statusline.="%#Modemsg#"
     let statusline.="\ %y "
+    let statusline.="%#StatusLineTerm#"
     let statusline.="\%3l:%L:%c\ "
     return statusline
 endfunction
 
 function! ProtLineInactiveStatus()
     let statusline=""
-    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ \ ':'\ '}%)"
+    let statusline.="%#Todo#"
+    let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ ':'\ '}%)"
+    let statusline.="%#StatusLineNC#"
     let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':'\ '}"
     let statusline.="\ %<"
+    let statusline.="%#Normal#"
     let statusline.="%f"
     let statusline.="\ %r"
     let statusline.="%=" 
-    let statusline.="\%3l:%L\ "
+    let statusline.="%#StatusLineNC#"
+    let statusline.="\ %3l:%L\ "
     return statusline
 endfunction
 
@@ -100,4 +112,3 @@ augroup status
     autocmd InsertEnter * setlocal statusline=%!ProtLineActiveStatusInsertMode()
     autocmd InsertLeave * setlocal statusline=%!ProtLineActiveStatus()
 augroup END
-
