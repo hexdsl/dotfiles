@@ -1,5 +1,5 @@
 set encoding=utf-8
-set spelllang=en
+set spelllang=en,el
 set spellsuggest=10
 
 set errorbells
