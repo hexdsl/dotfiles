@@ -51,7 +51,6 @@ ansi_sequences+="\033]12;$(xrdb_query_get_hex_value cursorColor)\007"
 ansi_sequences+="\033]19;$(xrdb_query_get_hex_value cursorColor2)\007"
 ansi_sequences+="\033]17;$(xrdb_query_get_hex_value foreground)\007"
 ansi_sequences+="\033]708;$(xrdb_query_get_hex_value background)\007"
-ansi_sequences+="\033]708;$(xrdb_query_get_hex_value background)\007"
 
 # apply ANSI sequences to running terminals
 for term in /dev/pts/[0-9]*; do

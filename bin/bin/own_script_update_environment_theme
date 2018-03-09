@@ -42,7 +42,7 @@
 tempus_scheme=$1
 
 # define array with Tempus light themes
-tempus_light_themes=(fugit past totus)
+tempus_light_themes=(dawn fugit past totus)
 
 # require exactly one command line argument, otherwise sed would just remove the selection
 # TODO refine all those echo statements
@@ -105,6 +105,7 @@ modify_st()
 {
     sed -i -e "s/_[a-z]*\./_$tempus_scheme./g" $HOME/.my_Xcolors/active-tempus-theme.h
     cd $HOME/st
+    rm -f config.h
     make clean install
 }
 
@@ -118,6 +119,8 @@ modify_tmux()
         sed -i -e 's/tmux_tempus_theme_foreground=colour[0-15]*/tmux_tempus_theme_foreground=colour15/' $HOME/.tmux.conf
         sed -i -e 's/tmux_tempus_theme_background=colour[0-15]*/tmux_tempus_theme_background=colour0/' $HOME/.tmux.conf
     fi
+
+    tmux source-file "$HOME/.tmux.conf"
 }
 
 # change the shell variables theme, used by dmenu, bspwm, dunst
@@ -194,9 +197,9 @@ modify_dunst()
 {
     # simple colours for dunst
     # does not distinguish urgency levels
-	sed -i -e "s/frame_color = \"\#[0-9a-f]*\"/frame_color = \"$background\"/g" $HOME/.config/dunst/dunstrc
-	sed -i -e "s/background = \"\#[0-9a-f]*\"/background = \"$background\"/g" $HOME/.config/dunst/dunstrc
-    sed -i -e "s/foreground = \"\#[0-9a-f]*\"/foreground = \"$foreground\"/g" $HOME/.config/dunst/dunstrc
+	sed -i -e "s/frame_color = \"\#[0-9a-fA-F]*\"/frame_color = \"$background\"/g" $HOME/.config/dunst/dunstrc
+	sed -i -e "s/background = \"\#[0-9a-fA-F]*\"/background = \"$background\"/g" $HOME/.config/dunst/dunstrc
+    sed -i -e "s/foreground = \"\#[0-9a-fA-F]*\"/foreground = \"$foreground\"/g" $HOME/.config/dunst/dunstrc
 
     # kill and reload dunst
     killall dunst && eval $(dbus-launch)
@@ -220,16 +223,11 @@ update_environment_theme()
     # define scheme for shell substitution in subsequent commands
     source "$HOME/.my_Xcolors/active-tempus-theme.sh"
     modify_bspwm
-    # modify_xfce4_terminal
     modify_dunst
 }
 
 # run commands for everything
 update_environment_theme
-
-# XXX TODO XXX can st be live reloaded?
-# update running urxvt instances
-own_script_update_running_urxvt
 
 # send notification
 notify-send -i /usr/share/icons/Papirus/16x16/apps/terminal.svg "Environment theme" "Updated colours to <b>Tempus $tempus_scheme</b>"
@@ -248,3 +246,13 @@ notify-send -i /usr/share/icons/Papirus/16x16/apps/terminal.svg "Environment the
     # sed -i -e "s/ColorSelectionBackground=\#[0-9a-f]*/ColorSelectionBackground=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
     # sed -i -e "s/ColorBold=\#[0-9a-f]*/ColorBold=$foreground/g" $HOME/.config/xfce4/terminal/terminalrc
 # }
+
+    # This goes with rest of modify calls
+    # modify_xfce4_terminal
+
+# This goes last before the final notification
+# # XXX TODO XXX can st be live reloaded?
+# NOTE commented out, as I no longer use URxvt
+# # update running urxvt instances
+# own_script_update_running_urxvt
+
