@@ -15,17 +15,26 @@
 
 # Display number of available updates from the Arch main repos and the AUR
 
+# the commands for checking for updates
 arch_updates=$(checkupdates 2> /dev/null | wc -l)
-aur_updates=$(yay --print --upgrades 2> /dev/null | wc -l)
+aur_updates=$(yay -Pn 2> /dev/null)
 
-if [ "$arch_updates" -gt 0 ]; then
-    echo "Arch: $arch_updates";
-else
-	echo "";
-fi
+# reusable code for printing a message if updates exist
+query_package_updates ()
+{
+    if [ $1 -gt 0 ]; then
+        echo "$2: $1" | tr '\n' ' '
+    else
+        echo ""
+    fi
+}
 
-if [ "$aur_updates" -gt 0 ]; then
-    echo "AUR: $aur_updates";
-else
-	echo "";
-fi
+#
+get_print_update_count () 
+{
+    query_package_updates $arch_updates Arch
+    query_package_updates $aur_updates AUR
+}
+
+# echo the function to supress starting newline
+echo $(get_print_update_count)
