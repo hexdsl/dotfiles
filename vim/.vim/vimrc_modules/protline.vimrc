@@ -1,7 +1,11 @@
 " protline: my simplistic statusline
+" 
 " based off of sources:
 " https://www.reddit.com/r/vim/comments/6b7b08/my_custom_statusline/
 " https://hackernoon.com/the-last-statusline-for-vim-a613048959b2
+"
+" date function source:
+" https://cromwell-intl.com/open-source/vim-word-count.html
 
 " Dictionary: take mode() input -> longer notation of current mode
 " mode() is defined by Vim
@@ -45,6 +49,26 @@ function! ProtLinePasteMode()
     endif
 endfunction
 
+let g:word_count=""
+function WordCount()
+    return g:word_count
+endfunction
+function UpdateWordCount()
+    let lnum = 1
+    let n = 0
+    while lnum <= line('$')
+        let n = n + len(split(getline(lnum)))
+        let lnum = lnum + 1
+    endwhile
+let g:word_count = n
+endfunction
+" Update the count when cursor is idle in command or insert mode.
+" Update when idle for 1000 msec (default is 4000 msec).
+set updatetime=1000
+augroup WordCounter
+    au! CursorHold,CursorHoldI * call UpdateWordCount()
+augroup END
+
 function! ProtLineActiveStatus()
     let statusline=""
     let statusline.="%#StatusLine#"
@@ -60,14 +84,16 @@ function! ProtLineActiveStatus()
     let statusline.="%=" 
     let statusline.="%#DiffChange#"
     let statusline.="\ %y "
+    let statusline.="%#CursorLineNr#"
+    let statusline.="\ %{WordCount()} "
     let statusline.="%#StatusLine#"
-    let statusline.="\%3l:%L:%c\ "
+    let statusline.="\ %3l:%L:%c\ "
     return statusline
 endfunction
 
 function! ProtLineActiveStatusInsertMode()
     let statusline=""
-    let statusline.="%#StatusLine#"
+    let statusline.="%#DiffAdd#"
     let statusline.="%(%{'help'!=&filetype?'\ \ '.bufnr('%').'\ ':'\ '}%)"
     let statusline.="%#StatusLineTerm#"
     let statusline.="\ %{ProtLineCurrentMode()}\%-6{ProtLinePasteMode()}"
@@ -81,7 +107,9 @@ function! ProtLineActiveStatusInsertMode()
     let statusline.="%#Modemsg#"
     let statusline.="\ %y "
     let statusline.="%#StatusLineTerm#"
-    let statusline.="\%3l:%L:%c\ "
+    let statusline.="\ %{WordCount()} "
+    let statusline.="%#DiffAdd#"
+    let statusline.="\ %3l:%L:%c\ "
     return statusline
 endfunction
 

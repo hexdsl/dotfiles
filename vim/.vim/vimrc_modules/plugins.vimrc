@@ -8,9 +8,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'dpelle/vim-LanguageTool'
     Plug 'ervandew/supertab'
     Plug 'protesilaos/tempus-themes-vim'
-    Plug 'ctrlpvim/ctrlp.vim'
+    " Plug 'ctrlpvim/ctrlp.vim'
     Plug 'sheerun/vim-polyglot'
     Plug 'junegunn/goyo.vim'
     Plug 'christoomey/vim-tmux-navigator'
+    Plug 'tpope/vim-liquid'
+    Plug 'tpope/vim-markdown'
 
 call plug#end()
