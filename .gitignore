@@ -25,7 +25,7 @@
 **/.vim/plugged
 **/.vim/swap
 **/.wallpaper.jpg
-**/st
+bin/bin/st
 *.directory
 *.log
 *.sql
