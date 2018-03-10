@@ -141,6 +141,10 @@ super + shift + t
 super + p ; s
     {screencastmenu, own_script_ffmpeg_screencast rec_stop}
 
+# open interface to quickly access predefined dotfiles
+super + p ; d
+    dotsmenu
+
 # media controls
 # ----------------------------
 

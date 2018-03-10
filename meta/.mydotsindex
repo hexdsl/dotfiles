@@ -1,0 +1,9 @@
+Bspwm /home/prot/.config/bspwm/bspwmrc
+Polybar /home/prot/.config/polybar/config
+Ranger /home/prot/.config/ranger/rc.conf
+Sxhkd /home/prot/.config/sxhkd/sxhkdrc
+Tmux /home/prot/.tmux.conf
+Tmux Keybindings /home/prot/.tmux/keybindings.conf
+Vim Keybindings /home/prot/.vim/vimrc_modules/keybindings.vimrc
+Vim Plugin Settings /home/prot/.vim/vimrc_modules/plugin_settings.vimrc
+Vim Plugins /home/prot/.vim/vimrc_modules/plugins.vimrc
