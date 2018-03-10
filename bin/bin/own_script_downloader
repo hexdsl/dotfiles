@@ -43,7 +43,7 @@ curl_loop ()
 {
     cd $HOME/Pictures/$1
 
-    for i in "$list_of_links"; do
+    for i in $list_of_links; do
         curl -O $i
     done
 }
@@ -68,11 +68,11 @@ get_images ()
 youtubedl_loop ()
 {
     if [[ $1 = 'audio' ]]; then
-        for i in "$list_of_links"; do
+        for i in $list_of_links; do
             youtube-dl -ci --extract-audio --audio-format mp3 $i -o "~/Videos/youtube-dl/%(title)s.%(ext)s"
         done
     else
-        for i in "$list_of_links"; do
+        for i in $list_of_links; do
             youtube-dl --no-playlist --no-part --write-description --newline --prefer-free-formats $i -o "~/Videos/youtube-dl/%(title)s.%(ext)s"
         done
     fi

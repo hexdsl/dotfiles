@@ -67,9 +67,9 @@ fi
 modify_wallpaper()
 {
 	if [[ " ${tempus_light_themes[*]} " == *" $tempus_scheme "* ]]; then
-		cp -rf $HOME/Pictures/theme/light.jpg $HOME/.wallpaper.jpg && feh --bg-fill $HOME/.wallpaper.jpg
+		cp -f $HOME/Pictures/theme/light.jpg $HOME/.wallpaper.jpg && feh --bg-fill $HOME/.wallpaper.jpg
 	else
-		cp -rf $HOME/Pictures/theme/dark.jpg $HOME/.wallpaper.jpg && feh --bg-fill $HOME/.wallpaper.jpg
+		cp -f $HOME/Pictures/theme/dark.jpg $HOME/.wallpaper.jpg && feh --bg-fill $HOME/.wallpaper.jpg
 	fi
 }
 
