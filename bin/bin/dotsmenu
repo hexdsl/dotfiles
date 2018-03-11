@@ -34,9 +34,6 @@ mydotsindex="$HOME/.mydotsindex"
 # define length of dotfiles' list (for use in dmenu -l)
 mydotsindex_length=$(cat $mydotsindex | wc -l)
 
-# where to edit files
-_editor='st -e vim'
-
 # gets the list with the file paths
 # keeps only the first part which is the path's label
 # that keeps the dmenu interface clean
@@ -45,8 +42,7 @@ mydotsindex_selection_clean ()
     # pass custom colours to dmenu command
     source $HOME/.my_Xcolors/active-tempus-theme.sh
 
-    cat $mydotsindex | \
-    sed -e 's,\(^[A-Za-z ]*\) \([a-z/._]*\),\1,g' | \
+    sed -e 's,\(^[A-Za-z ]*\) \([a-z/._]*\),\1,g' $mydotsindex | \
     dmenu -i -l $mydotsindex_length -p 'Edit dotfile' -nb $background -nf $foreground -sb $color1 -sf $background -fn 'DejaVu Sans Mono-12'
 }
 
@@ -56,5 +52,5 @@ mydotsindex_choice=$(grep -w "$(mydotsindex_selection_clean) " .mydotsindex | se
 
 # open editor with path to selection
 if [ "$mydotsindex_choice" ]; then
-    $_editor "$mydotsindex_choice"
+    st -e $EDITOR "$mydotsindex_choice"
 fi
