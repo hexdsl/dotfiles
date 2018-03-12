@@ -26,17 +26,13 @@ set relativenumber
 set cursorline
 set wrap
 set ruler
-
+set listchars=tab:›\ ,eol:¬,trail:⋅,extends:>,precedes:<,nbsp:+
 set modifiable
 
 " Behaviour
 set showmatch
 set textwidth=0
 set nostartofline
-
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-endif
 
 " Tabs
 set autoindent

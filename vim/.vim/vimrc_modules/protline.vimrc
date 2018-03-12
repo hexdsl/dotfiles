@@ -49,26 +49,6 @@ function! ProtLinePasteMode()
     endif
 endfunction
 
-let g:word_count=""
-function WordCount()
-    return g:word_count
-endfunction
-function UpdateWordCount()
-    let lnum = 1
-    let n = 0
-    while lnum <= line('$')
-        let n = n + len(split(getline(lnum)))
-        let lnum = lnum + 1
-    endwhile
-let g:word_count = n
-endfunction
-" Update the count when cursor is idle in command or insert mode.
-" Update when idle for 1000 msec (default is 4000 msec).
-set updatetime=1000
-augroup WordCounter
-    au! CursorHold,CursorHoldI * call UpdateWordCount()
-augroup END
-
 function! ProtLineActiveStatus()
     let statusline=""
     let statusline.="%#StatusLine#"
@@ -84,8 +64,6 @@ function! ProtLineActiveStatus()
     let statusline.="%=" 
     let statusline.="%#DiffChange#"
     let statusline.="\ %y "
-    let statusline.="%#CursorLineNr#"
-    let statusline.="\ %{WordCount()} "
     let statusline.="%#StatusLine#"
     let statusline.="\ %3l:%L:%c\ "
     return statusline
@@ -106,8 +84,6 @@ function! ProtLineActiveStatusInsertMode()
     let statusline.="%=" 
     let statusline.="%#Modemsg#"
     let statusline.="\ %y "
-    let statusline.="%#StatusLineTerm#"
-    let statusline.="\ %{WordCount()} "
     let statusline.="%#DiffAdd#"
     let statusline.="\ %3l:%L:%c\ "
     return statusline
