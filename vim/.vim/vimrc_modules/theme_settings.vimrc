@@ -1,3 +1,3 @@
 set t_Co=256
 syntax enable
-colorscheme tempus_dusk
+colorscheme tempus_past
