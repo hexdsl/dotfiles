@@ -1,6 +1,3 @@
-" Paste mode avoids auto-indent
-set pastetoggle=<leader>p
-
 " auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 

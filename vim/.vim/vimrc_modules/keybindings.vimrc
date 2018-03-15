@@ -5,18 +5,17 @@
 
 let mapleader=","
 
-
 " file actions
 " ----------------------------
 nmap <leader>w :w!<cr>
-nmap <leader>wa :wa!<cr>
 nmap <leader>x :x!<cr>
-nmap <leader>xa :xa!<cr>
 nmap <leader>q :q!<cr>
-nmap <leader>qa :qa!<cr>
 
 " editor interface
 " ----------------------------
+
+" paste mode avoids auto-indent
+set pastetoggle=<leader>p
 
 " NOTE disabled to allow vim-tmux-navigator
 " " splits
@@ -34,9 +33,6 @@ nmap <s-l> gt
 
 " toggle spell check
 nmap <silent> <leader>sp :set spell!<CR>
-
-" word Count
-nmap <leader>wc g<C-g>
 
 " clear the search highlight
 nmap <silent> \ :silent nohlsearch<cr>
