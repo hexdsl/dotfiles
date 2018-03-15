@@ -64,6 +64,9 @@ bspc config auto_alternate true
 bspc config auto_cancel true
 # bspc config initial_polarity second_child
 
+# program-specific rules
+bspc rule -a Emacs state=tiled
+
 # colours
 # ------------------------------------------------------------------------------
 

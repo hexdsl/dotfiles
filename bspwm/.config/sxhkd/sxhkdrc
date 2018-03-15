@@ -151,16 +151,10 @@ super + p ; d
 # mpd
 # XF86Audio{Play,Prev,Next}
     # mpc {toggle,prev,next}
-alt + {Down,Left,Right,Up}
-    mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",stop}
-
 XF86Audio{Play,Prev,Next,Stop}
     mpc {toggle,prev && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",next && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/musique.svg "Now Playing" "$(mpc --format '%artist% ~ %title% \[%album%\]' current)",stop}
 
 # speaker volume
-alt + shift + {Down,Left,Right}
-    amixer set Master {toggle,5%-,5%+}
-
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     amixer set Master {toggle,5%-,5%+}
 
@@ -174,10 +168,11 @@ super + XF86Audio{Mute,LowerVolume,RaiseVolume}
 # ----------------------------
 # NOTE TODO in case of multiple remotes, write tmux dmenu script
 
-# terminal emulator
+# terminal emulator and emacs
 # NOTE `@` means until key is released
-super + @Return
-    st -e tmux
+# NOTE emacs --daemon is started from ~/.xprofile
+super + {_, shift + } @Return
+    {st -e tmux, emacsclient -c}
 
 # common programs
 # use chain chords

@@ -30,6 +30,11 @@ if [ -x /usr/bin/setxkbmap ]; then
     setxkbmap -layout 'us,gr' -option 'grp:alt_caps_toggle'
 fi
 
+# emacs daemon
+if [ -x /usr/bin/emacs ]; then
+    emacs --daemon
+fi
+
 # music player daemon
 if [ -x /usr/bin/mpd ]; then
     mpd
