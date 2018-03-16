@@ -1,0 +1,4 @@
+ls
+ls -a
+ls -l
+ssh hyperion
