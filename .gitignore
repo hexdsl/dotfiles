@@ -21,12 +21,13 @@
 **/.config/task/completed.data
 **/.config/task/pending.data
 **/.config/task/undo.data
+**/.emacs.d/auto-save-list
 **/.lockscreen.png
 **/.vim/plugged
 **/.vim/swap
 **/.wallpaper.jpg
-bin/bin/st
 *.directory
 *.log
 *.sql
 *.sqlite
+bin/bin/st

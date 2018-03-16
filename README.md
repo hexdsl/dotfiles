@@ -62,22 +62,24 @@ From A-Z:
 - `compton`. Display compositor.
 - `dmenu`. Program launcher.
 - `dunst`. Notification daemon.
+- `emacs`. Text editor (more like a self-contained OS, but I digress).
 - `mpd`. Music server daemon.
-- `mpv`. Media player.
+- `mpv`. Media player invoked from the console.
 - `ncmpcpp`. Console music client for `mpd`.
 - `neomutt`. Console email client.
-- `newsboat`. Feed reader and podcast client.
+- `newsboat`. Console feed reader and podcast client.
 - `papirus-icon-theme`. Icon theme used in my `notify-send` actions.
 - `pass`. Password manager.
 - `polybar` (AUR). System status bar.
 - `ranger`. Console file manager.
 - `redshift`. Screen colour temparature daemon.
-- `st`. Terminal emulator (run with `tmux`, to avoid the need of patching a moving target)
-- `task` (aka taskwarrior). Task manager.
+- `st` ([my custom build](https://github.com/protesilaos/st). Terminal emulator.
+- `task` (aka taskwarrior). Task manager for the console.
+- `tmux`. Terminal multiplexer.
 - `ttf-dejavu`. System interface fonts.
 - `ttf-font-awesome-4` (AUR). Icon font used in the system bar.
 - `ttf-iosevka-term-ss04` (AUR). Fonts used in terminals.
-- `vim`. Text editor.
+- `vim`. Text editor, used exclusively in the console.
 - `w3m`. Console browser.
 
 ## License
