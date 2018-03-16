@@ -50,7 +50,7 @@ mydotsindex_selection_clean ()
 # match choice to the file path it references, exluding the label
 mydotsindex_choice=$(grep -w "$(mydotsindex_selection_clean) " .mydotsindex | sed -e 's,\([A-Za-z ]*\) \([A-Za-z/._ ]*\),\2,g')
 
-# open editor with path to selection
+# open visual editor with path to selection
 if [ "$mydotsindex_choice" ]; then
-    st -e $EDITOR "$mydotsindex_choice"
+    $VISUAL "$mydotsindex_choice"
 fi
