@@ -21,7 +21,7 @@
 **/.config/task/completed.data
 **/.config/task/pending.data
 **/.config/task/undo.data
-**/.emacs.d/auto-save-list
+**/.emacs.d
 **/.lockscreen.png
 **/.vim/plugged
 **/.vim/swap
