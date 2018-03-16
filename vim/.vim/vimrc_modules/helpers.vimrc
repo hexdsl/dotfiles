@@ -5,7 +5,7 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Abbreviations
-iab medate <c-r>=strftime('%Y-%m-%)<cr>
+iab medate <c-r>=strftime('%Y-%m-%d')<cr>
 iab metime <c-r>=strftime('%H:%M')<cr>
 iab meweb https://protesilaos.com/
 iab megithub https://github.com/protesilaos
