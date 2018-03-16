@@ -73,7 +73,7 @@ From A-Z:
 - `polybar` (AUR). System status bar.
 - `ranger`. Console file manager.
 - `redshift`. Screen colour temparature daemon.
-- `st` ([my custom build](https://github.com/protesilaos/st). Terminal emulator.
+- `st` ([my custom build](https://github.com/protesilaos/st)). Terminal emulator.
 - `task` (aka taskwarrior). Task manager for the console.
 - `tmux`. Terminal multiplexer.
 - `ttf-dejavu`. System interface fonts.
