@@ -6,6 +6,10 @@ if [ -x /usr/bin/vim ]; then
     alias vi='vim'
 fi
 
+if [ -x /usr/bin/emacs ]; then
+    alias e='emacsclient -c'
+fi
+
 # cd
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -36,28 +40,28 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # shortcuts to bash aliases
-alias mybaa='vim ~/.my_bash/aliases/apt'
-alias mybac='vim ~/.my_bash/aliases/common'
-alias mybaf='vim ~/.my_bash/aliases/flatpak'
-alias mybag='vim ~/.my_bash/aliases/git'
-alias mybap='vim ~/.my_bash/aliases/pacman'
-alias mybaw='vim ~/.my_bash/aliases/web'
-alias mybax='vim ~/.my_bash/aliases/extra'
+alias mybaa="$EDITOR ~/.my_bash/aliases/apt"
+alias mybac="$EDITOR ~/.my_bash/aliases/common"
+alias mybaf="$EDITOR ~/.my_bash/aliases/flatpak"
+alias mybag="$EDITOR ~/.my_bash/aliases/git"
+alias mybap="$EDITOR ~/.my_bash/aliases/pacman"
+alias mybaw="$EDITOR ~/.my_bash/aliases/web"
+alias mybax="$EDITOR ~/.my_bash/aliases/extra"
 
 # shortcuts to bash functions
-alias mybfc='vim ~/.my_bash/functions/common'
+alias mybfc="$EDITOR ~/.my_bash/functions/common"
 
 # shortcuts to common configs
-alias bbb='vim ~/.bashrc'
-alias ddd='vim ~/.config/dunst/dunstrc'
-alias mmm='vim ~/.neomuttrc'
-alias nnn='vim ~/.config/newsboat/urls'
-alias ppp='vim ~/.config/polybar/config'
-alias rrr='vim ~/.config/ranger/rc.conf'
-alias sss='vim ~/.neomutt/mails/signature'
-alias ttt='vim ~/.taskrc'
-alias vvv='vim ~/.vimrc'
-alias xxx='vim ~/.Xresources'
+alias bbb="$EDITOR ~/.bashrc"
+alias ddd="$EDITOR ~/.config/dunst/dunstrc"
+alias mmm="$EDITOR ~/.neomuttrc"
+alias nnn="$EDITOR ~/.config/newsboat/urls"
+alias ppp="$EDITOR ~/.config/polybar/config"
+alias rrr="$EDITOR ~/.config/ranger/rc.conf"
+alias sss="$EDITOR ~/.neomutt/mails/signature"
+alias ttt="$EDITOR ~/.taskrc"
+alias vvv="$EDITOR ~/.vimrc"
+alias xxx="$EDITOR ~/.Xresources"
 
 # reload config files
 alias rbbb='source ~/.bashrc'

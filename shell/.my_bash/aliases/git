@@ -2,6 +2,7 @@
 
 if [ -x /usr/bin/git ]; then
     # common commands
+    alias gsta='git status'
     alias gadd='git add'
     alias gall='git add -A'
     alias gcom='git commit -m'
