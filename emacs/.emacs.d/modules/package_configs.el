@@ -1,3 +1,10 @@
+;;; package_configs.el --- module with ocnfigs for installed packages
+
+;;; Commentary:
+;; this file is called from init.el
+;; it contains options for all downloaded packages
+
+;;; Code:
 ;; projectile
 (projectile-global-mode)
 (setq projectile-indexing-method 'alien)
@@ -19,3 +26,17 @@
 
 ;; rainbow delimeters
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; ivy
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+
+;; counsel
+(counsel-mode 1)
+(ivy-set-actions
+      'counsel-find-file
+      '(("d" delete-file "delete")))
+
+;; flychek
+(global-flycheck-mode)

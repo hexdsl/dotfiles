@@ -1,5 +1,10 @@
-;;;; key bindings
+;;; keybindings.el --- my module with custom key bindings
 
+;;; Commentary:
+;; this file is called from init.el
+;; it contains keybindings for packages and custom actions
+
+;;; Code:
 ;; more kill line motions
 ;; kill whole line, regardless of position
 ;; kill backwards
@@ -14,8 +19,8 @@
 (global-set-key (kbd "M-k") 'kill-whole-line)
 
 ;; definition for equivalent to vim yy
-(defun copy-line (arg)
-  "Copy lines (as many as prefix argument) in the kill ring.
+(defun copy-line (ARG)
+  "Copy lines (as many as prefix argument `ARG`) in the kill ring.
       Ease of use features:
       - Move to start of next line.
       - Appends the copy on sequential calls.
@@ -23,7 +28,7 @@
       - If region is active, copy its lines."
   (interactive "p")
   (let ((beg (line-beginning-position))
-	(end (line-end-position arg)))
+	(end (line-end-position ARG)))
     (when mark-active
       (if (> (point) (mark))
 	  (setq beg (save-excursion (goto-char (mark)) (line-beginning-position)))
@@ -32,8 +37,8 @@
 	(kill-append (buffer-substring beg end) (< end beg))
       (kill-ring-save beg end)))
   (kill-append "\n" nil)
-  (beginning-of-line (or (and arg (1+ arg)) 2))
-  (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
+  (beginning-of-line (or (and ARG (1+ ARG)) 2))
+  (if (and ARG (not (= 1 ARG))) (message "%d lines copied" ARG)))
 
 (global-set-key (kbd "C-c C-k") 'copy-line)
 
@@ -62,3 +67,12 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;; swiper
+(global-set-key (kbd "C-s") 'swiper)
+
+(provide 'keybindings)
+;;; keybindings.el ends here

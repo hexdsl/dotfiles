@@ -1,9 +1,14 @@
-;; NOTE work in progress
+;;; init.el --- generic, modular config for a base GNU Emacs
 
-;; this is a generic config to learn basic emacs
+;;; Commentary:
+;; NOTE work in progress
+;; this is a generic config to learn basic Emacs
 ;; intentionally avoiding EVIL (Vim) mode
 ;; the idea is to see whether Emacs can offer more
+;; TODO incorporate `use-package'
+;; https://github.com/jwiegley/use-package
 
+;;; Code:
 ;;;; packages
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -24,7 +29,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit rainbow-delimiters auto-complete multiple-cursors powerline neotree flx-ido projectile))))
+    (flycheck counsel swiper ivy magit rainbow-delimiters auto-complete multiple-cursors powerline neotree flx-ido projectile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -34,6 +39,9 @@
 
 ;;;; modules
 (add-to-list 'load-path "~/.emacs.d/modules/")
-    (load-library "general")
-    (load-library "keybindings")
-    (load-library "package_configs")
+(load-library "general")
+(load-library "keybindings")
+(load-library "package_configs")
+
+(provide 'init)
+;;; init.el ends here
