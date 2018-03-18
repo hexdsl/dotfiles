@@ -58,5 +58,5 @@
 
 (global-set-key (kbd "C-c k") 'my-kill-word-at-point)
 
-(provide 'prot/keybindings)
+(provide 'prot-keybindings)
 ;;; prot-keybindings.el ends here

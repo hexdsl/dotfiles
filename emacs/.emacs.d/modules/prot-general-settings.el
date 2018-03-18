@@ -1,4 +1,4 @@
-;;; prot-general.el --- init module with my general settings
+;;; prot-general-settings.el --- init module with my general settings
 
 ;;; Commentary:
 ;; contains general settings for Emacs
@@ -7,17 +7,18 @@
 ;;; Code:
 ;;;; user interface
 
-;; default theme
-;; TODO https://github.com/protesilaos/tempus-themes
-(load-theme 'tango-dark)
+;; theme
+;; TODO port tempus themes
+;; https://github.com/protesilaos/tempus-themes
+(load-theme 'deeper-blue)
 
 ;; disable gtk ui components
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; default font
-(add-to-list 'default-frame-alist '(font . "Iosevka Term-12"))
+;; disable welcome screen
+(setq inhibit-startup-screen t)
 
 ;; default encoding
 (set-language-environment "UTF-8")
@@ -72,5 +73,5 @@
 ;; delete region when inserting text
 (delete-selection-mode 1)
 
-(provide 'prot/general)
-;;; prot-general.el ends here
+(provide 'prot-general-settings)
+;;; prot-general-settings.el ends here

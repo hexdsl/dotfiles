@@ -40,10 +40,6 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
-;; powerline
-(use-package powerline
-  :config (powerline-default-theme))
-
 ;; auto-complete
 (use-package auto-complete
   :config (ac-config-default))
@@ -86,5 +82,5 @@
 ;; markdown-mode
 (use-package markdown-mode)
 
-(provide 'prot/package-configs)
+(provide 'prot-package-configs)
 ;;; prot-package-configs.el ends here

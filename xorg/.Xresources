@@ -18,6 +18,13 @@ Xft.lcdfilter: lcddefault
 ! See https://github.com/protesilaos/dotfiles especially its `bin`
 #include </home/prot/.my_Xcolors/active-tempus-theme.Xcolors>
 
+! emacs
+! ==============================================================================
+emacs.font: Iosevka Term:pixelsize=16
+emacs.boldFont: Iosevka Term:pixelsize=16:bold
+emacs.italicFont: Iosevka Term:pixelsize=16:italic
+emacs.bolditalicFont: Iosevka Term:pixelsize=16:bold:italic
+
 ! urxvt
 ! ==============================================================================
 
