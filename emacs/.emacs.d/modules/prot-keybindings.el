@@ -1,8 +1,9 @@
-;;; keybindings.el --- my module with custom key bindings
+;;; prot-keybindings.el --- init module with custom key bindings
 
 ;;; Commentary:
+;; contains keybindings for custom actions
 ;; this file is called from init.el
-;; it contains keybindings for packages and custom actions
+;; NOTE keybibdings for plugins are defined in prot-package-configs.el
 
 ;;; Code:
 ;; more kill line motions
@@ -57,22 +58,5 @@
 
 (global-set-key (kbd "C-c k") 'my-kill-word-at-point)
 
-;;;; keybibdings for plugins
-
-;; neotree
-(global-set-key (kbd "C-c n") 'neotree-toggle)
-
-;; multiple cursors
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-;; magit
-(global-set-key (kbd "C-x g") 'magit-status)
-
-;; swiper
-(global-set-key (kbd "C-s") 'swiper)
-
-(provide 'keybindings)
-;;; keybindings.el ends here
+(provide 'prot/keybindings)
+;;; prot-keybindings.el ends here

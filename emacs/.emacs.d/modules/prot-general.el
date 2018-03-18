@@ -1,6 +1,11 @@
-;;;; general settings
+;;; prot-general.el --- init module with my general settings
 
-;;; user interface
+;;; Commentary:
+;; contains general settings for Emacs
+;; this file is called from init.el
+
+;;; Code:
+;;;; user interface
 
 ;; default theme
 ;; TODO https://github.com/protesilaos/tempus-themes
@@ -36,24 +41,13 @@
 ;; remember cursor position, for emacs 25.1 or later
 (save-place-mode 1)
 
-;; save minibuffer history
-(savehist-mode 1)
-
-;; keep a list of recently opened files
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 10)
-
 ;; turn on bracket match highlight
 (show-paren-mode 1)
 
-;; auto insert closing bracket
-(electric-pair-mode 1)
-
 ;; show line numbers
 ; TODO new method
-(when (version<= "26.0.50" emacs-version )
-  (global-display-line-numbers-mode))
+;; (when (version<= "26.0.50" emacs-version )
+;;   (global-display-line-numbers-mode))
 ; TODO remove old method
 (global-linum-mode 1)
 
@@ -63,7 +57,7 @@
 ;; wrap long lines by word boundary, and arrow up/down move by visual line, etc
 (global-visual-line-mode 1)
 
-;; make sentence ending by single space
+;; single space defines the end of a sentence
 (setq sentence-end-double-space nil )
 
 ;; ignore irregular casing for words
@@ -75,5 +69,8 @@
 (put 'transient-mark-mode 'permanent-local t)
 (setq-default transient-mark-mode t)
 
-;; delete region if inserting text
+;; delete region when inserting text
 (delete-selection-mode 1)
+
+(provide 'prot/general)
+;;; prot-general.el ends here

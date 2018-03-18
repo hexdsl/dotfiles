@@ -2,11 +2,11 @@
 
 ;;; Commentary:
 ;; NOTE work in progress
+;; packages are declared with `use-package'
+
 ;; this is a generic config to learn basic Emacs
 ;; intentionally avoiding EVIL (Vim) mode
 ;; the idea is to see whether Emacs can offer more
-;; TODO incorporate `use-package'
-;; https://github.com/jwiegley/use-package
 
 ;;; Code:
 ;;;; packages
@@ -22,26 +22,11 @@
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (flycheck counsel swiper ivy magit rainbow-delimiters auto-complete multiple-cursors powerline neotree flx-ido projectile))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
 ;;;; modules
 (add-to-list 'load-path "~/.emacs.d/modules/")
-(load-library "general")
-(load-library "keybindings")
-(load-library "package_configs")
+(load-library "prot-general")
+(load-library "prot-keybindings")
+(load-library "prot-package-configs")
 
 (provide 'init)
 ;;; init.el ends here
