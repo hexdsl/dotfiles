@@ -67,7 +67,7 @@
    'counsel-find-file
    '(("d" delete-file "delete"))))
 
-;; flychek
+;; flycheck
 (use-package flycheck
   :config (global-flycheck-mode))
 
@@ -81,10 +81,19 @@
 (use-package focus
   :bind ("C-c f" . focus-mode))
 
-;;visual-regexp
+;; visual-regexp
 (use-package visual-regexp
   :bind (("C-c r" . vr/replace)
 	 ("C-c q" . vr/query-replace)))
+
+;; git-gutter
+(use-package git-gutter
+  :config (global-git-gutter-mode +1))
+
+;; dashboard
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
 
 (provide 'prot-package-configs)
 ;;; prot-package-configs.el ends here

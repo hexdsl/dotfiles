@@ -17,20 +17,6 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; disable welcome screen
-(setq inhibit-startup-screen t)
-
-;; default encoding
-(set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8)
-
-;; column length
-(setq fill-column 80)
-(set-default 'fill-column 80)
-
-;; show empty lines at end of buffer
-(set-default 'indicate-empty-lines t)
-
 ;; answering with 'y' or 'n' instead of 'yes/no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
