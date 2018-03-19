@@ -39,18 +39,8 @@
 ;; backup in one place. flat, no tree structure
 (setq backup-directory-alist '(("" . "~/.emacs.d/backups")))
 
-;; remember cursor position, for emacs 25.1 or later
-(save-place-mode 1)
-
 ;; turn on bracket match highlight
 (show-paren-mode 1)
-
-;; show line numbers
-; TODO new method
-;; (when (version<= "26.0.50" emacs-version )
-;;   (global-display-line-numbers-mode))
-; TODO remove old method
-(global-linum-mode 1)
 
 ;; when a file is updated outside emacs, make it update if it's already opened in emacs
 (global-auto-revert-mode 1)

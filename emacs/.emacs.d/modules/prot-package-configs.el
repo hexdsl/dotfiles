@@ -44,11 +44,6 @@
 (use-package auto-complete
   :config (ac-config-default))
 
-;; neotree
-(use-package neotree
-  :bind ("C-c n" . neotree-toggle)
-  :config (setq neo-smart-open t))
-
 ;; rainbow delimeters
 (use-package rainbow-delimiters
   :config (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
@@ -81,6 +76,15 @@
 
 ;; markdown-mode
 (use-package markdown-mode)
+
+;; focus
+(use-package focus
+  :bind ("C-c f" . focus-mode))
+
+;;visual-regexp
+(use-package visual-regexp
+  :bind (("C-c r" . vr/replace)
+	 ("C-c q" . vr/query-replace)))
 
 (provide 'prot-package-configs)
 ;;; prot-package-configs.el ends here
