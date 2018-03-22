@@ -231,9 +231,9 @@ label-warn = %temperature%
 label-warn-background = ${colors.color1}
 label-warn-foreground = ${colors.background}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-padding = 3
 ramp-foreground = ${colors.color9}
 
