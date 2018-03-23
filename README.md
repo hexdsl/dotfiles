@@ -76,9 +76,10 @@ From A-Z:
 - `st` ([my custom build](https://github.com/protesilaos/st)). Terminal emulator.
 - `task` (aka taskwarrior). Task manager for the console.
 - `tmux`. Terminal multiplexer.
-- `ttf-dejavu`. System interface fonts.
+- `ttf-dejavu`. System interface fonts (dmenu, dunst) and `fontconfig` fallbacks.
 - `ttf-font-awesome-4` (AUR). Icon font used in the system bar.
-- `ttf-iosevka-term-ss04` (AUR). Fonts used in terminals.
+- `ttf-iosevka-term-ss04` (AUR). Fonts used in terminals, text editors.
+- `ttf-roboto`. Fonts used in the system bar.
 - `vim`. Text editor, used exclusively in the console.
 - `w3m`. Console browser.
 
