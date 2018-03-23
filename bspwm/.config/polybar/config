@@ -50,11 +50,12 @@ module-margin-right = 2
 ; IMPORTANT padding is generous because the sans font is appropriate
 ; IMPORTANT a mono font will make the bar look terrible
 font-0 = FontAwesome:style=regular:pixelsize=9;1
-font-1 = DejaVuSansCondensed:style=book:antialias=true:pixelsize=10;1
-font-2 = DejaVuSansCondensed:style=bold:antialias=true:pixelsize=10;1
+font-1 = RobotoCondensed:style=regular:antialias=true:pixelsize=10;1
+font-2 = RobotoCondensed:style=bold:antialias=true:pixelsize=10;1
 
 modules-left = bspwm mpd
-modules-right = archpkg battery backlight temperature volume keyboard date powermenu
+modules-center = date keyboard archpkg
+modules-right = battery backlight temperature volume powermenu
 
 ; fixes issue with bar on top of fullscreen windows
 wm-restack = bspwm
@@ -140,7 +141,7 @@ format-stopped =
 icon-pause = 
 icon-play = (Paused)
 
-label-song = %artist% - %title% 
+label-song = %artist% — %title% 
 label-song-maxlen = 50
 label-song-ellipsis = true
 
@@ -170,8 +171,8 @@ format-discharging = <ramp-capacity><label-discharging>
 format-full = <ramp-capacity><label-full>
 
 label-charging = %percentage%%
-label-discharging = %percentage%% (%time%)
-label-full = %percentage%
+label-discharging = %time%
+label-full = ∞
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
@@ -188,16 +189,11 @@ type = internal/xbacklight
 output = LVDS1
 enable-scroll = true
 
-format = <ramp> <label>
+format = <label>
+format-prefix = 
+format-prefix-padding = 3
+format-prefix-foreground = ${colors.color11}
 label = %percentage%%
-
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-ramp-foreground = ${colors.color11}
-ramp-padding = 3
 
 [module/temperature]
 type = internal/temperature
@@ -269,10 +265,6 @@ blacklist-1 = scroll lock
 format = <label-layout> <label-indicator>
 format-spacing = 0
 
-format-prefix = 
-format-prefix-padding = 3
-format-prefix-foreground = ${colors.color12}
-
 label-layout = %layout%
 
 label-indicator = %name%
@@ -283,11 +275,8 @@ label-indicator-foreground = ${colors.background}
 
 [module/date]
 type = internal/date
-interval = 1
-format-prefix = 
-format-prefix-padding = 3
-format-prefix-foreground = ${colors.color4}
-date = %a, %d %b, %H:%M:%S
+interval = 5
+date = %a, %d %b, %H:%M
 label = %date%
 ; toggle on click
 date-alt = %Y-%m-%d
@@ -298,7 +287,7 @@ format = <label-toggle> <menu>
 format-foreground = ${colors.foreground}
 format-padding = 0
 format-margin = 0
-menu-0-0 = " Shut down"
+menu-0-0 = " Close"
 menu-0-0-exec = shutdown now
 menu-0-0-padding = 3
 menu-0-0-background = ${colors.color1}
@@ -308,10 +297,10 @@ menu-0-1-exec = reboot
 menu-0-1-padding = 3
 menu-0-1-background = ${colors.color3}
 menu-0-1-foreground = ${colors.background}
-menu-0-2 = "× Cancel"
+menu-0-2 = "× Back"
 menu-0-2-padding = 3
 menu-0-2-background = ${colors.background}
 menu-0-2-foreground = ${colors.foreground}
-label-open = 
+label-open = 
 label-open-padding = 3
 label-close = 
