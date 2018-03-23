@@ -5,4 +5,4 @@
 ! See my `~/bin/own_script_update_environment_theme`
 
 ! This file is called by the ~/.Xresources. It includes generic colours for X.
-#include </home/prot/.my_Xcolors/tempus/tempus_past.Xcolors>
+#include </home/prot/.my_Xcolors/tempus/tempus_dusk.Xcolors>

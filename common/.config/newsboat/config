@@ -38,4 +38,4 @@ bind-key K prev article
 # Tempus themes
 # By Protesilaos Stavrou
 # https://github.com/protesilaos/tempus-themes
-include ~/.config/newsboat/themes/tempus_theme_light.theme
+include ~/.config/newsboat/themes/tempus_theme_dark.theme
