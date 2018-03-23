@@ -6,6 +6,8 @@ Here is a [short blog post](http://protesilaos.com/codelog/gnu-stow-dotfiles/) o
 
 ## Demo
 
+*Large gaps are for demo purposes, as I prefer to work with values between 0-5.*
+
 'Dirty' screenshot  
 ![bspwm sample screenshot](https://raw.githubusercontent.com/protesilaos/dotfiles/master/screenshot.png)
 
