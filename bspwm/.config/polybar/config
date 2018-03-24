@@ -170,7 +170,7 @@ format-full = <ramp-capacity><label-full>
 
 label-charging = %percentage%%
 label-discharging = %time%
-label-full = ∞
+label-full = Full
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
