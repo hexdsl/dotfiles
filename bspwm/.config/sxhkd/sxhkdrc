@@ -1,13 +1,88 @@
 # vi: ft=sh
-# filetype needed to set right comment style
+# filetype needed to set right comment style in Vim
 
-# make sxhkd reload its configuration files:
-super + Escape
+# NOTE XXX separated bindings based on presence of key chord chain
+# done on 2018-03-31 
+# TODO XXX review and clean up accordingly
+
+
+
+
+
+# Key chain chords mnemonics.
+# see `man sxhkd`
+#
+# Key chain chords are used for less common or ancillary commands.
+# The idea is to scope bindings so as to avoid conflicts.
+# Common commands are assigned direct shortcuts.
+#
+# Environment: super + e ; ...
+# Executables: super + x ; ...
+# Node flags: super + n ; f ; ...
+# Node splits: super + n ; s ; ...
+# FIXME key chain chords in the form of `super + n ; ...` have a bug
+# See https://github.com/baskerville/sxhkd/issues/83
+
+
+
+
+
+# ============================ 
+# key chain chords
+# ============================ 
+
+# environment
+# ---------------------------- 
+# reload sxhkd
+super + e ; s
 	pkill -USR1 -x sxhkd && notify-send -i /usr/share/icons/Papirus-Dark/16x16/apps/administration.svg "sxhkd config" "Reloaded key bindings"
 
 # reload polybar
-super + shift + Escape
+super + e ; p
     pkill polybar && . $HOME/.config/polybar/launch.sh
+
+# set environment theme
+# tempus theme switcher
+# NOTE XXX must run `stow` for all my dotfiles
+super + e ; t
+    tempusmenu
+
+# executables
+# ---------------------------- 
+
+# common programs
+super + x ; 1
+    firefox
+super + x ; {2-7}
+    st -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
+
+# open interface for screencasting or stop recording
+super + x ; {r,s}
+    {screencastmenu, own_script_ffmpeg_screencast rec_stop}
+
+# open interface to quickly access predefined dotfiles
+super + x ; d
+    dotsmenu
+
+# nodes
+# ---------------------------- 
+
+# set the node flags
+super + n ; f ; {l,s,p}
+    bspc node -g {locked,sticky,private}
+
+# make node split ratios equal or balanced
+super + n ; s ; {e,b}
+	bspc node @/ {--equalize,--balance}
+
+
+
+
+
+# ============================ 
+# direct key bindings
+# not key chain chords
+# ============================ 
 
 # bspwm hotkeys
 # ============================
@@ -29,10 +104,6 @@ super + m
 # interpreted as the last state.
 super + {t,shift + space,space,f}
  	bspc node -t ~{tiled,pseudo_tiled,floating,fullscreen}
-
-# set the node flags
-super + shift + {x,y,z}
-	bspc node -g {locked,sticky,private}
 
 # focus/swap
 # ----------------------------
@@ -91,14 +162,6 @@ super + ctrl + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# make split ratios equal
-super + equal
-	bspc node @/ --equalize
-
-# make split ratios balanced
-super + minus
-    bspc node @/ --balance
-
 # custom key bindings
 # ============================
 
@@ -131,20 +194,6 @@ super + shift + {y,u,i,o}
 super + shift + bracket{left,right}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
 
-# tempus theme switcher
-# NOTE XXX must run `stow` for all my dotfiles
-super + shift + t
-    tempusmenu
-
-# open interface for screencasting or stop recording
-# use chain cords
-super + p ; s
-    {screencastmenu, own_script_ffmpeg_screencast rec_stop}
-
-# open interface to quickly access predefined dotfiles
-super + p ; d
-    dotsmenu
-
 # media controls
 # ----------------------------
 
@@ -174,21 +223,12 @@ super + XF86Audio{Mute,LowerVolume,RaiseVolume}
 super + {_, shift + } @Return
     {st -e tmux, emacsclient -c}
 
-# common programs
-# use chain chords
-super + p ; 1
-    firefox
-super + p ; {2-7}
-    st -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
-
-# program launcher
+# dmenu
 # NOTE XXX must run `stow shell` and `stow bin` from my dotfiles
 # runs dmenu using Xcolors defined as shell variables
-super + d
-    own_script_run_dmenu_xcolors
-
+#
 # passmenu
 # NOTE XXX must run `stow shell` and `stow bin` from my dotfiles
 # runs passmenu using Xcolors defined as shell variables
-super + shift + d
-    own_script_run_passmenu_xcolors
+super + {d,p}
+    {own_script_run_dmenu_xcolors,own_script_run_passmenu_xcolors}
