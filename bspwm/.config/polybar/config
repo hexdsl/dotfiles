@@ -88,10 +88,13 @@ label-occupied-background = ${colors.background}
 label-occupied-foreground = ${colors.foreground}
 label-occupied-padding = 3
 
-label-urgent = %index%
-label-urgent-background = ${colors.color11}
-label-urgent-foreground = ${colors.background}
-label-urgent-padding = 3
+; NOTE does not seem to work
+; Probably missing something in bspwm
+; 
+; label-urgent = %index%!
+; label-urgent-background = ${colors.background}
+; label-urgent-foreground = ${colors.color1}
+; label-urgent-padding = 3
 
 label-empty = 
 
@@ -100,7 +103,8 @@ label-empty =
 ;
 ; Available tokens:
 ;   None
-label-monocle = Monocle
+; monocle = node single view
+label-monocle = M
 label-monocle-background = ${colors.color6}
 label-monocle-foreground = ${colors.background}
 label-monocle-padding = 3
@@ -109,18 +113,29 @@ label-monocle-padding = 3
 ; label-fullscreen = 
 ; label-floating = 
 
-label-pseudotiled = Pseudo Tiled
-label-pseudotiled-background = ${colors.color6}
+; pseudo-tiled = tiled but using its own geometry
+label-pseudotiled = PT
+label-pseudotiled-background = ${colors.color5}
 label-pseudotiled-foreground = ${colors.background}
 label-pseudotiled-padding = 3
 
-label-locked = Locked
+; locked = cannot be killed by bspwm
+label-locked = L
 label-locked-background = ${colors.color11}
 label-locked-foreground = ${colors.background}
 label-locked-padding = 3
 
-; label-sticky = 
-; label-private = 
+; sticky = stays in the current desktop
+label-sticky = S
+label-sticky-background = ${colors.color13}
+label-sticky-foreground = ${colors.background}
+label-sticky-padding = 3
+
+; private = trie to retain its position and geometry
+label-private = P
+label-private-background = ${colors.color9}
+label-private-foreground = ${colors.background}
+label-private-padding = 3
 
 [module/mpd]
 type = internal/mpd
