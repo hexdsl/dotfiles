@@ -1,0 +1,226 @@
+#+TITLE: Emacs config file
+#+AUTHOR: Protesilaos Stavrou
+
+* Tasks
+** TODO window switching package or custom function?
+** TODO function (?) for directly switching windows (splits)
+** TODO work on the abbreviations part   
+
+* General settings
+** User interface
+#+BEGIN_SRC emacs-lisp
+;;;; user interface
+
+;; disable gtk ui components
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; answering with 'y' or 'n' instead of 'yes/no'
+(defalias 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+** Helper settings
+#+BEGIN_SRC emacs-lisp
+;; backup in one place. flat, no tree structure
+(setq backup-directory-alist '(("" . "~/.emacs.d/backups")))
+
+;; turn on bracket match highlight
+(show-paren-mode 1)
+
+;; when a file is updated outside emacs, make it update if it's already opened in emacs
+(global-auto-revert-mode 1)
+
+;; wrap long lines by word boundary, and arrow up/down move by visual line, etc
+(global-visual-line-mode 1)
+
+;; single space defines the end of a sentence
+(setq sentence-end-double-space nil )
+
+;; ignore irregular casing for words
+(global-subword-mode 1)
+
+;; show active region
+(transient-mark-mode 1)
+(make-variable-buffer-local 'transient-mark-mode)
+(put 'transient-mark-mode 'permanent-local t)
+(setq-default transient-mark-mode t)
+
+;; delete region when inserting text
+(delete-selection-mode 1)
+#+END_SRC
+* Packages and their configs
+** `use-package` settings
+#+BEGIN_SRC emacs-lisp
+;; install `use-package' if missing
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; use-package
+(eval-when-compile
+  (require 'use-package))
+
+;; by default install missing packages
+(setq use-package-always-ensure t)
+#+END_SRC
+** Package declarations
+*** ace-jump-mode
+#+BEGIN_SRC emacs-lisp
+(use-package ace-jump-mode
+  :bind (("C-c SPC" . ace-jump-mode)
+	 ("C-x SPC" . ace-jump-mode-pop-mark)))
+#+END_SRC
+*** auto-complete
+#+BEGIN_SRC emacs-lisp
+(use-package auto-complete
+  :config (ac-config-default))
+#+END_SRC
+*** counsel
+#+BEGIN_SRC emacs-lisp
+(use-package counsel
+  :config
+  (counsel-mode 1)
+  (ivy-set-actions
+   'counsel-find-file
+   '(("d" delete-file "delete"))))
+#+END_SRC
+*** dashboard
+#+BEGIN_SRC emacs-lisp
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
+#+END_SRC
+*** expand region
+#+BEGIN_SRC emacs-lisp
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
+#+END_SRC
+*** flycheck
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck
+  :config (global-flycheck-mode))
+#+END_SRC
+*** focus
+#+BEGIN_SRC emacs-lisp
+(use-package focus
+  :bind ("C-c f" . focus-mode))
+#+END_SRC
+*** git-gutter
+#+BEGIN_SRC emacs-lisp
+(use-package git-gutter
+  :config (global-git-gutter-mode +1))
+#+END_SRC
+*** ivy
+#+BEGIN_SRC emacs-lisp
+(use-package ivy
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t))
+#+END_SRC
+*** magit
+#+BEGIN_SRC emacs-lisp 
+(use-package magit
+  :bind ("C-x g" . magit-status))
+#+END_SRC
+*** markdown-mode
+#+BEGIN_SRC emacs-lisp
+(use-package markdown-mode)
+#+END_SRC
+*** multiple cursors
+#+BEGIN_SRC emacs-lisp
+(use-package multiple-cursors
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+	 ("C->" . mc/mark-next-like-this)
+	 ("C-<" . mc/mark-previous-like-this)
+	 ("C-c C-<" . mc/mark-all-like-this)))
+#+END_SRC
+*** neotree
+#+BEGIN_SRC emacs-lisp 
+(use-package neotree
+  :bind ("C-c n" . neotree-toggle))
+#+END_SRC
+*** rainbow delimeters
+#+BEGIN_SRC emacs-lisp
+(use-package rainbow-delimiters
+  :config (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+#+END_SRC
+*** swiper
+#+BEGIN_SRC emacs-lisp
+(use-package swiper
+  :bind ("C-s" . swiper))
+#+END_SRC
+*** theme
+I do not like this theme. Its contrast 'rhythm' is inconsistent for my taste.
+Still, it is the best I have found as of yet.
+Will eventually develop ports for my [[https://protesilaos.com/tempus-themes][Tempus themes]].
+Before doing so, I need to have a solid understanding of Emacs and its major tools.
+Thus far, a candidate for basing my work on is the [[https://github.com/nashamri/spacemacs-theme][Spacemacs theme]].
+#+BEGIN_SRC emacs-lisp
+(use-package gruvbox-theme
+  :config (load-theme 'gruvbox t))
+#+END_SRC
+*** visual-regexp
+#+BEGIN_SRC emacs-lisp
+(use-package visual-regexp
+  :bind (("C-c r" . vr/replace)
+	 ("C-c q" . vr/query-replace)))
+#+END_SRC
+*** wc-mode
+#+BEGIN_SRC emacs-lisp
+(use-package wc-mode)
+#+END_SRC
+* My functions and key bindings
+** Kill motions
+#+BEGIN_SRC emacs-lisp
+;; kill backwards
+(defun backward-kill-line (arg)
+  "Kill ARG lines backward."
+  (interactive "p")
+  (kill-line (- 1 arg)))
+(global-set-key (kbd "C-S-k") 'backward-kill-line)
+#+END_SRC
+** Equivalent of Vim dd
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "M-k") 'kill-whole-line)
+#+END_SRC
+** Equivalent to Vim yy
+#+BEGIN_SRC emacs-lisp
+(defun copy-line (ARG)
+  "Copy lines (as many as prefix argument `ARG`) in the kill ring.
+      Ease of use features:
+      - Move to start of next line.
+      - Appends the copy on sequential calls.
+      - Use newline as last char even on the last line of the buffer.
+      - If region is active, copy its lines."
+  (interactive "p")
+  (let ((beg (line-beginning-position))
+	(end (line-end-position ARG)))
+    (when mark-active
+      (if (> (point) (mark))
+	  (setq beg (save-excursion (goto-char (mark)) (line-beginning-position)))
+	(setq end (save-excursion (goto-char (mark)) (line-end-position)))))
+    (if (eq last-command 'copy-line)
+	(kill-append (buffer-substring beg end) (< end beg))
+      (kill-ring-save beg end)))
+  (kill-append "\n" nil)
+  (beginning-of-line (or (and ARG (1+ ARG)) 2))
+  (if (and ARG (not (= 1 ARG))) (message "%d lines copied" ARG)))
+(global-set-key (kbd "C-c C-k") 'copy-line)
+#+END_SRC
+** kill word under position
+#+BEGIN_SRC emacs-lisp
+(defun my-kill-thing-at-point (thing)
+  "Kill the `thing-at-point' for the specified kind of THING."
+  (let ((bounds (bounds-of-thing-at-point thing)))
+    (if bounds
+        (kill-region (car bounds) (cdr bounds))
+      (error "No %s at point" thing))))
+
+(defun my-kill-word-at-point ()
+  "Kill the word at point."
+  (interactive)
+  (my-kill-thing-at-point 'word))
+(global-set-key (kbd "C-c k") 'my-kill-word-at-point)
+#+END_SRC
+* Abbreviations

@@ -22,10 +22,8 @@
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-;;;; init modules
-(load-file "~/.emacs.d/modules/prot-general-settings.el")
-(load-file "~/.emacs.d/modules/prot-package-configs.el")
-(load-file "~/.emacs.d/modules/prot-keybindings.el")
+;;;; init file
+(org-babel-load-file (expand-file-name "~/.emacs.d/emacs-init.org"))
 
 (provide 'init)
 ;;; init.el ends here
