@@ -1,4 +1,6 @@
 **/#*#
+**/.emacs.d/ac-comphist.dat
+**/.emacs.d/emacs-init.el
 **/*.git
 **/*.swp
 **/.config/mpd/database

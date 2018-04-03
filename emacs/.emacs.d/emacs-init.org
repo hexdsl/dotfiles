@@ -2,6 +2,12 @@
 #+AUTHOR: Protesilaos Stavrou
 
 * Tasks
+** TODO letter case conversion key bindings
+** TODO test this
+*** make file with shabang executable
+;; When saving a file that starts with `#. !', make it executable.
+(add-hook 'after-save-hook
+'executable-make-buffer-file-executable-if-script-p)
 ** TODO window switching package or custom function?
 ** TODO function (?) for directly switching windows (splits)
 ** TODO work on the abbreviations part   
@@ -64,16 +70,17 @@
 (setq use-package-always-ensure t)
 #+END_SRC
 ** Package declarations
-*** ace-jump-mode
-#+BEGIN_SRC emacs-lisp
-(use-package ace-jump-mode
-  :bind (("C-c SPC" . ace-jump-mode)
-	 ("C-x SPC" . ace-jump-mode-pop-mark)))
-#+END_SRC
 *** auto-complete
 #+BEGIN_SRC emacs-lisp
 (use-package auto-complete
   :config (ac-config-default))
+#+END_SRC
+*** avy
+#+BEGIN_SRC emacs-lisp
+(use-package avy
+  :ensure t
+  :bind
+  (("C-:" . avy-goto-char-timer)))
 #+END_SRC
 *** counsel
 #+BEGIN_SRC emacs-lisp
@@ -111,12 +118,27 @@
   :config (global-git-gutter-mode +1))
 #+END_SRC
 *** ivy
+Adapted from [[https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/][source]].
+
 #+BEGIN_SRC emacs-lisp
 (use-package ivy
+  :diminish (ivy-mode . "")
   :config
   (ivy-mode 1)
+  ;; add 'recentf-mode' and bookmarks to 'ivy-switch-buffer'.
   (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t))
+  ;; recursive minibuffers
+  (setq enable-recursive-minibuffers t)
+  ;; number of result lines to display
+  (setq ivy-height 10)
+  ;; does not count candidates
+  (setq ivy-count-format "")
+  ;; no regexp by default
+  (setq ivy-initial-inputs-alist nil)
+  ;; configure regexp engine.
+  (setq ivy-re-builders-alist
+	;; allow input not in order
+        '((t   . ivy--regex-ignore-order))))
 #+END_SRC
 *** magit
 #+BEGIN_SRC emacs-lisp 
@@ -140,6 +162,17 @@
 (use-package neotree
   :bind ("C-c n" . neotree-toggle))
 #+END_SRC
+*** projectile
+#+BEGIN_SRC emacs-lisp
+;; projectile
+(use-package projectile
+  :config
+  (projectile-global-mode)
+  (setq projectile-mode-line
+        '(:eval (format " [%s]" (projectile-project-name))))
+	(setq projectile-remember-window-configs t)
+	(setq projectile-completion-system 'ivy))
+#+END_SRC
 *** rainbow delimeters
 #+BEGIN_SRC emacs-lisp
 (use-package rainbow-delimiters
@@ -158,7 +191,7 @@ Before doing so, I need to have a solid understanding of Emacs and its major too
 Thus far, a candidate for basing my work on is the [[https://github.com/nashamri/spacemacs-theme][Spacemacs theme]].
 #+BEGIN_SRC emacs-lisp
 (use-package gruvbox-theme
-  :config (load-theme 'gruvbox t))
+  :config (load-theme 'gruvbox-dark-hard t))
 #+END_SRC
 *** visual-regexp
 #+BEGIN_SRC emacs-lisp
