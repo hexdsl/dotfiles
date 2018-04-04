@@ -84,6 +84,8 @@ From A-Z:
 - `vim`. Text editor, used exclusively in the console.
 - `w3m`. Console browser.
 
+**NOTE.** As I have recently added Emacs to my workflow, I may eventually deprecate some of the items on this list in favour of their Emacs equivalents.
+
 ## License
 
 Unless otherwise noted, all code herein is distributed under the terms of the GNU General Public License Version 3. In cases where that cannot apply (e.g. a picture), the Creative Commons Attribution-ShareAlike 4.0 License shall be used instead.
