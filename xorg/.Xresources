@@ -20,10 +20,10 @@ Xft.lcdfilter: lcddefault
 
 ! emacs
 ! ==============================================================================
-emacs.font: Iosevka Term:pixelsize=16
-emacs.boldFont: Iosevka Term:pixelsize=16:bold
-emacs.italicFont: Iosevka Term:pixelsize=16:italic
-emacs.bolditalicFont: Iosevka Term:pixelsize=16:bold:italic
+emacs.font: Hack:pixelsize=14
+emacs.boldFont: Hack:pixelsize=14:bold
+emacs.italicFont: Hack:pixelsize=14:italic
+emacs.bolditalicFont: Hack:pixelsize=14:bold:italic
 
 ! urxvt
 ! ==============================================================================

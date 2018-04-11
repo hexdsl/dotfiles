@@ -80,7 +80,7 @@ From A-Z:
 - `tmux`. Terminal multiplexer.
 - `ttf-dejavu`. System interface fonts (polybar, dmenu, dunst) and `fontconfig` fallbacks.
 - `ttf-font-awesome-4` (AUR). Icon font used in the system bar.
-- `ttf-iosevka-term-ss04` (AUR). Fonts used in terminals, text editors.
+- `ttf-hack`. Fonts used in terminals, text editors (*Hack* is almost identical to *DejaVu Sans Mono*, but seems to have better hinting/kerning).
 - `vim`. Text editor, used exclusively in the console.
 - `w3m`. Console browser.
 
