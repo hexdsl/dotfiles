@@ -25,6 +25,10 @@
 ;; answering with 'y' or 'n' instead of 'yes/no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
+** Theme
+#+BEGIN_SRC emacs-lisp
+(load-theme 'cipher-light)
+#+END_SRC
 ** Helper settings
 #+BEGIN_SRC emacs-lisp
 ;; backup in one place. flat, no tree structure
@@ -187,16 +191,6 @@ Adapted from [[https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/][source]]
 #+BEGIN_SRC emacs-lisp
 (use-package swiper
   :bind ("C-s" . swiper))
-#+END_SRC
-*** theme
-I do not like this theme. Its contrast 'rhythm' is inconsistent for my taste.
-Still, it is the best I have found as of yet.
-Will eventually develop ports for my [[https://protesilaos.com/tempus-themes][Tempus themes]].
-Before doing so, I need to have a solid understanding of Emacs and its major tools.
-Thus far, a candidate for basing my work on is the [[https://github.com/nashamri/spacemacs-theme][Spacemacs theme]].
-#+BEGIN_SRC emacs-lisp
-(use-package gruvbox-theme
-  :config (load-theme 'gruvbox-dark-hard t))
 #+END_SRC
 *** visual-regexp
 #+BEGIN_SRC emacs-lisp
