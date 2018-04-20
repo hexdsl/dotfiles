@@ -1,60 +1,60 @@
-# vi: ft=sh
+# # vi: ft=sh
 
-# this file is sourced from .xinitrc
-# it is used to run programs at the start of the X session
+# # this file is sourced from .xinitrc
+# # it is used to run programs at the start of the X session
 
-# NOTE bspwm autostart defined in ~/.config/bspwm/bspwmrc
-# the idea is to start programs after the window manager
+# # NOTE bspwm autostart defined in ~/.config/bspwm/bspwmrc
+# # the idea is to start programs after the window manager
 
-# environment agnostic
-# --------------------
+# # environment agnostic
+# # --------------------
 
-# unclock keyring for terminal sessions
-# see https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
-if [ -n "$DESKTOP_SESSION" ]; then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
-
-# # start URxvt server
-# if [ -x /usr/bin/urxvtd ]; then
-    # urxvtd --quiet --opendisplay --fork &
+# # unclock keyring for terminal sessions
+# # see https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
+# if [ -n "$DESKTOP_SESSION" ]; then
+    # eval $(gnome-keyring-daemon --start)
+    # export SSH_AUTH_SOCK
 # fi
 
-# load Xresources
-xrdb -merge ~/.Xresources
+# # # start URxvt server
+# # if [ -x /usr/bin/urxvtd ]; then
+    # # urxvtd --quiet --opendisplay --fork &
+# # fi
 
-# specify keyboard layouts and compose key
-if [ -x /usr/bin/setxkbmap ]; then
-    setxkbmap -option compose:menu
-    setxkbmap -layout 'us,gr' -option 'grp:alt_caps_toggle'
-fi
+# # load Xresources
+# xrdb -merge ~/.Xresources
 
-# emacs daemon
-if [ -x /usr/bin/emacs ]; then
-    emacs --daemon
-fi
-
-# music player daemon
-if [ -x /usr/bin/mpd ]; then
-    mpd
-fi
-
-# screen temperature
-if [ -x /usr/bin/redshift ]; then
-    # use local config
-    redshift -c ~/.config/redshift.conf &
-fi
-
-# environment specific
-# --------------------
-
-# # run if on any of the following
-# if [[ "$XDG_CURRENT_DESKTOP" = "GNOME" ]]; then
+# # specify keyboard layouts and compose key
+# if [ -x /usr/bin/setxkbmap ]; then
+    # setxkbmap -option compose:menu
+    # setxkbmap -layout 'us,gr' -option 'grp:alt_caps_toggle'
 # fi
 
-# if [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
+# # emacs daemon
+# if [ -x /usr/bin/emacs ]; then
+    # emacs --daemon
 # fi
 
-# if [[ "$XDG_CURRENT_DESKTOP" = "MATE" ]]; then
+# # music player daemon
+# if [ -x /usr/bin/mpd ]; then
+    # mpd
 # fi
+
+# # screen temperature
+# if [ -x /usr/bin/redshift ]; then
+    # # use local config
+    # redshift -c ~/.config/redshift.conf &
+# fi
+
+# # environment specific
+# # --------------------
+
+# # # run if on any of the following
+# # if [[ "$XDG_CURRENT_DESKTOP" = "GNOME" ]]; then
+# # fi
+
+# # if [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
+# # fi
+
+# # if [[ "$XDG_CURRENT_DESKTOP" = "MATE" ]]; then
+# # fi
