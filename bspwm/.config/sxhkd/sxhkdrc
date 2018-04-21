@@ -231,3 +231,7 @@ super + {_, shift + } @Return
 # runs passmenu using Xcolors defined as shell variables
 super + {d,p}
     {own_script_run_dmenu_xcolors,own_script_run_passmenu_xcolors}
+
+# dmenu specifically for flatpaks
+super + shift + d
+    flatpakmenu

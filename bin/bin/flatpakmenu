@@ -1,0 +1,46 @@
+#!/bin/bash
+
+    # This program is free software: you can redistribute it and/or modify
+    # it under the terms of the GNU General Public License as published by
+    # the Free Software Foundation, either version 3 of the License, or
+    # (at your option) any later version.
+
+    # This program is distributed in the hope that it will be useful,
+    # but WITHOUT ANY WARRANTY; without even the implied warranty of
+    # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    # GNU General Public License for more details.
+
+    # You should have received a copy of the GNU General Public License
+    # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# A dmenu script to run installed flatpaks.
+
+# list flatpak apps
+my_flatpaks="flatpak list"
+
+# define length of the flatpak list (for use in dmenu -l)
+my_flatpaks_length=$($my_flatpaks | wc -l)
+
+# select item in a list
+my_flatpaks_selection ()
+{
+    # pass custom colours to dmenu command
+    source $HOME/.my_Xcolors/active-tempus-theme.sh
+
+    # pass flatpak list to dmenu output
+    # exclude runtime packages
+    # clean extra info provided by 'flatpak list'
+    # NOTE the sed command includes substitution for a space, non-breakable whitespace, and tab characters
+    $my_flatpaks | \
+    grep -v runtime | \
+    sed -e 's#\(/x86_64[/ a-zA-Z1-9.,]*\)\([	       ]*\)\([a-zA-Z1-9,.]*\)##g' | \
+    dmenu -i -l $my_flatpaks_length -p 'Flatpak run' -nb $background -nf $foreground -sb $color6 -sf $background -fn 'DejaVu Sans Mono-12'
+}
+
+# capture dmenu output
+my_flatpaks_choice=$(my_flatpaks_selection)
+
+# open visual editor with path to selection
+if [ "$my_flatpaks_choice" ]; then
+    flatpak run "$my_flatpaks_choice"
+fi
