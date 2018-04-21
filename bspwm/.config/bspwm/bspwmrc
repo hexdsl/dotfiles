@@ -44,13 +44,8 @@ bspc config presel_feedback_color "$color13"
 # ==============================================================================
 
 sxhkd &
-
-# unclock keyring for terminal sessions
-# see https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
-if [ -n "$DESKTOP_SESSION" ]; then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
+xrdb -merge $HOME/.Xresources
+. $HOME/.config/polybar/launch.sh
 
 # start URxvt server
 if [ -x /usr/bin/urxvtd ]; then
@@ -72,6 +67,12 @@ if [ -x /usr/bin/redshift ]; then
     redshift -c ~/.config/redshift.conf &
 fi
 
+# specify keyboard layouts and compose key
+if [ -x /usr/bin/setxkbmap ]; then
+    setxkbmap -option compose:menu
+    setxkbmap -layout 'us,gr' -option 'grp:alt_caps_toggle'
+fi
+
 # hardware enablement tool
 if [ -x /usr/bin/xinput ]; then
     # `xinput list` devices
@@ -79,8 +80,7 @@ if [ -x /usr/bin/xinput ]; then
 
     # syntax is [id] [prop] [boolean]
     # enable touchpad tap to click
-    # xinput set-prop 11 278 1
-    xinput set-prop 12 298 1
+    xinput set-prop 11 275 1
 fi
 
 # hide mouse pointer

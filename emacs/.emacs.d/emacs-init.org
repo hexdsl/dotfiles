@@ -25,10 +25,6 @@
 ;; answering with 'y' or 'n' instead of 'yes/no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
-** Theme
-#+BEGIN_SRC emacs-lisp
-(load-theme 'cipher-light)
-#+END_SRC
 ** Helper settings
 #+BEGIN_SRC emacs-lisp
 ;; backup in one place. flat, no tree structure

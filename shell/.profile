@@ -21,5 +21,12 @@ if [ -d "$HOME/bin" ] ; then
     PATH=$PATH:"$HOME/bin"
 fi
 
+# unclock keyring for terminal sessions
+# see https://wiki.archlinux.org/index.php/GNOME/Keyring#With_a_display_manager
+if [ -n "$DESKTOP_SESSION" ]; then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
 # # prerequisite to unified look for gtk and qt apps
 # [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
