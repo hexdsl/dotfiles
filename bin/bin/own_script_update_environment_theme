@@ -229,6 +229,9 @@ update_environment_theme()
 # run commands for everything
 update_environment_theme
 
+# update running urxvt instances
+own_script_update_running_urxvt
+
 # send notification
 notify-send -i /usr/share/icons/Papirus/16x16/apps/terminal.svg "Environment theme" "Updated colours to <b>Tempus $tempus_scheme</b>"
 
@@ -249,10 +252,4 @@ notify-send -i /usr/share/icons/Papirus/16x16/apps/terminal.svg "Environment the
 
     # This goes with rest of modify calls
     # modify_xfce4_terminal
-
-# This goes last before the final notification
-# # XXX TODO XXX can st be live reloaded?
-# NOTE commented out, as I no longer use URxvt
-# # update running urxvt instances
-# own_script_update_running_urxvt
 

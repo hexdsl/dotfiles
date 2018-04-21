@@ -54,7 +54,7 @@ super + e ; t
 super + x ; 1
     firefox
 super + x ; {2-7}
-    st -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
+    urxvtc -e {ranger,newsboat,neomutt,rtv,ncmpcpp,podboat -a}
 
 # open interface for screencasting or stop recording
 super + x ; {r,s}
@@ -219,10 +219,8 @@ super + XF86Audio{Mute,LowerVolume,RaiseVolume}
 
 # terminal emulator and emacs
 # NOTE `@` means until key is released
-# NOTE emacs --daemon is started from ~/.xprofile
-    # {st -e tmux, emacsclient -c}
 super + {_, shift + } @Return
-    {gnome-terminal, emacs}
+    {urxvtc, emacs}
 
 # dmenu
 # NOTE XXX must run `stow shell` and `stow bin` from my dotfiles

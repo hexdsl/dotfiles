@@ -9,11 +9,11 @@ URxvt.depth: 32
 URxvt.allow_bold: true
 
 ! NOTE font and line spacing are fixed in `rxvt-unicode-patched` (AUR)
-URxvt.font: xft:Iosevka Term:pixelsize=12,xft:DejaVu Sans Mono:pixelsize=14
-URxvt.boldFont: xft:Iosevka Term:pixelsize=12:bold,xft:DejaVu Sans Mono:pixelsize=14:bold
-URxvt.italicFont: xft:Iosevka Term:pixelsize=12:italic,xft:DejaVu Sans Mono:pixelsize=14:italic
-URxvt.bolditalicFont: xft:Iosevka Term:pixelsize=12:bold:italic,xft:DejaVu Sans Mono:pixelsize=14:bold:italic
-URxvt.letterSpace: 0
+URxvt.font: xft:Hack:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14
+URxvt.boldFont: xft:Hack:pixelsize=14:bold,xft:DejaVu Sans Mono:pixelsize=14:bold
+URxvt.italicFont: xft:Hack:pixelsize=14:italic,xft:DejaVu Sans Mono:pixelsize=14:italic
+URxvt.bolditalicFont: xft:Hack:pixelsize=14:bold:italic,xft:DejaVu Sans Mono:pixelsize=14:bold:italic
+URxvt.letterSpace: -1
 URxvt.lineSpace: 0
 
 URxvt.scrollBar: false
@@ -21,7 +21,7 @@ URxvt.scrollTtyOutput: true
 URxvt.scrollTtyKeypress: true
 Urxvt.secondaryScroll: true
 
-! NOTE needs `urxvt-perls` (Arch Linux)
+! extensions
 URxvt.perl-ext-common: default,matcher,selection-to-clipboard,clipboard
 URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button: 1
