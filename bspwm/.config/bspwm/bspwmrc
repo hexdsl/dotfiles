@@ -52,6 +52,11 @@ if [ -x /usr/bin/urxvtd ]; then
 	urxvtd --quiet --opendisplay --fork &
 fi
 
+# start music server
+if [ -x /usr/bin/mpd ]; then
+	mpd
+fi
+
 # manage wallpaper
 if [ -x /usr/bin/feh ]; then
     feh --bg-fill ~/.wallpaper.jpg
@@ -80,7 +85,8 @@ if [ -x /usr/bin/xinput ]; then
 
     # syntax is [id] [prop] [boolean]
     # enable touchpad tap to click
-    xinput set-prop 11 275 1
+    # xinput set-prop 11 275 1
+    xinput set-prop 11 277 1
 fi
 
 # hide mouse pointer
