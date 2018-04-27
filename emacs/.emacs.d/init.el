@@ -11,7 +11,7 @@
 ;;; Code:
 
 ;;;; custom
-;;;; NOTE this should come first to avoid prompts on startup
+;; NOTE this goes first to avoid prompts at startup
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -19,17 +19,13 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("58587075e282dcb38fc873d2f6e0d71e52872f214bc1c632f5b48dc130d6e12a" default)))
- '(package-selected-packages
-   (quote
-    (which-key wc-mode volatile-highlights visual-regexp uuidgen use-package unfill toc-org smeargle restart-emacs rainbow-delimiters popwin pcre2el orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree mwim multiple-cursors move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter gh-md fuzzy focus flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word dashboard counsel column-enforce-mode auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ac-ispell))))
+    ("b7532dc0fc97ae16582677f9a8128e36a0dc77cf4b45978287c28f7813c53cab" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
 
 ;;;; packages
 (require 'package)

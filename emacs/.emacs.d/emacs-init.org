@@ -2,10 +2,12 @@
 #+AUTHOR: Protesilaos Stavrou
 
 * Tasks
+** TODO dark theme
+** TODO show buffer number? switch directly by number?
 ** TODO letter case conversion key bindings
 ** TODO test this
-*** make file with shabang executable
-;; When saving a file that starts with `#. !', make it executable.
+*** https://orgmode.org/worg/org-color-themes.htmlmake file with shabang executable
+;; When saving a file that starts with `#. !', mblackake it executable.
 (add-hook 'after-save-hook
 'executable-make-buffer-file-executable-if-script-p)
 ** TODO window switching package or custom function?
@@ -24,6 +26,11 @@
 
 ;; answering with 'y' or 'n' instead of 'yes/no'
 (defalias 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+** Theme options
+Also review this for [[https://orgmode.org/worg/org-color-themes.html][setting multiple themes]]
+#+BEGIN_SRC emacs-lisp
+(load-theme 'cipher)
 #+END_SRC
 ** Helper settings
 #+BEGIN_SRC emacs-lisp
@@ -53,6 +60,11 @@
 
 ;; delete region when inserting text
 (delete-selection-mode 1)
+#+END_SRC
+** org mode
+#+BEGIN_SRC emacs-lisp
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
 #+END_SRC
 * Packages and their configs
 ** `use-package` settings
@@ -198,6 +210,7 @@ Adapted from [[https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/][source]]
 #+BEGIN_SRC emacs-lisp
 (use-package wc-mode)
 #+END_SRC
+
 * My functions and key bindings
 ** Kill motions
 #+BEGIN_SRC emacs-lisp
@@ -251,4 +264,5 @@ Adapted from [[https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/][source]]
   (my-kill-thing-at-point 'word))
 (global-set-key (kbd "C-c k") 'my-kill-word-at-point)
 #+END_SRC
+
 * Abbreviations
