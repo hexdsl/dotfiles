@@ -15,9 +15,8 @@ export PAGER="less --quit-at-eof"
 export MANPAGER=$PAGER
 
 # default editor
-# the emacs daemon is initiated from the ~/.xprofile
 if [ -x /usr/bin/emacs ]; then
-    export VISUAL="emacsclient -c"
+    export VISUAL="emacs"
     export EDITOR=vim
 else
     export VISUAL=vim
