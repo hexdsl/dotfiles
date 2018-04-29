@@ -12,7 +12,7 @@ feed-sort-order name
 show-keymap-hint no
 swap-title-and-hints no
 text-width 80
-save-path "~/Documents/rss-archived"
+save-path "~/Documents/archived-articles/rss"
 browser /usr/bin/xdg-open %u
 confirm-exit yes
 
