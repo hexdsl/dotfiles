@@ -180,7 +180,7 @@ ctrl + alt + Delete
     bspc quit
 ctrl + alt {Home,End}
     systemctl {reboot,poweroff} 
-{ctrl + alt + l,XF86ScreenSaver}
+XF86ScreenSaver
     i3lock -i ~/.lockscreen.png
 
 # functionality
