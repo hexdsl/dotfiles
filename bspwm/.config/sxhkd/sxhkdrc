@@ -140,11 +140,11 @@ super + {_,shift + }r
 # preselect the direction
 # cancel the preselection
 # by pointing at given direction twice
-super + ctrl + {h,j,k,l}
+super + alt + {h,j,k,l}
     bspc node --presel-dir '~{north,south,west,east}'
 
 # preselect the ratio
-super + ctrl + {1-9}
+super + alt + {1-9}
 	bspc node -o 0.{1-9}
 
 # move/resize
