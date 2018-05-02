@@ -33,10 +33,16 @@ else
     export PS1="\n[\[\e[34m\]\w\[\e[m\]] \[\e[35m\]$ >\[\e[m\] "
 fi
 
-# enable tab completion 
-# paths are from Arch Linux
-if [ -f /usr/share/bash-completion/completions ]; then
-    . /usr/share/bash-completion/completions
+# following taken from Debian 9
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
 
 # sudo tab completion
