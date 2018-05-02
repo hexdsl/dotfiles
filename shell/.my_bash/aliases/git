@@ -5,7 +5,7 @@ if [ -x /usr/bin/git ]; then
     alias gsta='git status'
     alias gadd='git add'
     alias gall='git add -A'
-    alias gcom='git commit -m'
+    alias gcom='git commit -S -m'
     alias gpm='git push -u origin master'
     alias gph='git push -u origin HEAD'
 
