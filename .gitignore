@@ -1,7 +1,4 @@
 **/#*#
-**/.emacs.d/ac-comphist.dat
-**/.emacs.d/emacs-init.el
-**/.emacs.d/eshell
 **/*.git
 **/*.swp
 **/.config/mpd/database
@@ -25,9 +22,12 @@
 **/.config/task/completed.data
 **/.config/task/pending.data
 **/.config/task/undo.data
+**/.emacs.d/ac-comphist.dat
 **/.emacs.d/auto-save-list
 **/.emacs.d/backups
 **/.emacs.d/elpa
+**/.emacs.d/emacs-init.el
+**/.emacs.d/eshell
 **/.emacs.d/history
 **/.emacs.d/places
 **/.emacs.d/projectile-bookmarks.eld
