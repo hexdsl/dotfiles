@@ -62,9 +62,10 @@ From A-Z:
 
 - `bspwm`. Tiling window manager.
 - `compton`. Display compositor.
-- `dmenu`. Program launcher.
+- `dmenu`. Dynamic menu used to launch programs and custom commands.
 - `dunst`. Notification daemon.
 - `emacs`. Text editor (more like a self-contained OS, but I digress).
+- `materia-gtk-theme`. Widget theme for graphical applications.
 - `mpd`. Music server daemon.
 - `mpv`. Media player invoked from the console.
 - `ncmpcpp`. Console music client for `mpd`.
