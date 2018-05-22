@@ -77,10 +77,9 @@ From A-Z:
 - `ranger`. Console file manager.
 - `redshift`. Screen colour temparature daemon.
 - `rxvt-unicode`. Terminal emulator.
-- `st` ([my custom build](https://github.com/protesilaos/st)). Terminal emulator.
 - `task` (aka taskwarrior). Task manager for the console.
 - `tmux`. Terminal multiplexer.
-- `ttf-dejavu`. System interface fonts (polybar, dmenu, dunst) and `fontconfig` fallbacks.
+- `ttf-roboto`. System interface fonts (polybar, dmenu, dunst).
 - `ttf-font-awesome-4` (AUR). Icon font used in the system bar.
 - `ttf-hack`. Fonts used in terminals, text editors (*Hack* is almost identical to *DejaVu Sans Mono*, but seems to have better hinting/kerning).
 - `vim`. Text editor, used exclusively in the console.
