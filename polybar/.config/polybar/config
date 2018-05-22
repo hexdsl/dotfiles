@@ -50,8 +50,8 @@ module-margin-right = 2
 ; IMPORTANT padding is generous because the sans font is appropriate
 ; IMPORTANT a mono font will make the bar look terrible
 font-0 = FontAwesome:style=regular:pixelsize=9;1
-font-1 = DejaVuSansCondensed:style=book:antialias=true:pixelsize=10;1
-font-2 = DejaVuSansCondensed:style=bold:antialias=true:pixelsize=10;1
+font-1 = Roboto:style=regular:antialias=true:pixelsize=10;1
+font-2 = Roboto:style=bold:antialias=true:pixelsize=10;1
 
 modules-left = bspwm mpd
 modules-center = date keyboard archpkg
