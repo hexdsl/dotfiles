@@ -22,11 +22,14 @@ screencast_function_length=$(cat $HOME/bin/own_script_ffmpeg_screencast | grep -
 # pass custom colours to dmenu command
 source $HOME/.my_Xcolors/active-tempus-theme.sh
 
+# get the system-wide custom font
+source $HOME/.my_custom_ui_font.sh
+
 # dmenu wrapper with the list of options for my ffmpeg screen recording script
 screencastmenu_selection()
 {
     cat $HOME/bin/own_script_ffmpeg_screencast | grep -o -e 'rec_[a-z_]*' | \
-    dmenu -l $screencast_function_length -p 'Screencast options' -nb $background -nf $foreground -sb $color4 -sf $background -fn 'DejaVu Sans Mono-12'
+    dmenu -l $screencast_function_length -p 'Screencast options' -nb $background -nf $foreground -sb $color4 -sf $background -fn "$my_custom_ui_font"
 }
 
 # capture dmenu selection

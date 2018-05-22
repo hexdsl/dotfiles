@@ -1,7 +1,7 @@
 # vi: ft=dosini
 
 [global]
-font = DejaVu Sans Condensed 9
+font = Roboto 10
 frame_width = 1
 frame_color = "#1f252d"
 

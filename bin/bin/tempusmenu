@@ -27,12 +27,15 @@ tempus_themes_length=$(ls $HOME/.my_Xcolors/tempus/ | wc -l)
 # pass custom colours to dmenu command
 source $HOME/.my_Xcolors/active-tempus-theme.sh
 
+# get the system-wide custom font
+source $HOME/.my_custom_ui_font.sh
+
 # dmenu wrapper with the list of tempus themes
 tempus_themes_selection()
 {
     ls $HOME/.my_Xcolors/tempus/ | \
     sed 's/\([a-z]*_\)\([a-z]*\)\(\.[a-zA-Z]*\)/\2 /g' | \
-    dmenu -l $tempus_themes_length -p 'Select Tempus theme' -nb $background -nf $foreground -sb $color5 -sf $background -fn 'DejaVu Sans Mono-12'
+    dmenu -l $tempus_themes_length -p 'Select Tempus theme' -nb $background -nf $foreground -sb $color5 -sf $background -fn "$my_custom_ui_font" 
 }
 
 # capture dmenu output

@@ -27,6 +27,9 @@ my_flatpaks_selection ()
     # pass custom colours to dmenu command
     source $HOME/.my_Xcolors/active-tempus-theme.sh
 
+    # get the system-wide custom font
+    source $HOME/.my_custom_ui_font.sh
+
     # pass flatpak list to dmenu output
     # exclude runtime packages
     # clean extra info provided by 'flatpak list'
@@ -34,7 +37,7 @@ my_flatpaks_selection ()
     $my_flatpaks | \
     grep -v runtime | \
     sed -e 's#\(/x86_64[/ a-zA-Z1-9.,]*\)\([	       ]*\)\([a-zA-Z1-9,.]*\)##g' | \
-    dmenu -i -l $my_flatpaks_length -p 'Flatpak run' -nb $background -nf $foreground -sb $color6 -sf $background -fn 'DejaVu Sans Mono-12'
+    dmenu -i -l $my_flatpaks_length -p 'Flatpak run' -nb $background -nf $foreground -sb $color6 -sf $background -fn "$my_custom_ui_font"
 }
 
 # capture dmenu output
