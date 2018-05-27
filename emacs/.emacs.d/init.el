@@ -19,7 +19,11 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("b7532dc0fc97ae16582677f9a8128e36a0dc77cf4b45978287c28f7813c53cab" default))))
+    ("b7532dc0fc97ae16582677f9a8128e36a0dc77cf4b45978287c28f7813c53cab" default)))
+ '(inhibit-startup-screen t)
+ '(package-selected-packages
+   (quote
+    (writegood-mode wc-mode visual-regexp use-package rainbow-delimiters projectile neotree multiple-cursors markdown-mode magit git-gutter focus flycheck expand-region dashboard counsel avy auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

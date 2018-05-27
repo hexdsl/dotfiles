@@ -210,7 +210,10 @@ Adapted from [[https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/][source]]
 #+BEGIN_SRC emacs-lisp
 (use-package wc-mode)
 #+END_SRC
-
+*** writegoodmode
+#+BEGIN_SRC emacs-lisp
+(use-package writegood-mode)
+#+END_SRC
 * My functions and key bindings
 ** Kill motions
 #+BEGIN_SRC emacs-lisp
