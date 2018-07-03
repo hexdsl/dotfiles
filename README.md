@@ -1,5 +1,7 @@
 # Custom environment and configurations for GNU/Linux
 
+**Deprecation notice.** [Moved to GitLab](https://gitlab.com/protesilaos/dotfiles).
+
 #### Managed with GNU Stow
 
 Here is a [short blog post](http://protesilaos.com/codelog/gnu-stow-dotfiles/) on how I use that program.
